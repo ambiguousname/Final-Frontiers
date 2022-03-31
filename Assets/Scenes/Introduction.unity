@@ -267,47 +267,18 @@ MonoBehaviour:
   _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"...
     and may I say, Captain, it is good to call you by your full, proper, and rightful
     rank. The Union is lucky to have you, and we are all looking forward to your
-    tenure."},"_actorName":"Admiral Shanely","_actorParameterID":"5322a6ce-cbf5-4fa2-83be-fc8839b8e2c5","_UID":"ed8ceb3c-e58c-4aed-b285-601b5932a73f","_position":{"x":928.6665,"y":269.3296},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"Unfortunately,
+    tenure."},"_actorName":"Admiral Shanely","_actorParameterID":"5322a6ce-cbf5-4fa2-83be-fc8839b8e2c5","_UID":"ed8ceb3c-e58c-4aed-b285-601b5932a73f","_position":{"x":928.6665,"y":269.3296},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"_action":{"target":{"_value":1},"speed":{"_value":4.0},"keepDistance":{"_value":0.1},"overrideAgent":{"_type":"UnityEngine.AI.NavMeshAgent","_value":2},"$type":"NodeCanvas.Tasks.Actions.MoveToGameObject"},"_actorName":"Initiate
+    O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_name":"Initiate
+    O''kurr","_tag":"","_position":{"x":968.2923,"y":386.6984},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"1"},{"statement":{"_text":"Unfortunately,
     that will have to do as far as speeches go. The situation on Aratel is getting
     worse by the minute, and your ship is just about ready to go."},"_actorName":"Admiral
-    Shanely","_actorParameterID":"5322a6ce-cbf5-4fa2-83be-fc8839b8e2c5","_UID":"68eff585-cd99-4fb7-8b16-db6359a3599f","_name":"","_position":{"x":964.9205,"y":537.9745},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"availableChoices":[{"statement":{"_text":"The
-    situation on what? Where now?"}},{"statement":{"_text":"Understood."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"7942d764-3490-4ddc-90f2-04d6c58faecf","_position":{"x":976.4165,"y":675.8297},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"2"},{"statement":{"_text":"There''s
-    no time. You''ll have to be briefed on the way."},"_actorName":"Admiral Shanely","_actorParameterID":"5322a6ce-cbf5-4fa2-83be-fc8839b8e2c5","_UID":"4f53e667-1519-441d-a5a1-3cb9c422de74","_position":{"x":760.0165,"y":865.9996},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"statement":{"_text":"Good
+    Shanely","_actorParameterID":"5322a6ce-cbf5-4fa2-83be-fc8839b8e2c5","_UID":"68eff585-cd99-4fb7-8b16-db6359a3599f","_name":"","_position":{"x":964.9205,"y":537.9745},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"availableChoices":[{"statement":{"_text":"The
+    situation on what? Where now?"}},{"statement":{"_text":"Understood."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"7942d764-3490-4ddc-90f2-04d6c58faecf","_position":{"x":976.4165,"y":675.8297},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"3"},{"statement":{"_text":"There''s
+    no time. You''ll have to be briefed on the way."},"_actorName":"Admiral Shanely","_actorParameterID":"5322a6ce-cbf5-4fa2-83be-fc8839b8e2c5","_UID":"4f53e667-1519-441d-a5a1-3cb9c422de74","_position":{"x":760.0165,"y":865.9996},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"statement":{"_text":"Good
     luck on your first assignment, Captain. We''re all rooting for you here."},"_actorName":"Admiral
-    Shanely","_actorParameterID":"5322a6ce-cbf5-4fa2-83be-fc8839b8e2c5","_UID":"8dfb27e9-75f4-4c9d-8b43-e7d61e86be83","_position":{"x":922.0165,"y":964.9996},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"4"},{"statement":{"_text":"Captain!
+    Shanely","_actorParameterID":"5322a6ce-cbf5-4fa2-83be-fc8839b8e2c5","_UID":"8dfb27e9-75f4-4c9d-8b43-e7d61e86be83","_position":{"x":922.0165,"y":964.9996},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"5"},{"statement":{"_text":"Captain!
     I am to escort you to your ship ASAP. Follow me, please."},"_actorName":"Initiate
-    O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"6dba164e-345a-4978-8a58-1ee08b4d5405","_position":{"x":1008.016,"y":1085.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"5"},{"_UID":"0c1b4772-8ad9-496b-b80a-ff06b27a8fa5","_position":{"x":1106.427,"y":1246.672},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"6"},{"statement":{"_text":"So...
-    there seems to be a bit of a problem with the ship..."},"_actorName":"Initiate
-    O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_color":{"r":1.0,"a":1.0},"_UID":"b83537cd-7110-4ec7-82b8-8c593388056e","_position":{"x":1973.22,"y":768.8589},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"7"},{"availableChoices":[{"statement":{"_text":"What
-    is it?"}},{"statement":{"_text":"Wait, wait. Let''s slow down for a second."}},{"statement":{"_text":"We
-    don''t have time. I''ll figure it out later."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"d315161f-f924-47ca-bda7-bd8fbf5e8fb2","_position":{"x":2035.458,"y":972.9997},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"8"},{"statement":{"_text":"It
-    has no shields. And no weapons."},"_actorName":"Initiate O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"7c853c57-0742-43a0-a086-4dd78657db76","_position":{"x":1815.159,"y":1162.226},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"},{"availableChoices":[{"statement":{"_text":"I''m
-    sorry, I must have misheard you. Did you say that my ship has no shields or weapons?"}},{"statement":{"_text":"Good!
-    Great! Excellent!"}},{"statement":{"_text":"That''s completely unacceptable."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"7b6fb45b-a8a6-415b-86a5-e68ab2ab4df7","_position":{"x":1773.511,"y":1277.379},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"10"},{"statement":{"_text":"You
-    heard me correctly, Captain."},"_actorName":"Initiate O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"b9114ce9-d890-48c6-9ca5-0c108ffadead","_position":{"x":1519.68,"y":1552.568},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"11"},{"statement":{"_text":"I
-    don''t have the details, but it seems like there was an error in ship manufacture.
-    The Aratel situation is developing rapidly, and you''re the only ship in range
-    to shuttle the ambassador."},"_actorName":"Initiate O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"d14f7b02-fa34-4ed8-a5b4-73ed67922d99","_position":{"x":1818.409,"y":1772.161},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"12"},{"statement":{"_text":"Decontamination
-    processes are complete, you''re free to board."},"_actorName":"Initiate O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"f9a745e1-8a93-40a9-a6e2-d41945eb9781","_position":{"x":2231.051,"y":1887.978},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"13"},{"availableChoices":[{"statement":{"_text":"Does
-    this ship have a name?"}},{"statement":{"_text":"Do I have a name?"}},{"statement":{"_text":"Thank
-    you, Initiate."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"919f6536-e55b-4184-b2f4-b16034303278","_position":{"x":2298.836,"y":2029.762},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"14"},{"statement":{"_text":"Still
-    fresh from the shipyards, Captain.  Err... relatively, anyways. "},"_actorName":"Initiate
-    O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"01f11ae5-ffa4-4552-9987-4d24ca8eac56","_position":{"x":1956.197,"y":2198.031},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"15"},{"statement":{"_text":"The
-    Union typically names its own ships, but given the circumstances, I''m sure they
-    wouldn''t mind if you named it."},"_actorName":"Initiate O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"4f052de4-8137-462a-a7cd-10ad73e45829","_position":{"x":2072.116,"y":2306.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"16"},{"_action":{"parameters":[],"$type":"NodeCanvas.Tasks.Actions.ImplementedAction_Multiplatform"},"_UID":"027ada10-bea8-4cca-b522-d9dd7169b929","_position":{"x":2128.57,"y":2407.542},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"17"},{"statement":{"_text":"The
-    SS [ShipName]? I kinda like it."},"_actorName":"Initiate O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"f98b4241-aac7-48a6-8579-cc1d784d0869","_position":{"x":2143.802,"y":2553.825},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"18"},{"statement":{"_text":"Good
-    luck on your mission, [CaptainName]."},"_actorName":"Initiate O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"1f62ad7a-2c36-418e-a32a-bad50130d60e","_position":{"x":2397.758,"y":2655.443},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"19"},{"_UID":"f0b1f3b9-67af-4082-986d-3dcf902e2096","_position":{"x":2495.678,"y":2773.978},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"20"},{"statement":{"_text":"If
-    you do, I don''t know it. Sorry, I''m sure it''s in my file here, I''m just really
-    bad with names.\n\nLet''s see..."},"_actorName":"Initiate O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"d7da7810-b406-4910-8677-b1deb92597f9","_position":{"x":2381.67,"y":2243.915},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"21"},{"_action":{"parameters":[],"returnValue":{},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_UID":"7f3143bd-49ff-4f3f-b777-f32708cd935f","_position":{"x":2479.002,"y":2385.19},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"22"},{"statement":{"_text":"Captain
-    [Name]? Nice to meet you properly."},"_UID":"96e0e798-27f4-4f42-b77c-19d73c755cde","_position":{"x":2531.954,"y":2521.915},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"23"},{"statement":{"_text":"No
-    problem, Captain."},"_actorName":"Initiate O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"d7023301-72ba-46f8-976c-53942455a163","_position":{"x":2777.719,"y":2249.296},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"24"},{"_UID":"c2c12374-3409-4422-bdbf-64e8c96b1c04","_position":{"x":2841.381,"y":2382.524},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"25"},{"statement":{"_text":"..."},"_actorName":"Initiate
-    O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"b1aa11ef-2785-41a8-b674-8906100257d1","_position":{"x":1830.46,"y":1496.439},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"26"},{"statement":{"_text":"Oh!
-    You''re joking."},"_actorName":"Initiate O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"4aee980a-50c1-4891-af8e-61e3722642c7","_position":{"x":1809.262,"y":1623.102},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"27"},{"statement":{"_text":"There''s
-    just no time."},"_actorName":"Initiate O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"b6ad7dd5-6b3d-4a27-af9c-28c5fbc3a4dd","_position":{"x":2121.135,"y":1545.163},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"28"},{"statement":{"_text":"No
-    time, Captain. The Union really needs you at Aratel. The ship has all the info
-    you need downloaded on the logs, you can look at it there."},"_actorName":"Initiate
-    O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"ee67d916-43da-41b7-a4ab-f0e440d66960","_position":{"x":2223.445,"y":1285.58},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"29"},{"statement":{"_text":"Roger."},"_actorName":"Initiate
-    O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"eb153933-3f8f-4c63-92df-207bc9377d95","_position":{"x":2584.469,"y":1201.568},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"30"},{"statement":{"_text":"The
+    O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_UID":"6dba164e-345a-4978-8a58-1ee08b4d5405","_position":{"x":1008.016,"y":1085.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"statement":{"_text":"The
     Aratel Situation - Your Orders\n\nIn terms of priority, you are to:\n\n1. Escort
     Ambassador G''Vorik to the Aratel System\n\n2. Do whatever you can to make sure
     talks between the Aratel and the Augurs go as peacefully and as smoothly as possible.\n\nA
@@ -325,76 +296,84 @@ MonoBehaviour:
     the Augurs, specifically) have made use of technology well past their developmental
     level. This has naturally been very harmful to their expected societal growth.
     "},"_UID":"66a7dc56-6cb3-44a2-81bb-0c4212fdd1d2","_position":{"x":2983.837,"y":927.3368},"$type":"NodeCanvas.DialogueTrees.StatementNode"},{"statement":{"_text":"Captain
-    on deck!"},"_actorName":"Officer Keel","_actorParameterID":"a0f222a9-8e64-4f83-8754-87dd971307a2","_color":{"g":0.1572134,"b":1.0,"a":1.0},"_UID":"af7a0931-6f09-48f8-9cd9-db53d1477f7f","_position":{"x":3341.406,"y":524.3},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"32"},{"statement":{"_text":"First
+    on deck!"},"_actorName":"Officer Keel","_actorParameterID":"a0f222a9-8e64-4f83-8754-87dd971307a2","_color":{"g":0.1572134,"b":1.0,"a":1.0},"_UID":"af7a0931-6f09-48f8-9cd9-db53d1477f7f","_position":{"x":3358.79,"y":543.1324},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"8"},{"statement":{"_text":"First
     Officer Mira Keel reporting for duty, [CaptainName]."},"_actorName":"Officer
-    Keel","_actorParameterID":"a0f222a9-8e64-4f83-8754-87dd971307a2","_UID":"7fd5b0b7-06b4-4c16-b336-0fdd3326f49c","_position":{"x":3298.712,"y":670.0381},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"33"},{"statement":{"_text":"Science
+    Keel","_actorParameterID":"a0f222a9-8e64-4f83-8754-87dd971307a2","_UID":"7fd5b0b7-06b4-4c16-b336-0fdd3326f49c","_position":{"x":3298.712,"y":670.0381},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"},{"statement":{"_text":"Science
     Officer Jaal Faas, ready and awaiting orders, [CaptainName]."},"_actorName":"Officer
-    Faas","_actorParameterID":"c6a6a076-a618-42eb-b2bc-82453c446335","_UID":"079abb85-3a41-42f0-9fb3-f6720bc520dc","_position":{"x":3357.458,"y":793.0886},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"34"},{"statement":{"_text":"Weapons
-    Officer Andrew Wair, reporting for duty."},"_actorName":"Commander Wair","_actorParameterID":"b7410b6f-5fb9-4f04-a1ba-23d64fa01ae9","_UID":"fc86a152-d400-4c2f-8c96-f552b3c3b049","_position":{"x":3366.208,"y":939.2505},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"35"},{"statement":{"_text":"Engineering
+    Faas","_actorParameterID":"c6a6a076-a618-42eb-b2bc-82453c446335","_UID":"079abb85-3a41-42f0-9fb3-f6720bc520dc","_position":{"x":3357.458,"y":793.0886},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"10"},{"statement":{"_text":"Weapons
+    Officer Andrew Wair, reporting for duty."},"_actorName":"Commander Wair","_actorParameterID":"b7410b6f-5fb9-4f04-a1ba-23d64fa01ae9","_UID":"fc86a152-d400-4c2f-8c96-f552b3c3b049","_position":{"x":3366.208,"y":939.2505},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"11"},{"statement":{"_text":"Engineering
     Officer Ferrand Klast, reporting from the engine room, [CaptainName]."},"_actorName":"Officer
-    Klast","_actorParameterID":"ea4b4ba5-fd9e-4053-9771-0ddd3b5309a2","_UID":"6ed04456-4f4a-4a6f-adbd-fc03f6e3ac39","_position":{"x":3370.314,"y":1075.901},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"36"},{"statement":{"_text":"Helm
+    Klast","_actorParameterID":"ea4b4ba5-fd9e-4053-9771-0ddd3b5309a2","_UID":"6ed04456-4f4a-4a6f-adbd-fc03f6e3ac39","_position":{"x":3370.314,"y":1075.901},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"12"},{"statement":{"_text":"Helm
     Commander Pil Raetee, ready for anything [CaptainName]."},"_actorName":"Commander
-    Raetee","_actorParameterID":"3592f02f-01a3-40b6-99b1-a8005af7e67c","_UID":"08404ec7-42e2-458f-81e8-dfc950640d83","_position":{"x":3386.959,"y":1201.049},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"37"},{"availableChoices":[{"statement":{"_text":"Take
+    Raetee","_actorParameterID":"3592f02f-01a3-40b6-99b1-a8005af7e67c","_UID":"08404ec7-42e2-458f-81e8-dfc950640d83","_position":{"x":3386.959,"y":1201.049},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"13"},{"availableChoices":[{"statement":{"_text":"Take
     us to the Aratel system, as fast as possible."}},{"statement":{"_text":"Status
-    report."}},{"statement":{"_text":"Let me just start by saying this..."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"f345d917-6e13-41ed-8c26-440cb825eb08","_position":{"x":3426.988,"y":1424.114},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"38"},{"statement":{"_text":"Right
-    away, Captain."},"_actorName":"Commander Raetee","_actorParameterID":"3592f02f-01a3-40b6-99b1-a8005af7e67c","_UID":"1bc7f4aa-e276-42ed-933e-e7702c0842bf","_position":{"x":3363.997,"y":2968.744},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"39"},{"_UID":"54bc74e9-594e-4e46-9e7f-c2f735d4a76c","_position":{"x":3422.999,"y":3139.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"40"},{"statement":{"_text":"All
-    systems are functioning normally, Captain..."},"_actorName":"Officer Klast","_actorParameterID":"ea4b4ba5-fd9e-4053-9771-0ddd3b5309a2","_UID":"339fa0b6-0a83-4c8e-af77-01d44b113472","_position":{"x":3478.815,"y":1683.172},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"41"},{"statement":{"_text":"Except
-    for weapons, or shields. Of which we have none."},"_actorName":"Commander Wair","_actorParameterID":"b7410b6f-5fb9-4f04-a1ba-23d64fa01ae9","_UID":"7e34b9a5-bfa4-439a-b45a-bee3b7cb16fc","_position":{"x":3433.47,"y":1822.035},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"42"},{"availableChoices":[{"statement":{"_text":"I
+    report."}},{"statement":{"_text":"Let me just start by saying this..."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"f345d917-6e13-41ed-8c26-440cb825eb08","_position":{"x":3426.988,"y":1424.114},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"14"},{"statement":{"_text":"Right
+    away, Captain."},"_actorName":"Commander Raetee","_actorParameterID":"3592f02f-01a3-40b6-99b1-a8005af7e67c","_UID":"1bc7f4aa-e276-42ed-933e-e7702c0842bf","_position":{"x":3363.997,"y":2968.744},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"15"},{"_UID":"54bc74e9-594e-4e46-9e7f-c2f735d4a76c","_position":{"x":3422.999,"y":3139.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"16"},{"statement":{"_text":"All
+    systems are functioning normally, Captain..."},"_actorName":"Officer Klast","_actorParameterID":"ea4b4ba5-fd9e-4053-9771-0ddd3b5309a2","_UID":"339fa0b6-0a83-4c8e-af77-01d44b113472","_position":{"x":3478.815,"y":1683.172},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"17"},{"statement":{"_text":"Except
+    for weapons, or shields. Of which we have none."},"_actorName":"Commander Wair","_actorParameterID":"b7410b6f-5fb9-4f04-a1ba-23d64fa01ae9","_UID":"7e34b9a5-bfa4-439a-b45a-bee3b7cb16fc","_position":{"x":3433.47,"y":1822.035},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"18"},{"availableChoices":[{"statement":{"_text":"I
     am totally aware of that."}},{"statement":{"_text":"Please elaborate."}},{"statement":{"_text":"Commander
-    Wair, do you need something to do?"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"84c9bbd2-af51-42d4-867a-7b87b72b7dd6","_position":{"x":3451.831,"y":1969.93},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"43"},{"statement":{"_text":"...
-    Okay, Captain."},"_actorName":"Commander Wair","_actorParameterID":"b7410b6f-5fb9-4f04-a1ba-23d64fa01ae9","_UID":"38311e05-3a79-4b7d-ae6c-016160599d60","_position":{"x":3430.326,"y":2197.923},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"44"},{"availableChoices":[{"statement":{"_text":"Alright.
-    Take us to the Aratel system."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"41be9254-4cdf-4ae2-a41a-098709a885d4","_position":{"x":3502.467,"y":2334.882},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"45"},{"statement":{"_text":"It
+    Wair, do you need something to do?"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"84c9bbd2-af51-42d4-867a-7b87b72b7dd6","_position":{"x":3451.831,"y":1969.93},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"19"},{"statement":{"_text":"...
+    Okay, Captain."},"_actorName":"Commander Wair","_actorParameterID":"b7410b6f-5fb9-4f04-a1ba-23d64fa01ae9","_UID":"38311e05-3a79-4b7d-ae6c-016160599d60","_position":{"x":3430.326,"y":2197.923},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"20"},{"availableChoices":[{"statement":{"_text":"Alright.
+    Take us to the Aratel system."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"41be9254-4cdf-4ae2-a41a-098709a885d4","_position":{"x":3502.467,"y":2334.882},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"21"},{"statement":{"_text":"It
     seems like our computer is suffering from a case of contained rot. Manufacturing
     must have inserted some kind of faulty chip, and while it''d normally be replaced..."},"_actorName":"Commander
-    Wair","_actorParameterID":"b7410b6f-5fb9-4f04-a1ba-23d64fa01ae9","_UID":"92ef18e3-3b71-4cb9-be07-fb0b7f8c7b95","_position":{"x":3608.485,"y":2214.025},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"46"},{"statement":{"_text":"No,
+    Wair","_actorParameterID":"b7410b6f-5fb9-4f04-a1ba-23d64fa01ae9","_UID":"92ef18e3-3b71-4cb9-be07-fb0b7f8c7b95","_position":{"x":3608.485,"y":2214.025},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"22"},{"statement":{"_text":"No,
     Captain. I am fine just... sitting at my post like this."},"_actorName":"Commander
-    Wair","_actorParameterID":"b7410b6f-5fb9-4f04-a1ba-23d64fa01ae9","_UID":"9db891b3-3afb-47a7-b29e-89923aa51e60","_position":{"x":3932.14,"y":2204.711},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"47"},{"availableChoices":[{"statement":{"_text":"I
+    Wair","_actorParameterID":"b7410b6f-5fb9-4f04-a1ba-23d64fa01ae9","_UID":"9db891b3-3afb-47a7-b29e-89923aa51e60","_position":{"x":3932.14,"y":2204.711},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"23"},{"availableChoices":[{"statement":{"_text":"I
     know what you might be thinking..."}},{"statement":{"_text":"We have a grave
-    responsibility..."}},{"statement":{"_text":"I had a sandwich for lunch..."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"78b020fa-e293-414f-970b-90af04c4be64","_position":{"x":4416.012,"y":1317.283},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"48"},{"availableChoices":[{"statement":{"_text":"And
+    responsibility..."}},{"statement":{"_text":"I had a sandwich for lunch..."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"78b020fa-e293-414f-970b-90af04c4be64","_position":{"x":4416.012,"y":1317.283},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"24"},{"availableChoices":[{"statement":{"_text":"And
     yes, this mission is dangerous..."}},{"statement":{"_text":"And no, we don''t
-    stand a chance."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"8188c7d5-3c3b-461e-91eb-31a084dd5a90","_position":{"x":4422.047,"y":1745.826},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"49"},{"availableChoices":[{"statement":{"_text":"And
+    stand a chance."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"8188c7d5-3c3b-461e-91eb-31a084dd5a90","_position":{"x":4422.047,"y":1745.826},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"25"},{"availableChoices":[{"statement":{"_text":"And
     yes, the odds may be totally against us."}},{"statement":{"_text":"And yes, we
-    have no idea what awaits us in the Aratel system."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"c84924b2-bc56-431d-a311-1d45ac7cfed4","_position":{"x":4185.058,"y":2142.957},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"50"},{"availableChoices":[{"statement":{"_text":"And
+    have no idea what awaits us in the Aratel system."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"c84924b2-bc56-431d-a311-1d45ac7cfed4","_position":{"x":4185.058,"y":2142.957},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"26"},{"availableChoices":[{"statement":{"_text":"And
     yes, I may have forgotten where I was going with this..."}},{"statement":{"_text":"But
-    I have faith!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"d9c7e46d-274b-4991-9698-e471eb19ec61","_position":{"x":4084.699,"y":2379.471},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"51"},{"availableChoices":[{"statement":{"_text":"But
-    together, we can remember what I was talking about!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"562a9c82-dc14-44e1-a9e1-c2db4c36561b","_position":{"x":3844.64,"y":2639.592},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"52"},{"availableChoices":[{"statement":{"_text":"Take
-    us to the Aratel System."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"8ee24dfb-742d-42a7-9932-dc0a9c910a04","_position":{"x":4957.304,"y":2919.938},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"53"},{"statement":{"_text":"Uhhh,
-    you got it, Captain."},"_actorName":"Commander Raetee","_actorParameterID":"3592f02f-01a3-40b6-99b1-a8005af7e67c","_UID":"8b1ce35d-8d7c-43e1-9da0-99a852aeaab1","_position":{"x":3677.553,"y":2965.972},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"54"},{"_color":{"g":0.7254902,"b":0.9098039,"a":1.0},"_UID":"c7f7f1ed-6c81-45e6-922d-ab559e5c246f","_position":{"x":3607.0,"y":3086.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"55"},{"availableChoices":[{"statement":{"_text":"And
-    I have faith that we will succeed, no matter the cost!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"f429a011-60a8-40e6-923e-cb74c0a6cea2","_position":{"x":4194.559,"y":2597.104},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"56"},{"availableChoices":[{"statement":{"_text":"...
+    I have faith!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"d9c7e46d-274b-4991-9698-e471eb19ec61","_position":{"x":4084.699,"y":2379.471},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"27"},{"availableChoices":[{"statement":{"_text":"But
+    together, we can remember what I was talking about!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"562a9c82-dc14-44e1-a9e1-c2db4c36561b","_position":{"x":3844.64,"y":2639.592},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"28"},{"availableChoices":[{"statement":{"_text":"Take
+    us to the Aratel System."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"8ee24dfb-742d-42a7-9932-dc0a9c910a04","_position":{"x":4957.304,"y":2919.938},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"29"},{"statement":{"_text":"Uhhh,
+    you got it, Captain."},"_actorName":"Commander Raetee","_actorParameterID":"3592f02f-01a3-40b6-99b1-a8005af7e67c","_UID":"8b1ce35d-8d7c-43e1-9da0-99a852aeaab1","_position":{"x":3677.553,"y":2965.972},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"30"},{"_UID":"c7f7f1ed-6c81-45e6-922d-ab559e5c246f","_position":{"x":3607.0,"y":3086.0},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"31"},{"availableChoices":[{"statement":{"_text":"And
+    I have faith that we will succeed, no matter the cost!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"f429a011-60a8-40e6-923e-cb74c0a6cea2","_position":{"x":4194.559,"y":2597.104},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"32"},{"availableChoices":[{"statement":{"_text":"...
     That''s it, that''s the speech."}},{"statement":{"_text":"But I have a feeling
-    we''ll pull through, no matter what!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"2548b5cb-ea3c-4f13-a9a5-cbd483caa3e5","_position":{"x":4453.426,"y":2593.254},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"57"},{"availableChoices":[{"statement":{"_text":"But
-    we are Union Officers!"}},{"statement":{"_text":"We have a grave imperative..."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"f5631500-ac33-41bd-b8c8-33495d184af3","_position":{"x":4722.989,"y":1622.537},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"58"},{"availableChoices":[{"statement":{"_text":"We
+    we''ll pull through, no matter what!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"2548b5cb-ea3c-4f13-a9a5-cbd483caa3e5","_position":{"x":4453.426,"y":2593.254},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"33"},{"availableChoices":[{"statement":{"_text":"But
+    we are Union Officers!"}},{"statement":{"_text":"We have a grave imperative..."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"f5631500-ac33-41bd-b8c8-33495d184af3","_position":{"x":4722.989,"y":1622.537},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"34"},{"availableChoices":[{"statement":{"_text":"We
     are a Union crew!"}},{"statement":{"_text":"We will stand by our principles,
-    no matter what!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"a0c51a6d-e7e1-4799-a7c3-3764cd4dfb80","_position":{"x":4801.071,"y":2170.922},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"59"},{"availableChoices":[{"statement":{"_text":"We
+    no matter what!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"a0c51a6d-e7e1-4799-a7c3-3764cd4dfb80","_position":{"x":4801.071,"y":2170.922},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"35"},{"availableChoices":[{"statement":{"_text":"We
     are a Union ship! And we will get through this together!"}},{"statement":{"_text":"We
-    will kill anyone who stands in our way!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"dcf28dc5-fdd9-4a4b-a78d-5d02ddb4ad78","_position":{"x":4750.826,"y":2585.014},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"60"},{"availableChoices":[{"statement":{"_text":"Our
-    duty, our honor, our sympathy. These three things bind us, in destiny, in victory!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"7f1997b4-2453-4191-b9f6-c82c4af26e87","_position":{"x":5050.221,"y":2567.904},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"61"},{"availableChoices":[{"statement":{"_text":"Even
+    will kill anyone who stands in our way!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"dcf28dc5-fdd9-4a4b-a78d-5d02ddb4ad78","_position":{"x":4750.826,"y":2585.014},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"36"},{"availableChoices":[{"statement":{"_text":"Our
+    duty, our honor, our sympathy. These three things bind us, in destiny, in victory!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"7f1997b4-2453-4191-b9f6-c82c4af26e87","_position":{"x":5050.221,"y":2567.904},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"37"},{"availableChoices":[{"statement":{"_text":"Even
     with doubt facing us every corner we turn, remember this..."}},{"statement":{"_text":"So
-    grave, that we all might be dead after this!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"01dc2061-6cb1-432b-b092-e28ce1d48c2e","_position":{"x":5317.774,"y":2099.023},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"62"},{"availableChoices":[{"statement":{"_text":"Every
+    grave, that we all might be dead after this!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"01dc2061-6cb1-432b-b092-e28ce1d48c2e","_position":{"x":5317.774,"y":2099.023},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"38"},{"availableChoices":[{"statement":{"_text":"Every
     time we go out there, and we do our jobs, we make the universe better."}},{"statement":{"_text":"I
-    believe in each and every one of you."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"46d6fa4b-5fe4-4147-a821-26358bf56eff","_position":{"x":5412.355,"y":2534.158},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"63"},{"availableChoices":[{"statement":{"_text":"Your
+    believe in each and every one of you."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"46d6fa4b-5fe4-4147-a821-26358bf56eff","_position":{"x":5412.355,"y":2534.158},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"39"},{"availableChoices":[{"statement":{"_text":"Your
     sacrifices will be honored in my name!"}},{"statement":{"_text":"But we''ll come
-    back to life and beat the crap out of anyone who killed us!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"7033c982-0aa7-423d-91c4-60fbad504123","_position":{"x":5757.61,"y":2560.738},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"64"},{"availableChoices":[{"statement":{"_text":"It
-    was delicious."}},{"statement":{"_text":"To name a few of the ingredients..."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"3155e690-e3ef-42d1-a27f-46ff59f213b0","_position":{"x":5334.791,"y":1505.41},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"65"},{"availableChoices":[{"statement":{"_text":"CHEESE!"}},{"statement":{"_text":"LETTUCE!"}},{"statement":{"_text":"TOMATO!"}},{"statement":{"_text":"BACON!"}},{"statement":{"_text":"ICE
-    CREAM!"}},{"statement":{"_text":"TURKEY!"}},{"statement":{"_text":"COLESLAW!"}},{"statement":{"_text":"BREAD!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"79361220-6f4d-4396-9573-1351a8c81a05","_position":{"x":6063.875,"y":1722.957},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"66"},{"availableChoices":[{"statement":{"_text":"CHEESE!"}},{"statement":{"_text":"LETTUCE!"}},{"statement":{"_text":"TOMATO!"}},{"statement":{"_text":"BACON!"}},{"statement":{"_text":"ICE
-    CREAM!"}},{"statement":{"_text":"TURKEY!"}},{"statement":{"_text":"COLESLAW!"}},{"statement":{"_text":"BREAD!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"ee95cd87-3b9d-47d6-993a-6ce1b8ea68b8","_position":{"x":6038.733,"y":2103.25},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"67"},{"availableChoices":[{"statement":{"_text":"CHEESE!"}},{"statement":{"_text":"LETTUCE!"}},{"statement":{"_text":"TOMATO!"}},{"statement":{"_text":"BACON!"}},{"statement":{"_text":"ICE
-    CREAM!"}},{"statement":{"_text":"TURKEY!"}},{"statement":{"_text":"COLESLAW!"}},{"statement":{"_text":"BREAD!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"33d92100-e95e-4b2b-bc53-a96c2a5e5754","_position":{"x":6031.165,"y":2420.059},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"68"},{"availableChoices":[{"statement":{"_text":"CHEESE!"}},{"statement":{"_text":"LETTUCE!"}},{"statement":{"_text":"TOMATO!"}},{"statement":{"_text":"BACON!"}},{"statement":{"_text":"ICE
-    CREAM!"}},{"statement":{"_text":"TURKEY!"}},{"statement":{"_text":"COLESLAW!"}},{"statement":{"_text":"BREAD!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"b993f892-47b6-4a6d-a1a1-48d154356cc1","_position":{"x":6028.911,"y":2743.03},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"69"},{"availableChoices":[{"statement":{"_text":"And
+    back to life and beat the crap out of anyone who killed us!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"7033c982-0aa7-423d-91c4-60fbad504123","_position":{"x":5757.61,"y":2560.738},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"40"},{"availableChoices":[{"statement":{"_text":"It
+    was delicious."}},{"statement":{"_text":"To name a few of the ingredients..."}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"3155e690-e3ef-42d1-a27f-46ff59f213b0","_position":{"x":5334.791,"y":1505.41},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"41"},{"availableChoices":[{"statement":{"_text":"CHEESE!"}},{"statement":{"_text":"LETTUCE!"}},{"statement":{"_text":"TOMATO!"}},{"statement":{"_text":"BACON!"}},{"statement":{"_text":"ICE
+    CREAM!"}},{"statement":{"_text":"TURKEY!"}},{"statement":{"_text":"COLESLAW!"}},{"statement":{"_text":"BREAD!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"79361220-6f4d-4396-9573-1351a8c81a05","_position":{"x":6063.875,"y":1722.957},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"42"},{"availableChoices":[{"statement":{"_text":"CHEESE!"}},{"statement":{"_text":"LETTUCE!"}},{"statement":{"_text":"TOMATO!"}},{"statement":{"_text":"BACON!"}},{"statement":{"_text":"ICE
+    CREAM!"}},{"statement":{"_text":"TURKEY!"}},{"statement":{"_text":"COLESLAW!"}},{"statement":{"_text":"BREAD!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"ee95cd87-3b9d-47d6-993a-6ce1b8ea68b8","_position":{"x":6038.733,"y":2103.25},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"43"},{"availableChoices":[{"statement":{"_text":"CHEESE!"}},{"statement":{"_text":"LETTUCE!"}},{"statement":{"_text":"TOMATO!"}},{"statement":{"_text":"BACON!"}},{"statement":{"_text":"ICE
+    CREAM!"}},{"statement":{"_text":"TURKEY!"}},{"statement":{"_text":"COLESLAW!"}},{"statement":{"_text":"BREAD!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"33d92100-e95e-4b2b-bc53-a96c2a5e5754","_position":{"x":6031.165,"y":2420.059},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"44"},{"availableChoices":[{"statement":{"_text":"CHEESE!"}},{"statement":{"_text":"LETTUCE!"}},{"statement":{"_text":"TOMATO!"}},{"statement":{"_text":"BACON!"}},{"statement":{"_text":"ICE
+    CREAM!"}},{"statement":{"_text":"TURKEY!"}},{"statement":{"_text":"COLESLAW!"}},{"statement":{"_text":"BREAD!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"b993f892-47b6-4a6d-a1a1-48d154356cc1","_position":{"x":6028.911,"y":2743.03},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"45"},{"availableChoices":[{"statement":{"_text":"And
     that''s my perfect sandwich."}},{"statement":{"_text":"Think about that."}},{"statement":{"_text":"Now,
     what''s my favorite planet to visit, you ask?"}},{"statement":{"_text":"MORE
-    SANDWICH INGREDIENTS!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"de7861c9-59b3-4a04-9ad8-914652901398","_position":{"x":5481.056,"y":2881.564},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"70"},{"statement":{"_text":"Captain?
-    The ticking clock?"},"_actorName":"Officer Keel","_actorParameterID":"a0f222a9-8e64-4f83-8754-87dd971307a2","_UID":"1072c7dc-8d47-4d71-938e-8c00df70cc2c","_position":{"x":5309.563,"y":3099.993},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"71"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"30"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"26"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"28"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"24"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"16"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"20"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"22"},"_targetNode":{"$ref":"23"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"24"},"_targetNode":{"$ref":"25"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"26"},"_targetNode":{"$ref":"27"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"27"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"28"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"29"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"32"},"_targetNode":{"$ref":"33"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"33"},"_targetNode":{"$ref":"34"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"34"},"_targetNode":{"$ref":"35"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"36"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"36"},"_targetNode":{"$ref":"37"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"37"},"_targetNode":{"$ref":"38"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"38"},"_targetNode":{"$ref":"39"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"38"},"_targetNode":{"$ref":"41"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"38"},"_targetNode":{"$ref":"48"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"40"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"41"},"_targetNode":{"$ref":"42"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"42"},"_targetNode":{"$ref":"43"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"44"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"46"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"47"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"44"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"45"},"_targetNode":{"$ref":"39"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"46"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"47"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"48"},"_targetNode":{"$ref":"49"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"48"},"_targetNode":{"$ref":"58"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"48"},"_targetNode":{"$ref":"65"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"49"},"_targetNode":{"$ref":"50"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"49"},"_targetNode":{"$ref":"57"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"50"},"_targetNode":{"$ref":"51"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"50"},"_targetNode":{"$ref":"51"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"51"},"_targetNode":{"$ref":"52"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"51"},"_targetNode":{"$ref":"56"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"52"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"53"},"_targetNode":{"$ref":"54"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"54"},"_targetNode":{"$ref":"55"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"56"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"57"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"57"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"58"},"_targetNode":{"$ref":"59"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"58"},"_targetNode":{"$ref":"62"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"59"},"_targetNode":{"$ref":"60"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"59"},"_targetNode":{"$ref":"61"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"60"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"60"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"61"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"63"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"64"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"63"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"63"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"64"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"64"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"65"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"65"},"_targetNode":{"$ref":"66"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"66"},"_targetNode":{"$ref":"67"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"66"},"_targetNode":{"$ref":"67"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"66"},"_targetNode":{"$ref":"67"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"66"},"_targetNode":{"$ref":"67"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"66"},"_targetNode":{"$ref":"67"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"66"},"_targetNode":{"$ref":"67"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"66"},"_targetNode":{"$ref":"67"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"66"},"_targetNode":{"$ref":"67"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"67"},"_targetNode":{"$ref":"68"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"67"},"_targetNode":{"$ref":"68"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"67"},"_targetNode":{"$ref":"68"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"67"},"_targetNode":{"$ref":"68"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"67"},"_targetNode":{"$ref":"68"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"67"},"_targetNode":{"$ref":"68"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"67"},"_targetNode":{"$ref":"68"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"67"},"_targetNode":{"$ref":"68"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"68"},"_targetNode":{"$ref":"69"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"68"},"_targetNode":{"$ref":"69"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"68"},"_targetNode":{"$ref":"69"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"68"},"_targetNode":{"$ref":"69"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"68"},"_targetNode":{"$ref":"69"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"68"},"_targetNode":{"$ref":"69"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"68"},"_targetNode":{"$ref":"69"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"68"},"_targetNode":{"$ref":"69"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"69"},"_targetNode":{"$ref":"70"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"69"},"_targetNode":{"$ref":"70"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"69"},"_targetNode":{"$ref":"70"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"69"},"_targetNode":{"$ref":"70"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"69"},"_targetNode":{"$ref":"70"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"69"},"_targetNode":{"$ref":"70"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"69"},"_targetNode":{"$ref":"70"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"69"},"_targetNode":{"$ref":"70"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"70"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"70"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"70"},"_targetNode":{"$ref":"71"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"70"},"_targetNode":{"$ref":"66"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"71"},"_targetNode":{"$ref":"53"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Admiral
+    SANDWICH INGREDIENTS!"}}],"_actorName":"You","_actorParameterID":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9","_UID":"de7861c9-59b3-4a04-9ad8-914652901398","_position":{"x":5481.056,"y":2881.564},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"46"},{"statement":{"_text":"Captain?
+    The ticking clock?"},"_actorName":"Officer Keel","_actorParameterID":"a0f222a9-8e64-4f83-8754-87dd971307a2","_UID":"1072c7dc-8d47-4d71-938e-8c00df70cc2c","_position":{"x":5309.563,"y":3099.993},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"47"},{"_subTree":{"_value":3},"actorParametersMap":{"54ed3da3-b7fe-427d-bf35-ba7ab6d91293":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","39733ed4-a03a-474d-b4c6-973d149d2051":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9"},"_position":{"x":1335.956,"y":945.0558},"$type":"NodeCanvas.DialogueTrees.SubDialogueTree"},{"_action":{"target":{"_value":1},"speed":{"_value":4.0},"keepDistance":{"_value":0.1},"overrideAgent":{"_type":"UnityEngine.AI.NavMeshAgent","_value":2},"$type":"NodeCanvas.Tasks.Actions.MoveToGameObject"},"_actorName":"Initiate
+    O''kurr","_actorParameterID":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_name":"Initiate
+    O''kurr","_tag":"","_position":{"x":1033.812,"y":1190.384},"$type":"NodeCanvas.DialogueTrees.ActionNode"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"10"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"11"},"_targetNode":{"$ref":"12"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"12"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"13"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"17"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"24"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"15"},"_targetNode":{"$ref":"16"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"17"},"_targetNode":{"$ref":"18"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"18"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"20"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"19"},"_targetNode":{"$ref":"23"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"20"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"22"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"23"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"24"},"_targetNode":{"$ref":"25"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"24"},"_targetNode":{"$ref":"34"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"24"},"_targetNode":{"$ref":"41"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"25"},"_targetNode":{"$ref":"26"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"25"},"_targetNode":{"$ref":"33"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"26"},"_targetNode":{"$ref":"27"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"26"},"_targetNode":{"$ref":"27"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"27"},"_targetNode":{"$ref":"28"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"27"},"_targetNode":{"$ref":"32"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"28"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"29"},"_targetNode":{"$ref":"30"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"30"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"32"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"33"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"33"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"34"},"_targetNode":{"$ref":"35"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"34"},"_targetNode":{"$ref":"38"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"36"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"35"},"_targetNode":{"$ref":"37"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"36"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"36"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"37"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"38"},"_targetNode":{"$ref":"39"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"38"},"_targetNode":{"$ref":"40"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"41"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"41"},"_targetNode":{"$ref":"42"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"42"},"_targetNode":{"$ref":"43"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"42"},"_targetNode":{"$ref":"43"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"42"},"_targetNode":{"$ref":"43"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"42"},"_targetNode":{"$ref":"43"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"42"},"_targetNode":{"$ref":"43"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"42"},"_targetNode":{"$ref":"43"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"42"},"_targetNode":{"$ref":"43"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"42"},"_targetNode":{"$ref":"43"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"44"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"44"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"44"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"44"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"44"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"44"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"44"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"43"},"_targetNode":{"$ref":"44"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"44"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"44"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"44"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"44"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"44"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"44"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"44"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"44"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"45"},"_targetNode":{"$ref":"46"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"45"},"_targetNode":{"$ref":"46"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"45"},"_targetNode":{"$ref":"46"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"45"},"_targetNode":{"$ref":"46"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"45"},"_targetNode":{"$ref":"46"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"45"},"_targetNode":{"$ref":"46"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"45"},"_targetNode":{"$ref":"46"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"45"},"_targetNode":{"$ref":"46"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"46"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"46"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"46"},"_targetNode":{"$ref":"47"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"46"},"_targetNode":{"$ref":"42"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"47"},"_targetNode":{"$ref":"29"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"Admiral
     Shanely","_id":"5322a6ce-cbf5-4fa2-83be-fc8839b8e2c5"},{"_keyName":"You","_id":"14b05a4d-75ac-48a3-876b-3b0f3c5c1aa9"},{"_keyName":"Initiate
-    O''kurr","_id":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e"},{"_keyName":"Officer Keel","_id":"a0f222a9-8e64-4f83-8754-87dd971307a2"},{"_keyName":"Officer
-    Faas","_id":"c6a6a076-a618-42eb-b2bc-82453c446335"},{"_keyName":"Commander Wair","_id":"b7410b6f-5fb9-4f04-a1ba-23d64fa01ae9"},{"_keyName":"Officer
-    Klast","_id":"ea4b4ba5-fd9e-4053-9771-0ddd3b5309a2"},{"_keyName":"Commander Raetee","_id":"3592f02f-01a3-40b6-99b1-a8005af7e67c"}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
-  _boundGraphObjectReferences: []
+    O''kurr","_id":"f1b35ee7-ea6b-4a49-acc1-8b33595ecb4e","_actorObject":4},{"_keyName":"Officer
+    Keel","_id":"a0f222a9-8e64-4f83-8754-87dd971307a2"},{"_keyName":"Officer Faas","_id":"c6a6a076-a618-42eb-b2bc-82453c446335"},{"_keyName":"Commander
+    Wair","_id":"b7410b6f-5fb9-4f04-a1ba-23d64fa01ae9"},{"_keyName":"Officer Klast","_id":"ea4b4ba5-fd9e-4053-9771-0ddd3b5309a2"},{"_keyName":"Commander
+    Raetee","_id":"3592f02f-01a3-40b6-99b1-a8005af7e67c"}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 1790057789}
+  - {fileID: 1876884375}
+  - {fileID: 11400000, guid: c4993035331e4234fa7e10713932e266, type: 2}
+  - {fileID: 1876884377}
   _boundGraphSource:
     _version: 3.22
     _category: 
     _comments: 
-    _translation: {x: -4934, y: -1445}
-    _zoomFactor: 0.8545269
+    _translation: {x: -467, y: -876}
+    _zoomFactor: 0.9313503
   _firstActivation: 0
   _enableAction: 1
   _disableAction: 2
@@ -7702,6 +7681,101 @@ Transform:
   m_Father: {fileID: 100738589}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &195826634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 195826635}
+  - component: {fileID: 195826638}
+  - component: {fileID: 195826637}
+  - component: {fileID: 195826636}
+  m_Layer: 0
+  m_Name: Okurr Stardock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &195826635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195826634}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1995880275}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &195826636
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195826634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &195826637
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195826634}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &195826638
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195826634}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &239024600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7778,7 +7852,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41610
+  m_Name: pb_Mesh21988
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8351,7 +8425,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41558
+  m_Name: pb_Mesh21936
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8521,7 +8595,7 @@ GameObject:
   - component: {fileID: 516040737}
   m_Layer: 0
   m_Name: DialogueManager
-  m_TagString: Untagged
+  m_TagString: DialogueManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8627,7 +8701,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41708
+  m_Name: pb_Mesh22082
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8791,7 +8865,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41576
+  m_Name: pb_Mesh21954
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8955,7 +9029,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41588
+  m_Name: pb_Mesh21966
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19543,7 +19617,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41728
+  m_Name: pb_Mesh22096
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19714,7 +19788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 528911373250530336, guid: db4e50588e319eb4fba43a8798bf3f08, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.65
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 528911373250530336, guid: db4e50588e319eb4fba43a8798bf3f08, type: 3}
       propertyPath: m_LocalPosition.y
@@ -52094,7 +52168,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41526
+  m_Name: pb_Mesh21902
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -54822,7 +54896,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41668
+  m_Name: pb_Mesh22042
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -54986,7 +55060,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41628
+  m_Name: pb_Mesh22006
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -55827,7 +55901,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41498
+  m_Name: pb_Mesh21876
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -55985,6 +56059,101 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1790057789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1790057790}
+  - component: {fileID: 1790057793}
+  - component: {fileID: 1790057792}
+  - component: {fileID: 1790057791}
+  m_Layer: 0
+  m_Name: Okurr Greeting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1790057790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790057789}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.19, y: 0, z: -0.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1995880275}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1790057791
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790057789}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1790057792
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790057789}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1790057793
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790057789}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1844108469
 GameObject:
   m_ObjectHideFlags: 0
@@ -56447,6 +56616,7 @@ GameObject:
   - component: {fileID: 1876884374}
   - component: {fileID: 1876884375}
   - component: {fileID: 1876884376}
+  - component: {fileID: 1876884377}
   m_Layer: 0
   m_Name: Initiate O'kurr
   m_TagString: Untagged
@@ -56505,6 +56675,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9835af6c55d224ca2b8d0cc5186749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1876884377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876884373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d71fb7c52372e244baf2e69a9d0d116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Initiate O'kurr
+  _portrait: {fileID: 0}
+  _dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+  _dialogueOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1891217154
 GameObject:
   m_ObjectHideFlags: 0
@@ -56514,6 +56700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1891217155}
+  - component: {fileID: 1891217156}
   m_Layer: 0
   m_Name: Admiral Shanely
   m_TagString: Untagged
@@ -56537,6 +56724,18 @@ Transform:
   m_Father: {fileID: 597471838}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1891217156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891217154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9835af6c55d224ca2b8d0cc5186749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1903453686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56554,11 +56753,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 528911373250530336, guid: db4e50588e319eb4fba43a8798bf3f08, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.47
+      value: -5.18
       objectReference: {fileID: 0}
     - target: {fileID: 528911373250530336, guid: db4e50588e319eb4fba43a8798bf3f08, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4299998
+      value: -1.57
       objectReference: {fileID: 0}
     - target: {fileID: 528911373250530336, guid: db4e50588e319eb4fba43a8798bf3f08, type: 3}
       propertyPath: m_LocalRotation.w
@@ -63878,7 +64077,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41652
+  m_Name: pb_Mesh22026
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -64036,13 +64235,45 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1995880274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995880275}
+  m_Layer: 0
+  m_Name: Goals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995880275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995880274}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.65, y: 2.31, z: -1.487}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1790057790}
+  - {fileID: 195826635}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &2033722900
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41750
+  m_Name: pb_Mesh22124
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

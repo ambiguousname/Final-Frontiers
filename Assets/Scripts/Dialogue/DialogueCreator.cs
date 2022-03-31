@@ -6,6 +6,8 @@ using NodeCanvas.DialogueTrees;
 
 public class DialogueCreator : MonoBehaviour
 {
+    private DialogueTreeController tree;
+
     private GameObject activeDialogue;
     private Text activeName;
     private Text activeText;
@@ -43,6 +45,11 @@ public class DialogueCreator : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         dialogueLocator = GameObject.Find("DialogueLocator");
         canvasRect = dialogueLocator.transform.parent.GetComponent<RectTransform>().rect;
+        tree = GetComponentInChildren<DialogueTreeController>();
+    }
+
+    public DialogueTreeController GetTree() {
+        return tree;
     }
 
     private bool DialogueIsVisible() {
@@ -131,6 +138,7 @@ public class DialogueCreator : MonoBehaviour
         continueText.SetActive(false);
         activeName.text = info.actor.name;
         activeText.text = "";
+        activeText.color = info.actor.dialogueColor;
         activeTextPrint = AddText(info.statement.text, activeText);
         StartCoroutine(activeTextPrint);
     }
