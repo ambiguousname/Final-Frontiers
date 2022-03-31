@@ -15,6 +15,9 @@ public class ActorManager : MonoBehaviour
 
     private float dialogueY;
 
+    private GameObject escort;
+    private float escortDist;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +30,20 @@ public class ActorManager : MonoBehaviour
         dialogueY = dialogue.transform.position.y;
     }
 
-    public void Escort(GameObject escortTarget, float maximumDist) { 
-        
+    public void Escort(GameObject moveTarget, GameObject escortTarget, float maximumDist) {
+        escort = escortTarget;
+        escortDist = maximumDist;
+        MoveTo(moveTarget);
+    }
+
+    private void EscortUpdate() {
+        if (Vector3.Distance(this.transform.position, escort.transform.position) > escortDist)
+        {
+            agent.isStopped = true;
+        }
+        else if (agent.isStopped) {
+            agent.isStopped = false;
+        }
     }
 
     public void MoveTo(GameObject target) {
@@ -53,6 +68,9 @@ public class ActorManager : MonoBehaviour
             float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             dialogue.transform.rotation = Quaternion.Euler(0, angle, 0);
         }
-        
+
+        if (escort != null) {
+            EscortUpdate();
+        }
     }
 }
