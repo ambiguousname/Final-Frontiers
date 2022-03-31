@@ -10,7 +10,6 @@ public class DialogueCreator : MonoBehaviour
     private Text activeName;
     private Text activeText;
     private GameObject continueText;
-    private Renderer dialogueRenderer;
     private SubtitlesRequestInfo activeInfo;
     private MultipleChoiceRequestInfo activeChoice;
 
@@ -46,9 +45,13 @@ public class DialogueCreator : MonoBehaviour
         canvasRect = dialogueLocator.transform.parent.GetComponent<RectTransform>().rect;
     }
 
+    private bool DialogueIsVisible() {
+        return Vector3.Dot(activeDialogue.transform.forward, player.transform.forward) > 0.1f;
+    }
+
     private void Update()
     {
-        if (activeDialogue.activeInHierarchy && !dialogueRenderer.isVisible)
+        if (!DialogueIsVisible())
         {
             if (!dialogueLocator.activeInHierarchy)
             {
@@ -56,7 +59,7 @@ public class DialogueCreator : MonoBehaviour
             }
             // Based on https://www.youtube.com/watch?v=BC3AKOQUx04
 
-            Vector3 direction = player.transform.position - dialogueRenderer.transform.position;
+            Vector3 direction = player.transform.position - activeDialogue.transform.position;
 
             Quaternion rot = Quaternion.LookRotation(direction);
             rot.z = -rot.y;
@@ -69,13 +72,13 @@ public class DialogueCreator : MonoBehaviour
 
             dialogueLocator.GetComponent<RectTransform>().anchoredPosition = new Vector3(-dialogueLocator.transform.up.x * canvasRect.width / 2, -dialogueLocator.transform.up.y * canvasRect.height / 2, 0);
         }
-        else if (dialogueRenderer.isVisible && dialogueLocator.activeInHierarchy) {
+        else if (DialogueIsVisible()) {
             dialogueLocator.SetActive(false);
         }
     }
 
     public void PressNumButton(int number) {
-        if (dialogueRenderer.isVisible)
+        if (DialogueIsVisible())
         {
             if (activeChoice != null && activeChoice.options.Count >= number)
             {
@@ -124,7 +127,6 @@ public class DialogueCreator : MonoBehaviour
             activeName = activeDialogue.FindChildWithName("Name").GetComponent<Text>();
             activeText = activeDialogue.FindChildWithName("Text").GetComponent<Text>();
             continueText = activeDialogue.FindChildWithName("Continue");
-            dialogueRenderer = activeDialogue.FindChildWithName("VisibleBox").GetComponent<Renderer>();
         }
         continueText.SetActive(false);
         activeName.text = info.actor.name;
