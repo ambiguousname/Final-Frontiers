@@ -26,6 +26,7 @@ public class DialogueCreator : MonoBehaviour
     private IEnumerator activeTextPrint;
 
     bool dialogueFinished = true;
+    bool canChoose = false;
 
     public void StartNewDialogue(string treeName) {
         if (dialogueFinished) {
@@ -76,6 +77,11 @@ public class DialogueCreator : MonoBehaviour
     }
 
     private bool DialogueIsVisible() {
+        // If the dialogue is ongoing, but invisible...
+        if (!dialogueFinished && !activeDialogue.activeInHierarchy)
+        {
+            return true;
+        }
         return Vector3.Dot(activeDialogue.transform.forward, player.transform.forward) > 0;
     }
 
@@ -110,15 +116,16 @@ public class DialogueCreator : MonoBehaviour
     public void PressNumButton(int number) {
         if (DialogueIsVisible())
         {
-            if (activeChoice != null && activeChoice.options.Count >= number)
+            if (canChoose && activeChoice.options.Count >= number)
             {
+                canChoose = false;
                 activeChoice.SelectOption(number - 1);
-                activeChoice = null;
             }
             else if (number == 1)
             {
                 if (continueText.activeInHierarchy)
                 {
+                    activeDialogue.SetActive(false);
                     activeInfo.Continue();
                 }
                 else
@@ -137,28 +144,26 @@ public class DialogueCreator : MonoBehaviour
 
     private void MultipleChoice(MultipleChoiceRequestInfo info) {
         activeChoice = info;
+        canChoose = true;
         activeName.text = "You";
         activeText.text = "";
         continueText.SetActive(false);
         foreach (KeyValuePair<IStatement, int> choice in info.options) {
             activeText.text += (choice.Value + 1) + ". " + choice.Key + "\n";
         }
+        activeDialogue.SetActive(true);
     }
 
     private void UpdateDialogue(SubtitlesRequestInfo info)
     {
         activeInfo = info;
         if (info.actor.name != "You" && (activeDialogue == null || info.actor.name != activeDialogue.name)) {
-            if (activeDialogue != null)
-            {
-                activeDialogue.SetActive(false);
-            }
             activeDialogue = GameObject.Find(info.actor.name).FindChildWithTag("ActorDialogueBox");
-            activeDialogue.SetActive(true);
             activeName = activeDialogue.FindChildWithName("Name").GetComponent<Text>();
             activeText = activeDialogue.FindChildWithName("Text").GetComponent<Text>();
             continueText = activeDialogue.FindChildWithName("Continue");
         }
+        activeDialogue.SetActive(true);
         continueText.SetActive(false);
         activeName.text = info.actor.name;
         activeText.text = "";
