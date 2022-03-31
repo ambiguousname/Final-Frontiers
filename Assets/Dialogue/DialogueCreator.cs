@@ -88,9 +88,8 @@ public class DialogueCreator : MonoBehaviour
                 if (continueText.activeInHierarchy)
                 {
                     activeInfo.Continue();
-                }
-                else
-                {
+                } else if (activeChoice == null) {
+                    Debug.Log("Hello?");
                     StopCoroutine(activeTextPrint);
                     activeText.text = activeInfo.statement.text;
                     continueText.SetActive(true);

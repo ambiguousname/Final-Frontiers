@@ -11,6 +11,7 @@ public class DialogueInput : MonoBehaviour
     {
         creator = GameObject.Find("DialogueManager").GetComponent<DialogueCreator>();
     }
+
     void OnOne(InputValue value) {
         creator.PressNumButton(1);
     }
