@@ -24,7 +24,7 @@ public class ActorManager : MonoBehaviour
         Vector3 offset = dialogue.transform.position - this.transform.position;
 
         dialogueRadius = Vector3.Magnitude(new Vector3(offset.x, 0, offset.z));
-        dialogueY = dialogue.transform.localPosition.y;
+        dialogueY = dialogue.transform.position.y;
     }
 
     public void Escort(GameObject escortTarget, float maximumDist) { 
@@ -46,7 +46,9 @@ public class ActorManager : MonoBehaviour
             Vector3 directionXZ = new Vector3(direction.x, 0, direction.z);
             directionXZ.Normalize();
 
-            dialogue.transform.localPosition = -directionXZ * dialogueRadius + new Vector3(0, dialogueY, 0);
+            Vector3 newPos = this.transform.position - directionXZ * dialogueRadius;
+
+            dialogue.transform.position = new Vector3(newPos.x, dialogueY, newPos.z);
 
             float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             dialogue.transform.rotation = Quaternion.Euler(0, angle, 0);
