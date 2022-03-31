@@ -7,6 +7,8 @@ public class DialogueTrigger : MonoBehaviour
     [Tooltip("The tag of any object to enter to ")]
     public string tagToTrigger = "Player";
 
+    public string dialogueToStart;
+
     private DialogueCreator creator;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,7 @@ public class DialogueTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == tagToTrigger) {
-            creator.GetTree().StartDialogue();
+            creator.StartNewDialogue(dialogueToStart);
         }
     }
 }

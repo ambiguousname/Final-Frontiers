@@ -6,6 +6,8 @@ using NodeCanvas.DialogueTrees;
 
 public class DialogueCreator : MonoBehaviour
 {
+    public string DialogueToStart;
+
     private DialogueTreeController tree;
 
     private GameObject activeDialogue;
@@ -22,6 +24,22 @@ public class DialogueCreator : MonoBehaviour
     private Rect canvasRect;
 
     private IEnumerator activeTextPrint;
+
+    bool dialogueFinished = true;
+
+    public void StartNewDialogue(string treeName) {
+        if (dialogueFinished) {
+            GameObject dialogueObject = gameObject.FindChildWithName(treeName);
+            if (dialogueObject != null)
+            {
+                tree = dialogueObject.GetComponent<DialogueTreeController>();
+                tree.StartDialogue();
+            } else
+            {
+                Debug.LogWarning("Could not find DialogueTree of name " + treeName);
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void OnEnable()
@@ -45,7 +63,11 @@ public class DialogueCreator : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         dialogueLocator = GameObject.Find("DialogueLocator");
         canvasRect = dialogueLocator.transform.parent.GetComponent<RectTransform>().rect;
-        tree = GetComponentInChildren<DialogueTreeController>();
+        if (DialogueToStart != "") {
+            tree = gameObject.FindChildWithName(DialogueToStart).GetComponent<DialogueTreeController>();
+            dialogueFinished = false;
+            tree.StartDialogue();
+        }
     }
 
     public DialogueTreeController GetTree() {
@@ -58,7 +80,7 @@ public class DialogueCreator : MonoBehaviour
 
     private void Update()
     {
-        if (!DialogueIsVisible())
+        if (!dialogueFinished && !DialogueIsVisible())
         {
             if (!dialogueLocator.activeInHierarchy)
             {
@@ -146,6 +168,7 @@ public class DialogueCreator : MonoBehaviour
 
     private void DialogueFinish(DialogueTree dlg) {
         activeDialogue.SetActive(false);
+        dialogueFinished = true;
     }
 
     IEnumerator AddText(string t, Text ui) {
