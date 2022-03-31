@@ -35,8 +35,4 @@ public static class Helper
         }
         return null;
     }
-
-    public static Vector3 Mult(this Vector3 v, float constant) {
-        return new Vector3(v.x * constant, v.y * constant, v.z * constant);
-    }
 }

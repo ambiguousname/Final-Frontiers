@@ -46,7 +46,7 @@ public class DialogueCreator : MonoBehaviour
     }
 
     private bool DialogueIsVisible() {
-        return Vector3.Dot(activeDialogue.transform.forward, player.transform.forward) > 0.1f;
+        return Vector3.Dot(activeDialogue.transform.forward, player.transform.forward) < 0;
     }
 
     private void Update()
