@@ -122,7 +122,8 @@ public class DialogueCreator : MonoBehaviour
         }
     }
 
-    private void UpdateDialogue(SubtitlesRequestInfo info) {
+    private void UpdateDialogue(SubtitlesRequestInfo info)
+    {
         activeInfo = info;
         if (info.actor.name != "You" && (activeDialogue == null || info.actor.name != activeDialogue.name)) {
             if (activeDialogue != null)

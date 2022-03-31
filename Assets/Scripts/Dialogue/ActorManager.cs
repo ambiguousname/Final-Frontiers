@@ -31,6 +31,10 @@ public class ActorManager : MonoBehaviour
         
     }
 
+    public void MoveTo(GameObject target) {
+        agent.SetDestination(target.transform.position);
+    }
+
 
 
     // Update is called once per frame
