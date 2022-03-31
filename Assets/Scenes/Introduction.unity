@@ -20024,7 +20024,7 @@ MonoBehaviour:
     What are they like?"},"_actorName":"Initiate O''kurr","_actorParameterID":"3dfca5b9-6436-490a-bb64-74df7e288d3e","_position":{"x":-310.3937,"y":1269.823},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"36"},{"availableChoices":[{"statement":{"_text":"I
     honestly don''t have much of an idea."}},{"statement":{"_text":"Distrustful."}},{"statement":{"_text":"Decent
     enough, once you get past their exteriors."}}],"_actorName":"You","_actorParameterID":"5b5b1aea-89f7-49aa-a674-1566f3353245","_position":{"x":-225.0268,"y":1411.661},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"37"},{"statement":{"_text":"You...
-    don''t know?"},"_position":{"x":-411.629,"y":1632.885},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"38"},{"availableChoices":[{"statement":{"_text":"Even
+    don''t know?"},"_actorName":"Initiate O''kurr","_actorParameterID":"3dfca5b9-6436-490a-bb64-74df7e288d3e","_position":{"x":-411.629,"y":1632.885},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"38"},{"availableChoices":[{"statement":{"_text":"Even
     relatively close contact is good enough for the Union."}},{"statement":{"_text":"They
     prefer not to speak with outsiders. I''ve had very limited interactions."}}],"_actorName":"You","_actorParameterID":"5b5b1aea-89f7-49aa-a674-1566f3353245","_position":{"x":-498.9768,"y":1842.969},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"39"},{"statement":{"_text":"Oh."},"_actorName":"Initiate
     O''kurr","_actorParameterID":"3dfca5b9-6436-490a-bb64-74df7e288d3e","_position":{"x":512.3492,"y":1973.349},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"40"},{"availableChoices":[{"statement":{"_text":"I
@@ -20033,7 +20033,7 @@ MonoBehaviour:
     they''d want me."}}],"_actorName":"You","_actorParameterID":"5b5b1aea-89f7-49aa-a674-1566f3353245","_position":{"x":700.4222,"y":1079.598},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"41"},{"statement":{"_text":"Huh.
     Vacation, or...?"},"_actorName":"Initiate O''kurr","_actorParameterID":"3dfca5b9-6436-490a-bb64-74df7e288d3e","_position":{"x":365.0,"y":1244.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"42"},{"availableChoices":[{"statement":{"_text":"Yes,
     actually."}},{"statement":{"_text":"It''s none of your business."}}],"_actorName":"You","_actorParameterID":"5b5b1aea-89f7-49aa-a674-1566f3353245","_position":{"x":300.0,"y":1364.0},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"43"},{"statement":{"_text":"Having
-    fun?"},"_position":{"x":273.0,"y":1560.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"44"},{"availableChoices":[{"statement":{"_text":"Yes,
+    fun?"},"_actorName":"Initiate O''kurr","_actorParameterID":"3dfca5b9-6436-490a-bb64-74df7e288d3e","_position":{"x":273.0,"y":1560.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"44"},{"availableChoices":[{"statement":{"_text":"Yes,
     I am."}},{"statement":{"_text":"Yes, I was."}},{"statement":{"_text":"No."}}],"_actorName":"You","_actorParameterID":"5b5b1aea-89f7-49aa-a674-1566f3353245","_position":{"x":277.9999,"y":1687.0},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"45"},{"statement":{"_text":"Well,
     that''s good."},"_actorName":"Initiate O''kurr","_actorParameterID":"3dfca5b9-6436-490a-bb64-74df7e288d3e","_position":{"x":16.36167,"y":1921.292},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"46"},{"statement":{"_text":"Oh,
     well, hopefully you''ll get this resolved quickly."},"_actorName":"Initiate O''kurr","_actorParameterID":"3dfca5b9-6436-490a-bb64-74df7e288d3e","_position":{"x":328.4124,"y":1896.177},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"47"},{"statement":{"_text":"I''m
@@ -20051,8 +20051,8 @@ MonoBehaviour:
     _version: 3.22
     _category: 
     _comments: 
-    _translation: {x: -35.99993, y: -16.999903}
-    _zoomFactor: 0.7885454
+    _translation: {x: 961, y: -650}
+    _zoomFactor: 0.7565054
   _firstActivation: 0
   _enableAction: 1
   _disableAction: 2
@@ -56902,7 +56902,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.7
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

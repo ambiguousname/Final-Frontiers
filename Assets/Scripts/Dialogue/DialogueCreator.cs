@@ -33,6 +33,7 @@ public class DialogueCreator : MonoBehaviour
             if (dialogueObject != null)
             {
                 tree = dialogueObject.GetComponent<DialogueTreeController>();
+                dialogueFinished = false;
                 tree.StartDialogue();
             } else
             {
