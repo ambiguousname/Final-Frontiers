@@ -14,8 +14,8 @@ Initiate O'kurr: How was the ceremony, Captain? #line:0fb0b27
     -> You: Good. I was meant for the role. #line:0c45efa 
     -> You: Weird. I never expected to even get the title. #line:0eccb26 
     -> You: EXCITING! #line:0562de4 
-        Initiate O'kurr: Good to hear. Sooooo... #line:0627499 
-        <<jump WT_Soooo>>
+    Initiate O'kurr: Good to hear. Sooooo... #line:0627499 
+    <<jump WT_Soooo>>
 ===
 title: WT_Soooo
 ---
@@ -26,7 +26,7 @@ Initiate O'kurr: Well it seems here like a complete standoff in the Aratel syste
 -> You: There's no coincidence about it. #line:0411a12 
     <<jump WT_No_coincidence>>
 -> You: It *is* strange. #line:0c6574a 
-    <<jump Strange>>
+    <<jump WT_Strange>>
 ===
 title: WT_No_coincidence
 ---
@@ -48,7 +48,7 @@ Initiate O'kurr: Is that so? #line:03a4cc0
     <<jump WT_Aratel>>
 
 ===
-title: Strange
+title: WT_Strange
 ---
 -> You: I just so happen to be staying here. #line:01a2982
     Initiate O'kurr: Huh. Vacation, or...? #line:06b0bfb 
@@ -109,9 +109,9 @@ Initiate O'kurr: It has no shields. And no weapons. #line:0a997a0
     Initiate O'kurr: Oh! You're joking. #line:06e9366 
 -> You: That's completely unacceptable. #line:0a9a799 
     Initiate O'kurr: There's just no time. #line:03760b2 
--> You: That's how I roll.
-    Initiate O'kurr: I don't know if I should be reassured or not.
+-> You: That's how I roll. #line:0487ad3 
+    Initiate O'kurr: I don't know if I should be reassured or not. #line:0831866 
 Initiate O'kurr: I don't have the details, but it seems like there was an error in ship manufacture. #line:0d8581f 
 Initiate O'kurr: But the Aratel situation is developing rapidly, and you're the only ship in range to shuttle Ambassador G'Vorik. #line:00d62f7 
-Initiate O'kurr: Your ship has priority for installation as soon as you return to dock, so don't worry too much about it.
+Initiate O'kurr: Your ship has priority for installation as soon as you return to dock, so don't worry too much about it. #line:00f37c7 
 ===

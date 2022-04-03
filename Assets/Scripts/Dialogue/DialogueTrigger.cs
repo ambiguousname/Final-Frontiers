@@ -5,10 +5,14 @@ using Yarn.Unity;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    public bool canRepeat = false;
+
     [Tooltip("The tag of any object to enter to ")]
     public string tagToTrigger = "Player";
 
     public string dialogueToStart;
+
+    bool hasPlayed = false;
 
     private DialogueRunner runner;
     // Start is called before the first frame update
@@ -17,10 +21,13 @@ public class DialogueTrigger : MonoBehaviour
         runner = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueRunner>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.tag == tagToTrigger) {
+        if (!hasPlayed && other.tag == tagToTrigger && runner.Dialogue.IsActive == false) {
             runner.StartDialogue(dialogueToStart);
+            if (!canRepeat) {
+                hasPlayed = true;
+            }
         }
     }
 }
