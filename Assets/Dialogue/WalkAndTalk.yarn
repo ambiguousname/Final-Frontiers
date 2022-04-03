@@ -1,0 +1,112 @@
+﻿title: WalkAndTalk
+tags:
+---
+Initiate O'kurr: How was the ceremony, Captain?
+
+-> You: Just show me to my ship.
+    <<wait 5>>
+    <<jump Something Wrong>>
+-> You: Alright, I suppose.
+    Initiate O'kurr: Good to hear. Sorry you had to be rushed through it.
+    <<jump Soooo>>
+-> You: I fell asleep. What happened?
+    Initiate O'kurr: Not much. I mean, not *not* not much. I mean... You got promoted, right? How was that?
+    -> You: Good. I was meant for the role.
+    -> You: Weird. I never expected to even get the title.
+    -> You: EXCITING!
+        Initiate O'kurr: Good to hear. Sooooo...
+        <<jump Soooo>>
+===
+title: Soooo
+---
+Initiate O'kurr: What a weird set of circumstances though, right? Union Command hears word of... well it seems here like a complete standoff 
+in the Aratel system, and here you are, in deep space, having just received word that you've been promoted.
+
+-> You: There's no coincidence about it.
+    <<jump No coincidence>>
+-> You: It *is* strange.
+    <<jump Strange>>
+===
+title: No coincidence
+---
+Initiate O'kurr: Is that so?
+
+-> You: All other Union Captains are too busy.
+    Initiate O'kurr: The Union is stretched pretty thin. I'm not surprised.
+    <<wait 2>>
+    <<jump Something Wrong>>
+-> You: Command made it very clear to me: I am being tested.
+    Initiate O'kurr: Well... good luck on the test.
+    <<wait 2>>
+    <<jump Something Wrong>>
+-> You: I have some experience with the Aratel.
+    <<jump Aratel>>
+
+===
+title: Strange
+---
+-> You: I just so happen to be staying here.
+    Initiate O'kurr: Huh. Vacation, or...?
+    -> You: Yes, actually.
+    -> You: It's none of your business.
+    Initiate O'kurr: Having fun?
+    -> You: Yes, I am.
+        Initiate O'kurr: Well, that's good.
+    -> You: Yes, I was.
+        Initiate O'kurr: Oh, well, hopefully you'll get this resolved quickly.
+    -> You: No.
+        Initiate O'kurr: Oh.
+-> You: Maybe they just want the best Captain for the job.
+    Initiate O'kurr: I'm sure they do, Captain.
+-> You: I have no idea why they'd want me.
+    Initiate O'kurr: Well, hopefully you can ask them.
+
+    Initiate O'kurr: Once you get back.
+
+<<wait 2>>
+<<jump Something Wrong>>
+===
+title: Aratel
+---
+Initiate O'kurr: Really? What are they like?
+
+-> You: I honestly don't have much of an idea.
+    Initiate O'kurr: You... don't know?
+    -> You: Even relatively close contact is good enough for the Union.
+    -> You: They prefer not to speak with outsiders. I've had very limited interactions.
+-> You: Distrustful.
+-> You: Decent enough, once you get past their exteriors.
+
+Initiate O'kurr: Oh.
+
+<<wait 2>>
+<<jump Something Wrong>>
+===
+title: No Weapons
+---
+Initiate O'kurr: It has no shields. And no weapons.
+-> You: I'm sorry, I must have misheard you. Did you say that my ship has no shields or weapons?
+    Initiate O'kurr: You heard me correctly, Captain.
+-> You: Good! Great! Excellent!
+    Initiate O'kurr: ...
+    Initiate O'kurr: Oh! You're joking.
+-> You: That's completely unacceptable.
+    Initiate O'kurr: There's just no time.
+Initiate O'kurr: I don't have the details, but it seems like there was an error in ship manufacture.
+The Aratel situation is developing rapidly, and you're the only ship in range to shuttle the ambassador.
+===
+title: Something Wrong
+---
+Initiate O'kurr: Captain? There... seems to be a bit of a problem with the ship...
+
+-> You: What is it?
+    <<jump No Weapons>>
+-> You: Wait, wait. Let's slow down for a second.
+    Initiate O'kurr: No time, Captain. The Union really needs you at Aratel. The ship has all the info you need downloaded on the logs, you can look at it there.
+    <<wait 2>>
+    -> You: So... what's wrong with my ship?
+        Initiate O'kurr: Oh... yes!
+        <<jump No Weapons>>
+    -> You: (Say Nothing)
+-> You: We don't have time. I'll figure it out later.
+===
