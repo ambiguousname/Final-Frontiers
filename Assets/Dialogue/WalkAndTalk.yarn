@@ -1,113 +1,121 @@
 ﻿title: WalkAndTalk
 tags:
 ---
-Initiate O'kurr: How was the ceremony, Captain?
+Initiate O'kurr: How was the ceremony, Captain? #line:0fb0b27 
 
--> You: Just show me to my ship.
+-> You: Just show me to my ship. #line:0ed89a6 
     <<wait 5>>
     <<jump WT_Something_Wrong>>
--> You: Alright, I suppose.
-    Initiate O'kurr: Good to hear. Sorry you had to be rushed through it.
+-> You: Alright, I suppose. #line:03c3569 
+    Initiate O'kurr: Good to hear. Sorry you had to be rushed through it. #line:0ea1186 
     <<jump WT_Soooo>>
--> You: I fell asleep. What happened?
-    Initiate O'kurr: Not much. I mean, not *not* not much. I mean... You got promoted, right? How was that?
-    -> You: Good. I was meant for the role.
-    -> You: Weird. I never expected to even get the title.
-    -> You: EXCITING!
-        Initiate O'kurr: Good to hear. Sooooo...
+-> You: I fell asleep. What happened? #line:03bc772 
+    Initiate O'kurr: Not much. I mean, not *not* not much. I mean... You got promoted, right? How was that? #line:017c4ec 
+    -> You: Good. I was meant for the role. #line:0c45efa 
+    -> You: Weird. I never expected to even get the title. #line:0eccb26 
+    -> You: EXCITING! #line:0562de4 
+        Initiate O'kurr: Good to hear. Sooooo... #line:0627499 
         <<jump WT_Soooo>>
 ===
 title: WT_Soooo
 ---
-Initiate O'kurr: What a weird set of circumstances though, right? Union Command hears word of...
+Initiate O'kurr: What a weird set of circumstances though, right? Union Command hears word of... #line:015d841 
 
-Initiate O'kurr: Well it seems here like a complete standoff in the Aratel system, and here you are, in deep space, having just received word that you've been promoted.
+Initiate O'kurr: Well it seems here like a complete standoff in the Aratel system, and here you are, in deep space, having just received word that you've been promoted. #line:0d98f52 
 
--> You: There's no coincidence about it.
+-> You: There's no coincidence about it. #line:0411a12 
     <<jump WT_No_coincidence>>
--> You: It *is* strange.
+-> You: It *is* strange. #line:0c6574a 
     <<jump Strange>>
 ===
 title: WT_No_coincidence
 ---
-Initiate O'kurr: Is that so?
+Initiate O'kurr: Is that so? #line:03a4cc0 
 
--> You: All other Union Captains are too busy.
-    Initiate O'kurr: The Union is stretched pretty thin. I'm not surprised.
+-> You: All other Union Captains are too busy. #line:024dc8f 
+    // Future writing note: Subspace Explosion refers to the development of the fifth generation Subspace Drive, which allows ships to 
+    // travel through Subspace (this Universe's version of Warp) for extended periods of time. As a result, the Union is expanding rapidly.
+    Initiate O'kurr: The Union has been stretched pretty thin since the Subspace Explosion, so I'm not surprised. #line:0c1fa9d 
     <<wait 2>>
     <<jump WT_Something_Wrong>>
--> You: Command made it very clear to me: I am being tested.
-    Initiate O'kurr: Well... good luck on the test.
+-> You: Command made it very clear to me: I am being tested. #line:05b30b0 
+    Initiate O'kurr: Well... good luck on the test. #line:03d1d2c
+    <<set $reason to "Test">>
     <<wait 2>>
     <<jump WT_Something_Wrong>>
--> You: I have some experience with the Aratel.
+-> You: I have some experience with the Aratel. #line:0cba613
+    <<set $reason to "Met Aratel">>
     <<jump WT_Aratel>>
 
 ===
 title: Strange
 ---
--> You: I just so happen to be staying here.
-    Initiate O'kurr: Huh. Vacation, or...?
-    -> You: Yes, actually.
-    -> You: It's none of your business.
-    Initiate O'kurr: Having fun?
-    -> You: Yes, I am.
-        Initiate O'kurr: Well, that's good.
-    -> You: Yes, I was.
-        Initiate O'kurr: Oh, well, hopefully you'll get this resolved quickly.
-    -> You: No.
-        Initiate O'kurr: Oh.
--> You: Maybe they just want the best Captain for the job.
-    Initiate O'kurr: I'm sure they do, Captain.
--> You: I have no idea why they'd want me.
-    Initiate O'kurr: Well, hopefully you can ask them.
+-> You: I just so happen to be staying here. #line:01a2982
+    Initiate O'kurr: Huh. Vacation, or...? #line:06b0bfb 
+    -> You: Yes, actually. #line:0d55aae 
+        <<set $reason to "Vacation">>
+    -> You: It's none of your business. #line:0365df2
+        <<set $reason to "Classified">>
+    Initiate O'kurr: Having fun? #line:0de41ca 
+    -> You: Yes, I am. #line:0ff99d7 
+        Initiate O'kurr: Well, that's good. #line:0a5d5b8 
+    -> You: Yes, I was. #line:082eade 
+        Initiate O'kurr: Oh, well, hopefully you'll get this resolved quickly. #line:047aeb5 
+    -> You: No. #line:08424a9 
+        Initiate O'kurr: Oh. #line:0ba3f3a 
+-> You: Maybe they just want the best Captain for the job. #line:008d049 
+    <<set $reason to "Egoist">>
+    Initiate O'kurr: I'm sure they do, Captain. #line:0e3a43c 
+-> You: I have no idea why they'd want me. #line:07dc050 
+    <<set $reason to "Confused">>
+    Initiate O'kurr: Well, hopefully you can ask them. #line:0a2ae73 
     
-    Initiate O'kurr: Once you get back.
+    Initiate O'kurr: Once you get back. #line:0643dc9 
 
 <<wait 2>>
 <<jump WT_Something_Wrong>>
 ===
 title: WT_Aratel
 ---
-Initiate O'kurr: Really? What are they like?
+Initiate O'kurr: Really? What are they like? #line:0b9e671 
 
--> You: I honestly don't have much of an idea.
-    Initiate O'kurr: You... don't know?
-    -> You: Even relatively close contact is good enough for the Union.
-    -> You: They prefer not to speak with outsiders. I've had very limited interactions.
--> You: Distrustful.
--> You: Decent enough, once you get past their exteriors.
+-> You: I honestly don't have much of an idea. #line:0a3fd61 
+    Initiate O'kurr: You... don't know? #line:0abb2f9 
+    -> You: Even relatively close contact is good enough for the Union. #line:0bc3be3 
+    -> You: They prefer not to speak with outsiders. I've had very limited interactions. #line:05bc1f2 
+-> You: Distrustful. #line:0f1afbc 
+-> You: Decent enough, once you get past their exteriors. #line:077c7c5
 
-Initiate O'kurr: Oh.
+Initiate O'kurr: Hmm... #line:0886394 
 
 <<wait 2>>
 <<jump WT_Something_Wrong>>
 ===
 title: WT_No_Weapons
 ---
-Initiate O'kurr: It has no shields. And no weapons.
--> You: I'm sorry, I must have misheard you. Did you say that my ship has no shields or weapons?
-    Initiate O'kurr: You heard me correctly, Captain.
--> You: Good! Great! Excellent!
-    Initiate O'kurr: ...
-    Initiate O'kurr: Oh! You're joking.
--> You: That's completely unacceptable.
-    Initiate O'kurr: There's just no time.
-Initiate O'kurr: I don't have the details, but it seems like there was an error in ship manufacture.
-Initiate O'kurr: The Aratel situation is developing rapidly, and you're the only ship in range to shuttle the ambassador.
+Initiate O'kurr: It has no shields. And no weapons. #line:0a997a0 
+-> You: I'm sorry, I must have misheard you. Did you say that my ship has no shields or weapons? #line:08e17de 
+    Initiate O'kurr: You heard me correctly, Captain. #line:0cfce84 
+-> You: Good! Great! Excellent! #line:0ca852d 
+    Initiate O'kurr: ... #line:08110c6 
+    Initiate O'kurr: Oh! You're joking. #line:06e9366 
+-> You: That's completely unacceptable. #line:0a9a799 
+    Initiate O'kurr: There's just no time. #line:03760b2 
+Initiate O'kurr: I don't have the details, but it seems like there was an error in ship manufacture. #line:0d8581f 
+Initiate O'kurr: The Aratel situation is developing rapidly, and you're the only ship in range to shuttle the ambassador. #line:00d62f7 
 ===
 title: WT_Something_Wrong
 ---
-Initiate O'kurr: Captain? There... seems to be a bit of a problem with the ship...
+Initiate O'kurr: Captain? There... seems to be a bit of a problem with the ship... #line:0b0e51b 
 
--> You: What is it?
+-> You: What is it? #line:08fff2b 
     <<jump WT_No_Weapons>>
--> You: Wait, wait. Let's slow down for a second.
-    Initiate O'kurr: No time, Captain. The Union really needs you at Aratel. The ship has all the info you need downloaded on the logs, you can look at it there.
+-> You: Wait, wait. Let's slow down for a second. #line:0182ef7 
+    Initiate O'kurr: No time, Captain. The Union really needs you at Aratel. The ship has all the info you need downloaded on the logs, you can look at it there. #line:005d776 
     <<wait 2>>
-    -> You: So... what's wrong with my ship?
-        Initiate O'kurr: Oh... yes!
+    -> You: What's wrong with my ship again? #line:00bcfbc 
+        Initiate O'kurr: Oh... yes! #line:03c2d9a 
         <<jump WT_No_Weapons>>
-    -> You: (Say Nothing)
--> You: We don't have time. I'll figure it out later.
+    -> You: (Say Nothing) #line:071ef33 
+-> You: We don't have time. I'll figure it out later. #line:041741c 
 ===
