@@ -101,8 +101,11 @@ Initiate O'kurr: It has no shields. And no weapons. #line:0a997a0
     Initiate O'kurr: Oh! You're joking. #line:06e9366 
 -> You: That's completely unacceptable. #line:0a9a799 
     Initiate O'kurr: There's just no time. #line:03760b2 
+-> You: That's how I roll.
+    Initiate O'kurr: I don't know if I should be reassured or not.
 Initiate O'kurr: I don't have the details, but it seems like there was an error in ship manufacture. #line:0d8581f 
-Initiate O'kurr: The Aratel situation is developing rapidly, and you're the only ship in range to shuttle the ambassador. #line:00d62f7 
+Initiate O'kurr: But the Aratel situation is developing rapidly, and you're the only ship in range to shuttle Ambassador G'Vorik. #line:00d62f7 
+Initiate O'kurr: Your ship has priority for installation as soon as you return to dock, so don't worry too much about it.
 ===
 title: WT_Something_Wrong
 ---
