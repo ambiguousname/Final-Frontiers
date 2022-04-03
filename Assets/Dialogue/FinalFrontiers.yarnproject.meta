@@ -9,9 +9,12 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
-  - {instanceID: 0}
   - {fileID: 6391573757903218779, guid: 5d0402a560689944e8d71c34f494aa59, type: 3}
-  compileErrors: []
+  - {fileID: 6391573757903218779, guid: dc002c618473ab9488df700bd128e4cc, type: 3}
+  compileErrors:
+  - 'Parse errors exist in the following files:
+
+    Assets/Dialogue/WalkAndTalk.yarn'
   serializedDeclarations: []
   defaultLanguage: en-US
   languagesToSourceAssets: []

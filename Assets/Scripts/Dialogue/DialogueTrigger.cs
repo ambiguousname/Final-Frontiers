@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -9,17 +10,17 @@ public class DialogueTrigger : MonoBehaviour
 
     public string dialogueToStart;
 
-    private DialogueCreator creator;
+    private DialogueRunner runner;
     // Start is called before the first frame update
     void Start()
     {
-        creator = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueCreator>();
+        runner = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueRunner>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == tagToTrigger) {
-            creator.StartNewDialogue(dialogueToStart);
+            runner.StartDialogue(dialogueToStart);
         }
     }
 }

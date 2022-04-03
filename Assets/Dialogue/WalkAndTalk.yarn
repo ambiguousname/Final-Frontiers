@@ -5,42 +5,42 @@ Initiate O'kurr: How was the ceremony, Captain?
 
 -> You: Just show me to my ship.
     <<wait 5>>
-    <<jump Something Wrong>>
+    <<jump WT_Something_Wrong>>
 -> You: Alright, I suppose.
     Initiate O'kurr: Good to hear. Sorry you had to be rushed through it.
-    <<jump Soooo>>
+    <<jump WT_Soooo>>
 -> You: I fell asleep. What happened?
     Initiate O'kurr: Not much. I mean, not *not* not much. I mean... You got promoted, right? How was that?
     -> You: Good. I was meant for the role.
     -> You: Weird. I never expected to even get the title.
     -> You: EXCITING!
         Initiate O'kurr: Good to hear. Sooooo...
-        <<jump Soooo>>
+        <<jump WT_Soooo>>
 ===
-title: Soooo
+title: WT_Soooo
 ---
 Initiate O'kurr: What a weird set of circumstances though, right? Union Command hears word of... well it seems here like a complete standoff 
 in the Aratel system, and here you are, in deep space, having just received word that you've been promoted.
 
 -> You: There's no coincidence about it.
-    <<jump No coincidence>>
+    <<jump WT_No_coincidence>>
 -> You: It *is* strange.
     <<jump Strange>>
 ===
-title: No coincidence
+title: WT_No_coincidence
 ---
 Initiate O'kurr: Is that so?
 
 -> You: All other Union Captains are too busy.
     Initiate O'kurr: The Union is stretched pretty thin. I'm not surprised.
     <<wait 2>>
-    <<jump Something Wrong>>
+    <<jump WT_Something_Wrong>>
 -> You: Command made it very clear to me: I am being tested.
     Initiate O'kurr: Well... good luck on the test.
     <<wait 2>>
-    <<jump Something Wrong>>
+    <<jump WT_Something_Wrong>>
 -> You: I have some experience with the Aratel.
-    <<jump Aratel>>
+    <<jump WT_Aratel>>
 
 ===
 title: Strange
@@ -64,9 +64,9 @@ title: Strange
     Initiate O'kurr: Once you get back.
 
 <<wait 2>>
-<<jump Something Wrong>>
+<<jump WT_Something_Wrong>>
 ===
-title: Aratel
+title: WT_Aratel
 ---
 Initiate O'kurr: Really? What are they like?
 
@@ -80,9 +80,9 @@ Initiate O'kurr: Really? What are they like?
 Initiate O'kurr: Oh.
 
 <<wait 2>>
-<<jump Something Wrong>>
+<<jump WT_Something_Wrong>>
 ===
-title: No Weapons
+title: WT_No_Weapons
 ---
 Initiate O'kurr: It has no shields. And no weapons.
 -> You: I'm sorry, I must have misheard you. Did you say that my ship has no shields or weapons?
@@ -95,18 +95,18 @@ Initiate O'kurr: It has no shields. And no weapons.
 Initiate O'kurr: I don't have the details, but it seems like there was an error in ship manufacture.
 The Aratel situation is developing rapidly, and you're the only ship in range to shuttle the ambassador.
 ===
-title: Something Wrong
+title: WT_Something_Wrong
 ---
 Initiate O'kurr: Captain? There... seems to be a bit of a problem with the ship...
 
 -> You: What is it?
-    <<jump No Weapons>>
+    <<jump WT_No_Weapons>>
 -> You: Wait, wait. Let's slow down for a second.
     Initiate O'kurr: No time, Captain. The Union really needs you at Aratel. The ship has all the info you need downloaded on the logs, you can look at it there.
     <<wait 2>>
     -> You: So... what's wrong with my ship?
         Initiate O'kurr: Oh... yes!
-        <<jump No Weapons>>
+        <<jump WT_No_Weapons>>
     -> You: (Say Nothing)
 -> You: We don't have time. I'll figure it out later.
 ===

@@ -1,16 +1,16 @@
-﻿title: Intro
+﻿title: Start
 tags:
 ---
-Admiral Shanely: ... and may I say, Captain, it is good to call you by your full, proper, and rightful rank. The Union is lucky to have you,and we are all looking forward to your tenure.
+Admiral Shanely: ... and may I say, Captain, it is good to call you by your full, proper, and rightful rank. The Union is lucky to have you,and we are all looking forward to your tenure. #line:0f56e78 
 
-Admiral Shanely: Unfortunately, that will have to do as far as speeches go. The situation on Aratel is getting worse by the minute, and your ship is just about ready to go.
+Admiral Shanely: Unfortunately, that will have to do as far as speeches go. The situation on Aratel is getting worse by the minute, and your ship is just about ready to go. #line:0503cc0 
 
--> You: The situation on what? Where now?
-    Admrial Shanely: There's no time. You'll have to be briefed on the way.
--> You: Understood.
+-> You: The situation on what? Where now? #line:09c8439 
+    Admrial Shanely: There's no time. You'll have to be briefed on the way. #line:0009839 
+-> You: Understood. #line:0a7ae10 
 
-Admiral Shanely: Good luck on your first assignment, Captain. We're all rooting for you here.
+Admiral Shanely: Good luck on your first assignment, Captain. We're all rooting for you here. #line:0d35c4a 
 
-Initiate O'kurr: Captain! I am to escort you to your ship ASAP. Follow me, please.
+Initiate O'kurr: Captain! I am to escort you to your ship ASAP. Follow me, please. #line:0d7f7c8 
 
 ===

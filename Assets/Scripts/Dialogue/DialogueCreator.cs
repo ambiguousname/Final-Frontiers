@@ -1,21 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using NodeCanvas.DialogueTrees;
+using Yarn.Unity;
 
-public class DialogueCreator : MonoBehaviour
+public class DialogueCreator : DialogueViewBase
 {
     public string DialogueToStart;
-
-    private DialogueTreeController tree;
 
     private GameObject activeDialogue;
     private Text activeName;
     private Text activeText;
     private GameObject continueText;
-    private SubtitlesRequestInfo activeInfo;
-    private MultipleChoiceRequestInfo activeChoice;
+
+    private string fullText;
+
+    Action activeLine;
+    Action<int> activeChoice;
+    int numChoices;
 
     private GameObject player;
 
@@ -28,52 +31,11 @@ public class DialogueCreator : MonoBehaviour
     bool dialogueFinished = true;
     bool canChoose = false;
 
-    public void StartNewDialogue(string treeName) {
-        if (dialogueFinished) {
-            GameObject dialogueObject = gameObject.FindChildWithName(treeName);
-            if (dialogueObject != null)
-            {
-                tree = dialogueObject.GetComponent<DialogueTreeController>();
-                dialogueFinished = false;
-                tree.StartDialogue();
-            } else
-            {
-                Debug.LogWarning("Could not find DialogueTree of name " + treeName);
-            }
-        }
-    }
-
-    // Start is called before the first frame update
-    void OnEnable()
-    {
-        DialogueTree.OnDialogueStarted += DialogueStart;
-        DialogueTree.OnSubtitlesRequest += UpdateDialogue;
-        DialogueTree.OnDialogueFinished += DialogueFinish;
-        DialogueTree.OnMultipleChoiceRequest += MultipleChoice;
-    }
-
-    private void OnDisable()
-    {
-        DialogueTree.OnDialogueStarted -= DialogueStart;
-        DialogueTree.OnSubtitlesRequest -= UpdateDialogue;
-        DialogueTree.OnDialogueFinished -= DialogueFinish;
-        DialogueTree.OnMultipleChoiceRequest -= MultipleChoice;
-    }
-
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         dialogueLocator = GameObject.Find("DialogueLocator");
         canvasRect = dialogueLocator.transform.parent.GetComponent<RectTransform>().rect;
-        if (DialogueToStart != "") {
-            tree = gameObject.FindChildWithName(DialogueToStart).GetComponent<DialogueTreeController>();
-            dialogueFinished = false;
-            tree.StartDialogue();
-        }
-    }
-
-    public DialogueTreeController GetTree() {
-        return tree;
     }
 
     private bool DialogueIsVisible() {
@@ -116,63 +78,69 @@ public class DialogueCreator : MonoBehaviour
     public void PressNumButton(int number) {
         if (DialogueIsVisible())
         {
-            if (canChoose && activeChoice.options.Count >= number)
+            if (canChoose && numChoices >= number)
             {
                 canChoose = false;
-                activeChoice.SelectOption(number - 1);
+                activeChoice(number - 1);
             }
             else if (number == 1)
             {
                 if (continueText.activeInHierarchy)
                 {
                     activeDialogue.SetActive(false);
-                    activeInfo.Continue();
+                    activeLine();
                 }
                 else
                 {
                     StopCoroutine(activeTextPrint);
-                    activeText.text = activeInfo.statement.text;
+                    activeText.text = fullText;
                     continueText.SetActive(true);
                 }
             }
         }
     }
 
-    private void DialogueStart(DialogueTree dlg) {
-
+    public override void DialogueStarted()
+    {
+        dialogueFinished = false;
     }
 
-    private void MultipleChoice(MultipleChoiceRequestInfo info) {
-        activeChoice = info;
+    public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)
+    {
+        activeChoice = onOptionSelected;
         canChoose = true;
         activeName.text = "You";
         activeText.text = "";
         continueText.SetActive(false);
-        foreach (KeyValuePair<IStatement, int> choice in info.options) {
-            activeText.text += (choice.Value + 1) + ". " + choice.Key + "\n";
+        for (int i = 0; i < dialogueOptions.Length; i++)
+        {
+            activeText.text += (i + 1) + ". " + dialogueOptions[i].Line.Text.Text + "\n";
         }
+        numChoices = dialogueOptions.Length;
         activeDialogue.SetActive(true);
     }
 
-    private void UpdateDialogue(SubtitlesRequestInfo info)
+    public override void RunLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
     {
-        activeInfo = info;
-        if (info.actor.name != "You" && (activeDialogue == null || info.actor.name != activeDialogue.name)) {
-            activeDialogue = GameObject.Find(info.actor.name).FindChildWithTag("ActorDialogueBox");
+        activeLine = onDialogueLineFinished;
+        string name = dialogueLine.CharacterName;
+        if (name != "You" && (activeDialogue == null || name != activeDialogue.name)) {
+            activeDialogue = GameObject.Find(name).FindChildWithTag("ActorDialogueBox");
             activeName = activeDialogue.FindChildWithName("Name").GetComponent<Text>();
             activeText = activeDialogue.FindChildWithName("Text").GetComponent<Text>();
             continueText = activeDialogue.FindChildWithName("Continue");
         }
         activeDialogue.SetActive(true);
         continueText.SetActive(false);
-        activeName.text = info.actor.name;
+        activeName.text = name;
         activeText.text = "";
-        activeText.color = info.actor.dialogueColor;
-        activeTextPrint = AddText(info.statement.text, activeText);
+        fullText = dialogueLine.TextWithoutCharacterName.Text;
+        activeTextPrint = AddText(dialogueLine.TextWithoutCharacterName.Text, activeText);
         StartCoroutine(activeTextPrint);
     }
 
-    private void DialogueFinish(DialogueTree dlg) {
+    public override void DialogueComplete()
+    {
         activeDialogue.SetActive(false);
         dialogueFinished = true;
     }

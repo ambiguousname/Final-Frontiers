@@ -9401,7 +9401,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yarnProject: {fileID: 7545569452688597077, guid: f64d65b09eb05de42bda6ffa62fabc51, type: 3}
   _variableStorage: {fileID: 0}
-  dialogueViews: []
+  dialogueViews:
+  - {fileID: 516040737}
   startNode: Start
   startAutomatically: 1
   runSelectedOptionAsLine: 0
@@ -60155,8 +60156,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Initiate O'kurr
   _portrait: {fileID: 0}
-  _dialogueColor: {r: 1, g: 1, b: 1, a: 1}
+  _dialogueColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
   _dialogueOffset: {x: 0, y: 0, z: 0}
+  _portraitSprite: {fileID: 0}
 --- !u!1 &1889610202
 GameObject:
   m_ObjectHideFlags: 0
