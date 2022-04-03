@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Yarn.Unity;
 
 public class ActorManager : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class ActorManager : MonoBehaviour
         dialogueY = dialogue.transform.position.y;
     }
 
+    [YarnCommand("escort")]
     public void Escort(GameObject moveTarget, GameObject escortTarget, float maximumDist) {
         escort = escortTarget;
         escortDist = maximumDist;
@@ -46,7 +48,9 @@ public class ActorManager : MonoBehaviour
         }
     }
 
+    [YarnCommand("moveTo")]
     public void MoveTo(GameObject target) {
+        agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(target.transform.position);
     }
 

@@ -78,6 +78,7 @@ public class DialogueCreator : DialogueViewBase
     public void PressNumButton(int number) {
         if (DialogueIsVisible())
         {
+            Debug.Log(canChoose + " " + numChoices + " " + number);
             if (canChoose && numChoices >= number)
             {
                 canChoose = false;
