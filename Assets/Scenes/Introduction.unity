@@ -57654,6 +57654,10 @@ PrefabInstance:
       propertyPath: far clip plane
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430823, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_Name
       value: MainCamera
@@ -57681,7 +57685,8 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 1468313234}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -57923,6 +57928,11 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaDirect: 0.5
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
+--- !u!20 &1468313234 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5629371252788532807, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+  m_PrefabInstance: {fileID: 1380955783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1478300247
 GameObject:
   m_ObjectHideFlags: 0
@@ -57968,7 +57978,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9d8ce2ed7a90a184d9e33142133231a8, type: 2}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
-      value: PlayerCapsule
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_RootOrder

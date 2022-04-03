@@ -19,8 +19,9 @@ Initiate O'kurr: How was the ceremony, Captain?
 ===
 title: WT_Soooo
 ---
-Initiate O'kurr: What a weird set of circumstances though, right? Union Command hears word of... well it seems here like a complete standoff 
-in the Aratel system, and here you are, in deep space, having just received word that you've been promoted.
+Initiate O'kurr: What a weird set of circumstances though, right? Union Command hears word of...
+
+Initiate O'kurr: Well it seems here like a complete standoff in the Aratel system, and here you are, in deep space, having just received word that you've been promoted.
 
 -> You: There's no coincidence about it.
     <<jump WT_No_coincidence>>
@@ -60,7 +61,7 @@ title: Strange
     Initiate O'kurr: I'm sure they do, Captain.
 -> You: I have no idea why they'd want me.
     Initiate O'kurr: Well, hopefully you can ask them.
-
+    
     Initiate O'kurr: Once you get back.
 
 <<wait 2>>
@@ -93,7 +94,7 @@ Initiate O'kurr: It has no shields. And no weapons.
 -> You: That's completely unacceptable.
     Initiate O'kurr: There's just no time.
 Initiate O'kurr: I don't have the details, but it seems like there was an error in ship manufacture.
-The Aratel situation is developing rapidly, and you're the only ship in range to shuttle the ambassador.
+Initiate O'kurr: The Aratel situation is developing rapidly, and you're the only ship in range to shuttle the ambassador.
 ===
 title: WT_Something_Wrong
 ---

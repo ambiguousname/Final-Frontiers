@@ -78,7 +78,6 @@ public class DialogueCreator : DialogueViewBase
     public void PressNumButton(int number) {
         if (DialogueIsVisible())
         {
-            Debug.Log(canChoose + " " + numChoices + " " + number);
             if (canChoose && numChoices >= number)
             {
                 canChoose = false;
@@ -115,7 +114,7 @@ public class DialogueCreator : DialogueViewBase
         continueText.SetActive(false);
         for (int i = 0; i < dialogueOptions.Length; i++)
         {
-            activeText.text += (i + 1) + ". " + dialogueOptions[i].Line.Text.Text + "\n";
+            activeText.text += (i + 1) + ". " + dialogueOptions[i].Line.TextWithoutCharacterName.Text + "\n";
         }
         numChoices = dialogueOptions.Length;
         activeDialogue.SetActive(true);

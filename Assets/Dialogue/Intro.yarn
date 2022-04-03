@@ -13,5 +13,5 @@ Admiral Shanely: Unfortunately, that will have to do as far as speeches go. The 
 Admiral Shanely: Good luck on your first assignment, Captain. We're all rooting for you here. #line:0d35c4a 
 
 Initiate O'kurr: Captain! I am to escort you to your ship ASAP. Follow me, please. #line:0d7f7c8 
-<<escort "Initiate O'kurr" OkurrStardock 15>>
+<<escort "Initiate O'kurr" OkurrStardock Player 15>>
 ===

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 528911373250530336}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Dialogue
   m_TagString: ActorDialogueBox
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 3106808387795789158}
   - component: {fileID: 533222216700624680}
   - component: {fileID: 3124663389356123732}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: VisibleBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
