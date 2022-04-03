@@ -91,6 +91,14 @@ Initiate O'kurr: Hmm... #line:0886394
 <<wait 2>>
 <<jump WT_Something_Wrong>>
 ===
+title: WT_Something_Wrong
+---
+Initiate O'kurr: Captain? There... seems to be a bit of a problem with the ship... #line:0b0e51b 
+
+-> You: What is it? #line:08fff2b 
+    <<jump WT_No_Weapons>>
+-> You: We don't have time. I'll figure it out later. #line:041741c 
+===
 title: WT_No_Weapons
 ---
 Initiate O'kurr: It has no shields. And no weapons. #line:0a997a0 
@@ -106,19 +114,4 @@ Initiate O'kurr: It has no shields. And no weapons. #line:0a997a0
 Initiate O'kurr: I don't have the details, but it seems like there was an error in ship manufacture. #line:0d8581f 
 Initiate O'kurr: But the Aratel situation is developing rapidly, and you're the only ship in range to shuttle Ambassador G'Vorik. #line:00d62f7 
 Initiate O'kurr: Your ship has priority for installation as soon as you return to dock, so don't worry too much about it.
-===
-title: WT_Something_Wrong
----
-Initiate O'kurr: Captain? There... seems to be a bit of a problem with the ship... #line:0b0e51b 
-
--> You: What is it? #line:08fff2b 
-    <<jump WT_No_Weapons>>
--> You: Wait, wait. Let's slow down for a second. #line:0182ef7 
-    Initiate O'kurr: No time, Captain. The Union really needs you at Aratel. The ship has all the info you need downloaded on the logs, you can look at it there. #line:005d776 
-    <<wait 2>>
-    -> You: What's wrong with my ship again? #line:00bcfbc 
-        Initiate O'kurr: Oh... yes! #line:03c2d9a 
-        <<jump WT_No_Weapons>>
-    -> You: (Say Nothing) #line:071ef33 
--> You: We don't have time. I'll figure it out later. #line:041741c 
 ===
