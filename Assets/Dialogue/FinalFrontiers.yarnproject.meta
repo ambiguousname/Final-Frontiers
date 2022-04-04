@@ -12,6 +12,7 @@ ScriptedImporter:
   - {fileID: 6391573757903218779, guid: 5d0402a560689944e8d71c34f494aa59, type: 3}
   - {fileID: 6391573757903218779, guid: dc002c618473ab9488df700bd128e4cc, type: 3}
   - {fileID: 6391573757903218779, guid: 581558424bd04b54988e145ee37a952a, type: 3}
+  - {fileID: 6391573757903218779, guid: 4a92e2fcca184e54986ec1aca20f69d9, type: 3}
   compileErrors: []
   serializedDeclarations:
   - name: $reason
@@ -22,6 +23,22 @@ ScriptedImporter:
     description: WalkAndTalk.yarn, node WT_No_coincidence, line 10
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: dc002c618473ab9488df700bd128e4cc, type: 3}
+  - name: $shipName
+    typeName: String
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: ShipBoarding.yarn, node ShipBoarding, line 0
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 581558424bd04b54988e145ee37a952a, type: 3}
+  - name: $name
+    typeName: String
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: ShipBoarding.yarn, node ShipBoarding, line 1
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 581558424bd04b54988e145ee37a952a, type: 3}
   defaultLanguage: en-US
   languagesToSourceAssets: []
   useAddressableAssets: 0

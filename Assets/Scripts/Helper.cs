@@ -35,4 +35,10 @@ public static class Helper
         }
         return null;
     }
+
+    public static Vector3 RotateAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles) {
+        Vector3 dir = point - pivot;
+        dir = Quaternion.Euler(angles) * dir;
+        return dir + pivot;
+    }
 }

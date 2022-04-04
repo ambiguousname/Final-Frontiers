@@ -57,8 +57,7 @@ public class ActorManager : MonoBehaviour
 
     [YarnCommand("moveTo")]
     public void MoveTo(GameObject target) {
-        agent = GetComponent<NavMeshAgent>();
-        agent.SetDestination(target.transform.position);
+        this.agent.SetDestination(target.transform.position);
     }
 
     [YarnCommand("startWalkOnShip")]
@@ -66,14 +65,18 @@ public class ActorManager : MonoBehaviour
         activeShip = currShip;
         meshShip = navMeshShip;
         duplicateAgent = new GameObject();
-        Vector3 offset = activeShip.transform.position - this.transform.position;
-        duplicateAgent.transform.position = meshShip.transform.position + offset;
+        Vector3 offset = this.transform.position - activeShip.transform.position;
+        Debug.Log(this.transform.name);
+        Debug.Log(activeShip.transform.position + " " + this.transform.position + " " + offset + " " + meshShip.transform.position);
+        Vector3 newPos = meshShip.transform.position + offset;
+        duplicateAgent.transform.position = Helper.RotateAroundPivot(newPos, meshShip.transform.position, activeShip.transform.eulerAngles);
         agent = duplicateAgent.AddComponent<NavMeshAgent>();
     }
 
     private void WalkOnShipUpdate() {
-        Vector3 offset = meshShip.transform.position - activeShip.transform.position;
-        this.transform.position = duplicateAgent.transform.position + offset;
+        Vector3 offset = activeShip.transform.position - meshShip.transform.position;
+        Vector3 newPos = duplicateAgent.transform.position + offset;
+        this.transform.position = Helper.RotateAroundPivot(newPos, meshShip.transform.position, activeShip.transform.eulerAngles);
     }
 
     [YarnCommand("endWalkOnShip")]

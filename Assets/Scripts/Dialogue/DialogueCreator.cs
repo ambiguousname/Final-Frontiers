@@ -7,8 +7,6 @@ using Yarn.Unity;
 
 public class DialogueCreator : DialogueViewBase
 {
-    public string DialogueToStart;
-
     private GameObject activeDialogue;
     private Text activeName;
     private Text activeText;

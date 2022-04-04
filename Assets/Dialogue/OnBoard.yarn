@@ -3,5 +3,5 @@ tags:
 ---
 <<startWalkOnShip "Officer Roquell" ShipPrefab ShipMeshReference>>
 Officer Roquell: Captain.
-<<moveto "Officer Roquell" Bridge>>
+<<moveTo "Officer Roquell" Bridge>>
 ===
