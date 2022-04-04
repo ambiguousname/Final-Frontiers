@@ -159,6 +159,7 @@ title: OB_Speech_Sandwich
         Officer Roquell: CAPTAIN!
         Computer: Okay, I actually didn't program this part of the game yet.
         Computer: But pretend that you're super dead.
+        <<stop>>
     -> You: Huh. I don't know it. <<if $name == "Captain">>
     -> You: Cancel.
     Computer: Canceled.
