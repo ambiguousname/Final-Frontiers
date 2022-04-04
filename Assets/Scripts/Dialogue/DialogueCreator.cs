@@ -42,7 +42,7 @@ public class DialogueCreator : DialogueViewBase
         {
             return true;
         }
-        return Vector3.Dot(activeDialogue.transform.forward, player.transform.forward) > 0;
+        return Vector3.Dot(activeDialogue.transform.forward, player.transform.forward) > 0.1f;
     }
 
     private void Update()
