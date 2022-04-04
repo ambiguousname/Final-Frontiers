@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlidingDoorOpenTrigger : MonoBehaviour
+public class SlidingDoorOpenTrigger : DoorTrigger
 {
-    public string tagAllowed = "Player";
-    public bool locked = false;
     public GameObject connectedDoor;
-    bool open = false;
     private void OnTriggerEnter(Collider other)
     {
         if (!locked && other.tag == tagAllowed) {
