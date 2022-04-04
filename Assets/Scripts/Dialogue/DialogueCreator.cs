@@ -131,7 +131,6 @@ public class DialogueCreator : DialogueViewBase
             activeText = activeDialogue.FindChildWithName("Text").GetComponent<Text>();
             continueText = activeDialogue.FindChildWithName("Continue");
         }
-        Debug.Log("LINE RUN" + activeDialogue.activeInHierarchy);
         activeDialogue.SetActive(true);
         continueText.SetActive(false);
         activeName.text = name;

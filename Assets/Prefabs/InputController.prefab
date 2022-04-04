@@ -195,7 +195,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2403312907499225320}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2403312908507333551}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: Submit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2403312907822031665
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,8 +281,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.29870605, y: 0}
-  m_SizeDelta: {x: 1006.3225, y: 133.6117}
+  m_AnchoredPosition: {x: -0.057296753, y: 0}
+  m_SizeDelta: {x: 1620.6501, y: 133.6117}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2403312908009856889
 CanvasRenderer:
@@ -287,7 +299,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2403312908009856884}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -392,7 +404,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WA
+  m_Text: 
 --- !u!1 &2403312908426476149
 GameObject:
   m_ObjectHideFlags: 0
