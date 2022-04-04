@@ -71698,6 +71698,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6925690993621531210, guid: 90abe416ff7f2cc4e9517f7972c702a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7750867374006295948, guid: 90abe416ff7f2cc4e9517f7972c702a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.226
