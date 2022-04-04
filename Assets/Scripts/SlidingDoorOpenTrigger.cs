@@ -5,11 +5,12 @@ using UnityEngine;
 public class SlidingDoorOpenTrigger : MonoBehaviour
 {
     public string tagAllowed = "Player";
+    public bool locked = false;
     public GameObject connectedDoor;
     bool open = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == tagAllowed) {
+        if (!locked && other.tag == tagAllowed) {
             open = true;
             connectedDoor.GetComponent<Animation>().Play("DoorOpen");
         }

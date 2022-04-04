@@ -13,6 +13,11 @@ public class YarnCommands : MonoBehaviour
         });
     }
 
+    [YarnCommand("lockDoor")]
+    public static void LockDoor(GameObject door, bool shouldLock) {
+        door.GetComponent<SlidingDoorOpenTrigger>().locked = shouldLock;
+    }
+
     [YarnFunction("contains")]
     public static bool Contains(string textToSearch, string textToMatch) {
         return textToSearch.Contains(textToMatch);

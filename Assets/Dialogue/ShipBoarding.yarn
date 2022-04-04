@@ -51,4 +51,5 @@ title: SB_End
 ---
 Initiate O'kurr: And... Ambassador G'vorik is already aboard, and the system... has just processed your promotion. #line:0073ca4 
 Initiate O'kurr: Board when ready. Just through that airlock. #line:082b8f9 
+<<lockDoor SpaceStationDoor false>>
 ===

@@ -9587,7 +9587,7 @@ GameObject:
   - component: {fileID: 528839111}
   - component: {fileID: 528839112}
   m_Layer: 0
-  m_Name: DoorOpen
+  m_Name: SpaceStationDoorOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9633,6 +9633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagAllowed: Player
+  locked: 1
   connectedDoor: {fileID: 2009669452}
 --- !u!1 &544203844
 GameObject:
