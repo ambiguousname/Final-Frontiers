@@ -68,7 +68,7 @@ public class DialogueCreator : DialogueViewBase
 
             dialogueLocator.GetComponent<RectTransform>().anchoredPosition = new Vector3(-dialogueLocator.transform.up.x * canvasRect.width / 2, -dialogueLocator.transform.up.y * canvasRect.height / 2, 0);
         }
-        else if (DialogueIsVisible()) {
+        else if ((dialogueFinished && dialogueLocator.activeInHierarchy) || (!dialogueFinished && DialogueIsVisible())) {
             dialogueLocator.SetActive(false);
         }
     }

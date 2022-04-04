@@ -66,19 +66,23 @@ public class ActorManager : MonoBehaviour
     private void StartWalkOnShip(GameObject currShip, GameObject navMeshShip) {
         activeShip = currShip;
         meshShip = navMeshShip;
+        agent.enabled = false;
         duplicateAgent = new GameObject();
         Vector3 offset = this.transform.position - activeShip.transform.position;
         Debug.Log(this.transform.name);
-        Debug.Log(activeShip.transform.position + " " + this.transform.position + " " + offset + " " + meshShip.transform.position);
         Vector3 newPos = meshShip.transform.position + offset;
         duplicateAgent.transform.position = Helper.RotateAroundPivot(newPos, meshShip.transform.position, activeShip.transform.eulerAngles);
-        agent = duplicateAgent.AddComponent<NavMeshAgent>();
+        NavMeshAgent newAgent = duplicateAgent.AddComponent<NavMeshAgent>();
+        newAgent.height = agent.height;
+        newAgent.radius = agent.radius;
+        newAgent.baseOffset = agent.baseOffset;
+        agent = newAgent;
     }
 
     private void WalkOnShipUpdate() {
-        Vector3 offset = activeShip.transform.position - meshShip.transform.position;
-        Vector3 newPos = duplicateAgent.transform.position + offset;
-        this.transform.position = Helper.RotateAroundPivot(newPos, meshShip.transform.position, activeShip.transform.eulerAngles);
+        Vector3 playerOffset = duplicateAgent.transform.position - meshShip.transform.position;
+        Vector3 newPos = activeShip.transform.position + playerOffset;
+        this.transform.position = newPos;
     }
 
     [YarnCommand("endWalkOnShip")]
@@ -87,6 +91,7 @@ public class ActorManager : MonoBehaviour
         meshShip = null;
         Destroy(duplicateAgent);
         agent = GetComponent<NavMeshAgent>();
+        agent.enabled = true;
     }
 
 

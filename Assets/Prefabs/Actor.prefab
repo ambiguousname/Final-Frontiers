@@ -54,7 +54,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1854287428037887645}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.63
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -63,8 +63,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
+  m_Height: 2.25
+  m_BaseOffset: 0.62
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1001 &1854287426368206587
@@ -77,6 +77,18 @@ PrefabInstance:
     - target: {fileID: 528911373250530336, guid: db4e50588e319eb4fba43a8798bf3f08, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 528911373250530336, guid: db4e50588e319eb4fba43a8798bf3f08, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2407489
+      objectReference: {fileID: 0}
+    - target: {fileID: 528911373250530336, guid: db4e50588e319eb4fba43a8798bf3f08, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2407489
+      objectReference: {fileID: 0}
+    - target: {fileID: 528911373250530336, guid: db4e50588e319eb4fba43a8798bf3f08, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2407489
       objectReference: {fileID: 0}
     - target: {fileID: 528911373250530336, guid: db4e50588e319eb4fba43a8798bf3f08, type: 3}
       propertyPath: m_LocalPosition.x
@@ -112,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 528911373250530336, guid: db4e50588e319eb4fba43a8798bf3f08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -84.771
       objectReference: {fileID: 0}
     - target: {fileID: 528911373250530336, guid: db4e50588e319eb4fba43a8798bf3f08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
