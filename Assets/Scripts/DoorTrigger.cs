@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
-    public string tagAllowed = "Player";
+    public List<string> tagsAllowed = new List<string>(new string[] { "Player", "Actor"});
     public bool locked = false;
     protected bool open = false;
 }

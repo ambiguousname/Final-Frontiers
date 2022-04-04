@@ -13,7 +13,7 @@ public class MembraneDoorTrigger : DoorTrigger
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!locked && other.tag == tagAllowed) {
+        if (!locked && tagsAllowed.Contains(other.tag)) {
             coll.enabled = false;
             transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
         }

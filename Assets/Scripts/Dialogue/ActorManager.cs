@@ -6,7 +6,14 @@ using Yarn.Unity;
 
 public class ActorManager : MonoBehaviour
 {
+
     private NavMeshAgent agent;
+
+    private GameObject activeShip;
+
+    private GameObject meshShip;
+
+    private GameObject duplicateAgent;
 
     private GameObject dialogue;
 
@@ -54,11 +61,37 @@ public class ActorManager : MonoBehaviour
         agent.SetDestination(target.transform.position);
     }
 
+    [YarnCommand("startWalkOnShip")]
+    private void StartWalkOnShip(GameObject currShip, GameObject navMeshShip) {
+        activeShip = currShip;
+        meshShip = navMeshShip;
+        duplicateAgent = new GameObject();
+        Vector3 offset = activeShip.transform.position - this.transform.position;
+        duplicateAgent.transform.position = meshShip.transform.position + offset;
+        agent = duplicateAgent.AddComponent<NavMeshAgent>();
+    }
+
+    private void WalkOnShipUpdate() {
+        Vector3 offset = meshShip.transform.position - activeShip.transform.position;
+        this.transform.position = duplicateAgent.transform.position + offset;
+    }
+
+    [YarnCommand("endWalkOnShip")]
+    private void EndWalkOnShip() {
+        activeShip = null;
+        meshShip = null;
+        Destroy(duplicateAgent);
+        agent = GetComponent<NavMeshAgent>();
+    }
+
 
 
     // Update is called once per frame
     void Update()
     {
+        if (duplicateAgent != null) {
+            WalkOnShipUpdate();
+        }
         if (dialogue.activeInHierarchy)
         {
             Vector3 direction = this.transform.position - player.transform.position;

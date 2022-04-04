@@ -7,7 +7,7 @@ public class SlidingDoorOpenTrigger : DoorTrigger
     public GameObject connectedDoor;
     private void OnTriggerEnter(Collider other)
     {
-        if (!locked && other.tag == tagAllowed) {
+        if (!locked && tagsAllowed.Contains(other.tag)) {
             open = true;
             connectedDoor.GetComponent<Animation>().Play("DoorOpen");
         }
