@@ -3,7 +3,7 @@ tags:
 ---
 Initiate O'kurr: How was the ceremony, Captain? #line:0fb0b27 
 
--> You: Just show me to my ship. #line:0ed89a6 
+-> You: Just show me to my ship. #line:0ed89a6
     <<wait 5>>
     <<jump WT_Something_Wrong>>
 -> You: Alright, I suppose. #line:03c3569 

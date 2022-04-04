@@ -1,6 +1,8 @@
 ﻿title: ShipBoarding
 tags:
 ---
+<<set $shipName to "The Ship">>
+<<set $name to "Unknown">>
 Initiate O'kurr: Here we are. Whaddya think? #line:0f56d33 
 
 -> You: What are the specifications? #line:058046c 
@@ -12,6 +14,41 @@ Initiate O'kurr: Here we are. Whaddya think? #line:0f56d33
 -> You: It's ugly. #line:03be443 
     Initiate O'kurr: I think I can see that. #line:0bef9b3 
 
+<<jump SB_Naming>>
+
+===
+title: SB_Naming
+---
+-> You: Does it have a name? #line:0bfd2ab 
+    Initiate O'kurr: No, not yet. I think the Union has some list it iterates through, but I'm sure they wouldn't mind if you named it. #line:096f827 
+    <<showInput "Name the SS..." "shipName" "SB_ShipName">>
+-> You: Do I have a name? #line:0cf3163 
+    Initiate O'kurr: I think you do. I have it on file, Captain... #line:09635a4 
+    <<showInput "Name Yourself, Captain..." "name" "SB_Name">>
+-> You: (Say Nothing) #line:068b2f5 
+    <<jump SB_End>>
+===
+title: SB_ShipName
+---
+Initiate O'kurr: Ah, the SS {$shipName}. I kinda like it. #line:015266d 
+<<jump SB_End>>
+===
+title: SB_Name
+---
+Initiate O'kurr: Captain {$name}. Nice to meet you. #line:09a41eb 
+<<if contains($name, "Captain")>>
+    Initiate O'kurr: Wait... Captain {$name}? That's a bit repetitive, isn't it? #line:0d66879 
+    -> You: I made a terrible mistake. #line:0c19012 
+        Initiate O'kurr: Oh, that sucks. Shame you can't do anything about it. #line:07b00f6 
+    -> You: My parents were very specific. #line:0840088 
+        Initiate O'kurr: Makes sense. #line:0b1743b 
+    -> You: I changed it, deliberately. To reflect my promotion. #line:007f2ed 
+        Initiate O'kurr: Oh... kay. #line:0bc71dd 
+<<endif>>
+<<jump SB_End>>
+===
+title: SB_End
+---
 Initiate O'kurr: And... Ambassador G'vorik is already aboard, and the system... has just processed your promotion. #line:0073ca4 
 Initiate O'kurr: Board when ready. Just through that airlock. #line:082b8f9 
 ===

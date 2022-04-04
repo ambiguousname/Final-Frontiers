@@ -81,6 +81,7 @@ public class DialogueCreator : DialogueViewBase
             if (canChoose && numChoices >= number)
             {
                 canChoose = false;
+                activeDialogue.SetActive(false);
                 activeChoice(number - 1);
             }
             else if (number == 1)
@@ -130,6 +131,7 @@ public class DialogueCreator : DialogueViewBase
             activeText = activeDialogue.FindChildWithName("Text").GetComponent<Text>();
             continueText = activeDialogue.FindChildWithName("Continue");
         }
+        Debug.Log("LINE RUN" + activeDialogue.activeInHierarchy);
         activeDialogue.SetActive(true);
         continueText.SetActive(false);
         activeName.text = name;

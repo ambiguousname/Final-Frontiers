@@ -18,7 +18,7 @@ public class InputController : MonoBehaviour
     }
 
     public void CreateDialogue(string titleText, Action<string> callback) {
-        gameObject.SetActive(true);
+        transform.GetChild(0).gameObject.SetActive(true);
         title.text = titleText;
         activeCallback = callback;
     }
@@ -27,7 +27,7 @@ public class InputController : MonoBehaviour
     public void Submit(string text) {
         if (input.text.Length > 0)
         {
-            gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(false);
             activeCallback(text);
         }
     }
