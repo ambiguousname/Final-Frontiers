@@ -228,6 +228,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5889603947228658715}
     m_Modifications:
+    - target: {fileID: 2403312907822031665, guid: 9d896a2abc8e9e04e9eed81aa308e79f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2403312908426476149, guid: 9d896a2abc8e9e04e9eed81aa308e79f, type: 3}
       propertyPath: m_Name
       value: TextInput
@@ -319,6 +323,22 @@ PrefabInstance:
     - target: {fileID: 2403312908507333549, guid: 9d896a2abc8e9e04e9eed81aa308e79f, type: 3}
       propertyPath: m_Name
       value: InputController
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403312908863662288, guid: 9d896a2abc8e9e04e9eed81aa308e79f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1449.5483
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403312908863662288, guid: 9d896a2abc8e9e04e9eed81aa308e79f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 265.3902
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403312908863662288, guid: 9d896a2abc8e9e04e9eed81aa308e79f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.6743
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403312908863662288, guid: 9d896a2abc8e9e04e9eed81aa308e79f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 57.45439
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d896a2abc8e9e04e9eed81aa308e79f, type: 3}

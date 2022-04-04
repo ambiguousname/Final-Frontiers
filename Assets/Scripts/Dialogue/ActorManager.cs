@@ -25,11 +25,13 @@ public class ActorManager : MonoBehaviour
 
     private GameObject escort;
     private float escortDist;
-
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Start()
+    {
         dialogue = gameObject.FindChildWithName("Dialogue");
         player = GameObject.FindGameObjectWithTag("Player");
         Vector3 offset = dialogue.transform.position - this.transform.position;
