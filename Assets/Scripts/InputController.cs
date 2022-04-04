@@ -18,6 +18,9 @@ public class InputController : MonoBehaviour
     }
 
     public void CreateDialogue(string titleText, Action<string> callback) {
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         transform.GetChild(0).gameObject.SetActive(true);
         title.text = titleText;
         activeCallback = callback;
@@ -25,6 +28,9 @@ public class InputController : MonoBehaviour
 
     // Start is called before the first frame update
     public void Submit(string text) {
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         if (input.text.Length > 0)
         {
             transform.GetChild(0).gameObject.SetActive(false);
