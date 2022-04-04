@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1854287428037887644}
   - component: {fileID: 1854287428037887635}
   - component: {fileID: 4449679154561742056}
+  - component: {fileID: 1754602729748022150}
   m_Layer: 0
   m_Name: Actor
   m_TagString: Actor
@@ -67,6 +68,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1754602729748022150
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854287428037887645}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8852298, y: 3.4129937, z: 1.8437669}
+  m_Center: {x: -0.0093243895, y: 1.6486248, z: -0.026883738}
 --- !u!1001 &1854287426368206587
 PrefabInstance:
   m_ObjectHideFlags: 0

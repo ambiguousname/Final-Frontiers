@@ -6,7 +6,6 @@ using Yarn.Unity;
 
 public class ActorManager : MonoBehaviour
 {
-
     private NavMeshAgent agent;
 
     private GameObject activeShip;
@@ -25,6 +24,7 @@ public class ActorManager : MonoBehaviour
 
     private GameObject escort;
     private float escortDist;
+
     void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -69,7 +69,6 @@ public class ActorManager : MonoBehaviour
         agent.enabled = false;
         duplicateAgent = new GameObject();
         Vector3 offset = this.transform.position - activeShip.transform.position;
-        Debug.Log(this.transform.name);
         Vector3 newPos = meshShip.transform.position + offset;
         duplicateAgent.transform.position = Helper.RotateAroundPivot(newPos, meshShip.transform.position, activeShip.transform.eulerAngles);
         NavMeshAgent newAgent = duplicateAgent.AddComponent<NavMeshAgent>();
@@ -114,6 +113,13 @@ public class ActorManager : MonoBehaviour
 
             float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             dialogue.transform.rotation = Quaternion.Euler(0, angle, 0);
+
+            Vector3 sizeVector = (player.transform.position - this.transform.position)/3;
+            float size = sizeVector.magnitude;
+            if (size > 4) {
+                size = 4;
+            }
+            dialogue.transform.localScale = new Vector3(size, size, 1);
         }
 
         if (escort != null) {
