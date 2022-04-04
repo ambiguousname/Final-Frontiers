@@ -2,7 +2,7 @@
 tags:
 ---
 <<set $shipName to "The Ship">>
-<<set $name to "Unknown">>
+<<set $name to "Captain">>
 Initiate O'kurr: Here we are. Whaddya think? #line:0f56d33 
 
 -> You: What are the specifications? #line:058046c 
@@ -45,6 +45,7 @@ Initiate O'kurr: Captain {$name}. Nice to meet you. #line:09a41eb
     -> You: I changed it, deliberately. To reflect my promotion. #line:007f2ed 
         Initiate O'kurr: Oh... kay. #line:0bc71dd 
 <<endif>>
+<<set $name to "Captain " + $name>>
 <<jump SB_End>>
 ===
 title: SB_End

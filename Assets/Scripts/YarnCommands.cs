@@ -22,4 +22,9 @@ public class YarnCommands : MonoBehaviour
     public static bool Contains(string textToSearch, string textToMatch) {
         return textToSearch.Contains(textToMatch);
     }
+
+    [YarnFunction("length")]
+    public static int Length(string text) {
+        return text.Length;
+    }
 }

@@ -2,6 +2,207 @@
 tags:
 ---
 <<startWalkOnShip "Officer Roquell" ShipPrefab ShipMeshReference>>
-Officer Roquell: Captain.
-<<moveTo "Officer Roquell" Bridge>>
+<<startWalkOnShip "Commander Corwin" ShipPrefab ShipMeshReference>>
+<<startWalkOnShip "Commander Rikt" ShipPrefab ShipMeshReference>>
+<<startWalkOnShip "Officer Dabo" ShipPrefab ShipMeshReference>>
+<<set $crewTrust to 0>>
+Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
+
+-> You: A pleasure to meet you.
+    Officer Roquell: Hopefully. Let's talk when there's time.
+-> You: Let's get underway as soon as possible.
+
+Officer Roquell: Allow me to escort you to the bridge.
+<<escort "Officer Roquell" Bridge Player 10>>
+===
+title: OB_OnBridge
+---
+Officer Roquell: Captain, may I introduce...
+
+Commander Corwin: Helm and Weapons Commander Wair Corwin. Nice to meet you, {$name}.
+
+Officer Dabo: Science Officer Regor Dabo, ready and waiting, Captain.
+
+Commander Rikt: Engineering Jesh Rikt. Just itching to put stress on the Subspace Drive.
+
+Officer Roquell: And Union Command couldn't afford to supply a doctor in time. Don't get injured. Or killed.
+
+-> You: Nice to meet you, all.
+    Officer Dabo: And you too, Captain.
+    Officer Roquell: We don't have time for pleasantries, Captain.
+    <<jump OB_Plot>>
+-> You: Status report.
+    Commander Corwin: We have no shields or weaponry, Captain.
+    Commander Corwin: It seems like our computer is suffering from a case of contained rot.
+    Commander Corwin: Manufacturing must have inserted some kind of faulty chip, and while it'd normally be replaced...
+    -> You: Is that all?
+        Commander Rikt: Seems to be. Just hope there aren't any sudden surprises from the manufacturing process.
+        Commander Corwin: Well Jesh, I was reading recently about an outbreak of spores on another Orion Class ship. Seems like the shipyard...
+        Commander Rikt: No way they just get away with that fresh off the assembly line.
+        Commander Corwin: It's true. These Orion Class ships are cursed during assembly, I swear.
+        Officer Roquell: Commander Corwin! Focus. On your job.
+        Commander Corwin: Sorry, First Officer.
+        <<jump OB_Plot>>
+    -> You: Will you be okay just manning the helm?
+        Commander Rikt: Yes. I'll just be silently sobbing here over the tragic loss of our outward genitalia.
+        Commander Corwin: What?
+        Commander Rikt: Wair, I'm talking about the inoperable sex organs-
+        Officer Dabo: Ewwww! That's disgusting.
+        Officer Roquell: Commander, we're going to have to have a talk about appropriate workplace discussions. Focus, please.
+        Commander Rikt: Oh no! I'm really sorry. Uhhh...
+        Officer Roquell: Just don't do it again, and I won't have to report you.
+        Commander Rikt: Yes, First Officer.
+        <<jump OB_Plot>>
+-> You: Before we get underway, if I could make a short speech...
+    <<jump OB_Speech>>
+
+===
+title: OB_Speech
+---
+-> You: I know what you must be thinking...
+    -> You: And yes, this mission is dangerous.
+        -> You: And yes, the odds may totally be against us.
+        -> You: And yes, we have no idea what awaits us in the Aratel system.
+        <<jump OB_Speech_And_Yes>>
+    -> You: And no, we don't stand a chance.
+        -> You: But I don't give a damn.
+            -> You: We'll pull through anyways. Because that's what we do.
+            -> You: We'll go out in a blaze of glory.
+            <<set $crewTrust to 5>>
+        -> You: And I am determined to kill every last Aratel. No matter the cost.
+            -> You: Ohhh, yeah.
+            -> You: Who's with me?!
+            <<set $crewTrust to -5>>
+            Officer Dabo: ... Great speech Captain, let's just... there's...
+            Commander Corwin: I was paying attention! Loved... it!
+            Officer Roquell: Pay no mind to the speech, we need to hurry.
+-> You: We have a grave responsibility here today...
+    -> You: We have to be reminded of our duties to the Union.
+        -> You: Our duties as Union members. As Union officers. As a Union ship.
+            -> You: And we are here to make the galaxy a better place. A safer place.
+            -> You: And we will see the day through, because that's what the Union does.
+        -> You: We go to the Aratel system today...
+            -> You: To transport some random individual. I haven't read the file yet.
+            -> You: To fight for peace.
+-> You: Let me describe a sandwich I had for lunch, with a few choice ingredients...
+    <<set $sandwich to "">>
+    Officer Roquell: Captain?
+    <<jump OB_Speech_And_Yes_Faith>>
+
+<<jump OB_Plot>>
+===
+title: OB_Speech_And_Yes
+---
+-> You: And yes, I may have forgotten where I was going with this...
+    -> You: But together, we'll remember what I was talking about!
+    -> You: That's it. That's the speech.
+    <<jump OB_Plot>>
+-> You: But I have faith!
+    -> You: Faith in me.
+    -> You: Faith in this ship.
+    -> You: Faith in all of us.
+    <<jump OB_Speech_And_Yes_Faith>>
+===
+title: OB_Speech_And_Yes_Faith
+---
+-> You: And that faith will see us through.
+-> You: That's a George Michael song. If I could sing it for us...
+    Officer Roquell: That's... really not necessary Captain! We'll have time later.
+<<jump OB_Plot>>
+===
+title: OB_Speech_Sandwich
+---
+-> You: BREAD!
+    <<set $sandwich to $sandwich + "1">>
+-> You: CHEESE!
+    <<set $sandwich to $sandwich + "2">>
+-> You: LETTUCE!
+    <<set $sandwich to $sandwich + "3">>
+-> You: UDON!
+    <<set $sandwich to $sandwich + "4">>
+-> You: OREGANO!
+    <<set $sandwich to $sandwich + "5">>
+-> You: THYME!
+    <<set $sandwich to $sandwich + "6">>
+-> You: COLESLAW!
+    <<set $sandwich to $sandwich + "7">>
+-> You: BACON!
+    <<set $sandwich to $sandwich + "8">>
+<<if $sandwich == "1466">>
+    Computer: State your name to confirm.
+    -> You: {$name}! <<if $name != "Captain">>
+        Computer: Backdoor Autodestruct enabled.
+        Computer: 5.
+        -> You: Cancel!
+            <<set $crewTrust to -10>>
+            <<wait 5>>
+            <<jump OB_Plot>>
+        -> You: (Say Nothing)
+        Commander Rikt: Is... someone going to do something?
+        Computer: 4.
+        Officer Roquell: Captain.
+        -> You: Cancel!
+            <<set $crewTrust to -20>>
+            <<wait 7>>
+            <<jump OB_Plot>>
+        -> You: (Say Nothing)
+        Computer: 3.
+        Officer Roquell: Captain!
+        Computer: 2.
+        -> You: Cancel!
+            <<set $crewTrust to -40>>
+            <<wait 10>>
+            <<jump OB_Plot>>
+        -> You: (Say Nothing)
+        Computer: 1.
+        Officer Roquell: CAPTAIN!
+        Computer: Okay, I actually didn't program this part of the game yet.
+        Computer: But pretend that you're super dead.
+    -> You: Huh. I don't know it. <<if $name == "Captain">>
+    -> You: Cancel.
+    Computer: Canceled.
+    <<set $crewTrust to -10>>
+    <<jump OB_Plot>>
+<<else if length($sandwich) == 4>>
+    <<set $crewTrust to -10>>
+    Officer Roquell: Ok, Captain, are we... good to go?
+    -> You: No. I'm not done yet.
+        <<set $sandwich to "">>
+        <<jump OB_Speech_Sandwich>> 
+    -> You: Yeah, sure.
+        <<jump OB_Plot>>
+<<else>>
+    <<jump OB_Speech_Sandwich>>
+<<endif>>
+===
+title: OB_Plot
+---
+-> You: Plot a course for the Aratel system.
+Commander Corwin: Yes Captain!
+<<wait 2>>
+Commander Corwin: Something's supposed to happen. I think this part of the game hasn't been programmed yet.
+===
+title: OB_Orders
+---
+The Aratel Situation - Your Orders
+
+In terms of priority, you are to:
+
+1. Escort Ambassador G'Vorik to the Aratel System
+
+2. Do whatever you can to make sure talks between the Aratel and the Augurs go as peacefully and as smoothly as possible.
+
+A brief report and analysis of the Aratel:
+
+The Aratel were first discovered on 10845.9.0, having just developed iron tools.
+They seemed to progress normally until about a hundred years ago, where Union probes discovered they had fully mastered space flight and conventional weaponry. 
+Reasons for technological leap are unknown. 
+
+For the past few hundred years, the Aratel have been ruled by a social strata known as "Augurs".
+Recently, the Aratel have been claiming mistreatment by Augurs. Both parties have requested the Union specifically as a neutral party to mediate the dispute.
+
+The Aratel are somewhat strange as space-farers go, especially with their rapid advancement.
+The Aratel generally do not leave their space, and do not share details on the inner-workings of their society.
+We only have snippets of information about how the Aratel currently function, but the prevailing theory is that the Aratel have managed to access use of technology well past their developmental level.
+This has naturally been very harmful to their expected development.
 ===
