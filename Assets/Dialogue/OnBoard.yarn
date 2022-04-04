@@ -23,7 +23,7 @@ Commander Corwin: Helm and Weapons Commander Wair Corwin. Nice to meet you, {$na
 
 Officer Dabo: Science Officer Regor Dabo, ready and waiting, Captain.
 
-Commander Rikt: Engineering Jesh Rikt. Just itching to put stress on the Subspace Drive.
+Commander Rikt: Engineering Jesh Rikt. Reporting from the engines, and just itching to put stress on the Subspace Drive.
 
 Officer Roquell: And Union Command couldn't afford to supply a doctor in time. Don't get injured. Or killed.
 
@@ -41,16 +41,16 @@ Officer Roquell: And Union Command couldn't afford to supply a doctor in time. D
         Commander Rikt: No way they just get away with that fresh off the assembly line.
         Commander Corwin: It's true. These Orion Class ships are cursed during assembly, I swear.
         Officer Roquell: Commander Corwin! Focus. On your job.
-        Commander Corwin: Sorry, First Officer.
+        Commander Corwin: Yes, First Officer.
         <<jump OB_Plot>>
     -> You: Will you be okay just manning the helm?
         Commander Rikt: Yes. I'll just be silently sobbing here over the tragic loss of our outward genitalia.
         Commander Corwin: What?
         Commander Rikt: Wair, I'm talking about the inoperable sex organs-
         Officer Dabo: Ewwww! That's disgusting.
-        Officer Roquell: Commander, we're going to have to have a talk about appropriate workplace discussions. Focus, please.
+        Officer Roquell: Commander, some species aren't comfortable with discussing reproductive processes. Focus, please.
         Commander Rikt: Oh no! I'm really sorry. Uhhh...
-        Officer Roquell: Just don't do it again, and I won't have to report you.
+        Officer Roquell: Just don't do it again.
         Commander Rikt: Yes, First Officer.
         <<jump OB_Plot>>
 -> You: Before we get underway, if I could make a short speech...
@@ -74,7 +74,7 @@ title: OB_Speech
             -> You: Who's with me?!
             <<set $crewTrust to -5>>
             Officer Dabo: ... Great speech Captain, let's just... there's...
-            Commander Corwin: I was paying attention! Loved... it!
+            Commander Corwin: ...I was paying attention! Loved the... the bit about... yes!
             Officer Roquell: Pay no mind to the speech, we need to hurry.
 -> You: We have a grave responsibility here today...
     -> You: We have to be reminded of our duties to the Union.
@@ -164,7 +164,7 @@ title: OB_Speech_Sandwich
     -> You: Cancel.
     Computer: Canceled.
     <<jump OB_Plot>>
-<<else if length($sandwich) == 4>>
+<<elseif length($sandwich) == 4>>
     Officer Roquell: Ok, Captain, are we... good to go?
     -> You: No. I'm not done yet.
         <<set $sandwich to "">>
