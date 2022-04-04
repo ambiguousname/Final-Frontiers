@@ -11,6 +11,7 @@ public class SlidingDoorOpenTrigger : MonoBehaviour
     {
         if (other.tag == tagAllowed) {
             open = true;
+            connectedDoor.GetComponent<Animation>().Play("DoorOpen");
         }
     }
 
@@ -18,6 +19,7 @@ public class SlidingDoorOpenTrigger : MonoBehaviour
     {
         if (open) {
             open = false;
+            connectedDoor.GetComponent<Animation>().Play("DoorClose");
         }
     }
 }

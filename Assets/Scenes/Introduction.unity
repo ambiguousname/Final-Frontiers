@@ -9618,8 +9618,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3820627, y: 1, z: 1}
+  m_Center: {x: 0.19102982, y: 0, z: 0.0000000025135813}
 --- !u!114 &528839112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9632,6 +9632,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1755a153543472943ad7c27fe1c7a3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagAllowed: Player
+  connectedDoor: {fileID: 2009669452}
 --- !u!1 &544203844
 GameObject:
   m_ObjectHideFlags: 0
@@ -70357,6 +70359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2009669453}
+  - component: {fileID: 2009669454}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -70381,6 +70384,23 @@ Transform:
   m_Father: {fileID: 599515963}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -10.927, z: 0}
+--- !u!111 &2009669454
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009669452}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a5c1efb67cddfe543949f466805689d3, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a5c1efb67cddfe543949f466805689d3, type: 2}
+  - {fileID: 7400000, guid: 9b20b37e4676c174599a65267b024657, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!43 &2017191462
 Mesh:
   m_ObjectHideFlags: 0
