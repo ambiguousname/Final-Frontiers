@@ -17,6 +17,7 @@ Officer Roquell: Allow me to escort you to the bridge.
 ===
 title: OB_OnBridge
 ---
+<<moveTo "Officer Roquell" XOStation>>
 Officer Roquell: Captain, may I introduce...
 
 Commander Corwin: Helm and Weapons Commander Wair Corwin. Nice to meet you, {$name}.

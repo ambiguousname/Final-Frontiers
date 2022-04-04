@@ -123,6 +123,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 3838ff5597ff08e408a3e3b6e2fae607, type: 2}
+--- !u!1 &13555272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 13555273}
+  - component: {fileID: 13555276}
+  - component: {fileID: 13555275}
+  - component: {fileID: 13555274}
+  m_Layer: 0
+  m_Name: OnBridge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &13555273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13555272}
+  m_LocalRotation: {x: -0, y: -0.70299137, z: -0, w: 0.7111984}
+  m_LocalPosition: {x: 235.883, y: -1.6069999, z: 43.772}
+  m_LocalScale: {x: 10.508929, y: 2.2736526, z: 9.233795}
+  m_Children: []
+  m_Father: {fileID: 1735188949}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -89.335, z: 0}
+--- !u!114 &13555274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13555272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159dda4f395bc274894dc97eaa1d9482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canRepeat: 0
+  tagToTrigger: Player
+  dialogueToStart: OB_OnBridge
+--- !u!65 &13555275
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13555272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &13555276
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13555272}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &19991511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61526,6 +61595,7 @@ Transform:
   - {fileID: 284771376}
   - {fileID: 511074516}
   - {fileID: 528839110}
+  - {fileID: 13555273}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
