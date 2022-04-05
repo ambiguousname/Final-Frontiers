@@ -33,4 +33,14 @@ public class YarnCommands : MonoBehaviour
     public static void LoadScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
     }
+
+    [YarnCommand("startAnim")]
+    public static void StartAnim(GameObject gameObject, string animName) {
+        gameObject.GetComponent<Animator>().Play(animName);
+    }
+
+    [YarnCommand("parent")]
+    public static void Parent(GameObject child, GameObject parent) {
+        child.transform.parent = parent.transform;
+    }
 }

@@ -81,7 +81,8 @@ public class ActorManager : MonoBehaviour
     private void WalkOnShipUpdate() {
         Vector3 playerOffset = duplicateAgent.transform.position - meshShip.transform.position;
         Vector3 newPos = activeShip.transform.position + playerOffset;
-        this.transform.position = newPos;
+        this.transform.position = Helper.RotateAroundPivot(newPos, activeShip.transform.position, activeShip.transform.eulerAngles);
+        this.transform.rotation = Quaternion.Euler(activeShip.transform.eulerAngles);
     }
 
     [YarnCommand("endWalkOnShip")]

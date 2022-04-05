@@ -179,8 +179,9 @@ title: OB_Plot
 ---
 -> You: Plot a course for the Aratel system.
 Commander Corwin: Yes Captain!
-<<wait 2>>
-Commander Corwin: Something's supposed to happen. I think this part of the game hasn't been programmed yet.
+<<lockDoor AirlockDoor true>>
+<<parent Player ShipPrefab>>
+<<startAnim ShipPrefab LeaveDock>>
 ===
 title: OB_Orders
 ---
