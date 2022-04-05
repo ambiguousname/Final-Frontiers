@@ -1,10 +1,8 @@
 ﻿title: OnBoard
 tags:
 ---
-<<startWalkOnShip "Officer Roquell" ShipPrefab ShipMeshReference>>
-<<startWalkOnShip "Commander Corwin" ShipPrefab ShipMeshReference>>
-<<startWalkOnShip "Officer Dabo" ShipPrefab ShipMeshReference>>
 <<set $crewTrust to 0>>
+
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
 
 -> You: A pleasure to meet you.
@@ -180,7 +178,7 @@ title: OB_Plot
 -> You: Plot a course for the Aratel system.
 Commander Corwin: Yes Captain!
 <<lockDoor AirlockDoor true>>
-<<parent Player ShipPrefab>>
+<<stickTo Player ShipPrefab>>
 <<startAnim ShipPrefab LeaveDock>>
 ===
 title: OB_Orders

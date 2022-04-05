@@ -62,46 +62,10 @@ public class ActorManager : MonoBehaviour
         this.agent.SetDestination(target.transform.position);
     }
 
-    [YarnCommand("startWalkOnShip")]
-    private void StartWalkOnShip(GameObject currShip, GameObject navMeshShip) {
-        activeShip = currShip;
-        meshShip = navMeshShip;
-        agent.enabled = false;
-        duplicateAgent = new GameObject();
-        Vector3 offset = this.transform.position - activeShip.transform.position;
-        Vector3 newPos = meshShip.transform.position + offset;
-        duplicateAgent.transform.position = Helper.RotateAroundPivot(newPos, meshShip.transform.position, activeShip.transform.eulerAngles);
-        NavMeshAgent newAgent = duplicateAgent.AddComponent<NavMeshAgent>();
-        newAgent.height = agent.height;
-        newAgent.radius = agent.radius;
-        newAgent.baseOffset = agent.baseOffset;
-        agent = newAgent;
-    }
-
-    private void WalkOnShipUpdate() {
-        Vector3 playerOffset = duplicateAgent.transform.position - meshShip.transform.position;
-        Vector3 newPos = activeShip.transform.position + playerOffset;
-        this.transform.position = Helper.RotateAroundPivot(newPos, activeShip.transform.position, activeShip.transform.eulerAngles);
-        this.transform.rotation = Quaternion.Euler(activeShip.transform.eulerAngles);
-    }
-
-    [YarnCommand("endWalkOnShip")]
-    private void EndWalkOnShip() {
-        activeShip = null;
-        meshShip = null;
-        Destroy(duplicateAgent);
-        agent = GetComponent<NavMeshAgent>();
-        agent.enabled = true;
-    }
-
-
 
     // Update is called once per frame
     void Update()
     {
-        if (duplicateAgent != null) {
-            WalkOnShipUpdate();
-        }
         if (dialogue.activeInHierarchy)
         {
             Vector3 direction = this.transform.position - player.transform.position;

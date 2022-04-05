@@ -39,8 +39,8 @@ public class YarnCommands : MonoBehaviour
         gameObject.GetComponent<Animator>().Play(animName);
     }
 
-    [YarnCommand("parent")]
-    public static void Parent(GameObject child, GameObject parent) {
-        child.transform.parent = parent.transform;
+    [YarnCommand("stickTo")]
+    public static void StickTo(GameObject toStick, GameObject target) {
+        toStick.GetComponent<StickCharacter>().SetTarget(target);
     }
 }
