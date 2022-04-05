@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
 public class YarnCommands : MonoBehaviour
@@ -26,5 +27,10 @@ public class YarnCommands : MonoBehaviour
     [YarnFunction("length")]
     public static int Length(string text) {
         return text.Length;
+    }
+
+    [YarnCommand("loadScene")]
+    public static void LoadScene(string sceneName) {
+        SceneManager.LoadScene(sceneName);
     }
 }

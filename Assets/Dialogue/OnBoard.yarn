@@ -3,7 +3,6 @@ tags:
 ---
 <<startWalkOnShip "Officer Roquell" ShipPrefab ShipMeshReference>>
 <<startWalkOnShip "Commander Corwin" ShipPrefab ShipMeshReference>>
-<<startWalkOnShip "Commander Rikt" ShipPrefab ShipMeshReference>>
 <<startWalkOnShip "Officer Dabo" ShipPrefab ShipMeshReference>>
 <<set $crewTrust to 0>>
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
@@ -22,7 +21,7 @@ Officer Roquell: Captain, may I introduce...
 
 Commander Corwin: Helm and Weapons Commander Wair Corwin. Nice to meet you, {$name}.
 
-Officer Dabo: Science Officer Regor Dabo, ready and waiting, Captain.
+Officer Dabo: Science and Communications Officer Rega Dabo, ready and waiting, Captain.
 
 Commander Rikt: Engineering Jesh Rikt. Reporting from the engines, and just itching to put stress on the Subspace Drive.
 
@@ -88,7 +87,7 @@ title: OB_Speech
 -> You: Let me describe a sandwich I had for lunch, with a few choice ingredients...
     <<set $sandwich to "">>
     Officer Roquell: Captain?
-    <<jump OB_Speech_And_Yes_Faith>>
+    <<jump OB_Speech_Sandwich>>
 
 <<jump OB_Plot>>
 ===
@@ -131,6 +130,7 @@ title: OB_Speech_Sandwich
     <<set $sandwich to $sandwich + "8">>
 
 <<set $crewTrust to $crewTrust - 2>>
+Officer Roquell: ...
 <<if $sandwich == "1466">>
     Computer: State your name to confirm.
     -> You: {$name}! <<if $name != "Captain">>
@@ -158,9 +158,8 @@ title: OB_Speech_Sandwich
         -> You: (Say Nothing)
         Computer: 1.
         Officer Roquell: CAPTAIN!
-        Computer: Okay, I actually didn't program this part of the game yet.
-        Computer: But pretend that you're super dead.
-        <<stop>>
+        <<wait 2>>
+        <<loadScene Dead>>
     -> You: Huh. I don't know it. <<if $name == "Captain">>
     -> You: Cancel.
     Computer: Canceled.

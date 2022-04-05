@@ -27,7 +27,7 @@ public class ActorManager : MonoBehaviour
 
     void OnEnable()
     {
-        agent = GetComponent<NavMeshAgent>();
+        TryGetComponent<NavMeshAgent>(out agent);
     }
 
     private void Start()
