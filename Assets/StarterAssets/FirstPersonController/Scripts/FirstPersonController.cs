@@ -126,7 +126,7 @@ namespace StarterAssets
 				CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
 
 				// rotate the player left and right
-				GetComponent<ShipSticker>().RotateUpdate(Vector3.up * _rotationVelocity);
+				//GetComponent<ShipSticker>().RotateUpdate(Vector3.up * _rotationVelocity);
 				//transform.Rotate(Vector3.up * _rotationVelocity);
 			}
 		}

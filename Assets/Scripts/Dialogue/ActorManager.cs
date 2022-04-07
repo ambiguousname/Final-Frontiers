@@ -116,7 +116,7 @@ public class ActorManager : MonoBehaviour
             dialogue.transform.position = new Vector3(newPos.x, dialogueY, newPos.z);
 
             float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-            dialogue.transform.rotation = Quaternion.Euler(0, angle, 0);
+            dialogue.transform.localRotation = Quaternion.Euler(0, angle, 0);
 
             Vector3 sizeVector = (player.transform.position - this.transform.position)/3;
             float size = sizeVector.magnitude;
