@@ -4,6 +4,9 @@ tags:
 <<startWalkOnShip "Officer Roquell" ShipPrefab ShipMeshReference>>
 <<startWalkOnShip "Commander Corwin" ShipPrefab ShipMeshReference>>
 <<startWalkOnShip "Officer Dabo" ShipPrefab ShipMeshReference>>
+
+<<startAnim ShipPrefab LeaveDock>>
+
 <<set $crewTrust to 0>>
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
 
@@ -181,7 +184,6 @@ title: OB_Plot
 Commander Corwin: Yes Captain!
 <<lockDoor AirlockDoor true>>
 <<parent Player ShipPrefab>>
-<<startAnim ShipPrefab LeaveDock>>
 ===
 title: OB_Orders
 ---

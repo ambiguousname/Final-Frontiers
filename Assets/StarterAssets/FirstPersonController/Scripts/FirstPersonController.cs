@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 
 namespace StarterAssets
 {
-	[RequireComponent(typeof(CharacterController))]
+	//[RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 	[RequireComponent(typeof(PlayerInput))]
 #endif
@@ -84,7 +84,7 @@ namespace StarterAssets
 
 		private void Start()
 		{
-			_controller = GetComponent<CharacterController>();
+			//_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 
 			// reset our timeouts on start
@@ -94,9 +94,9 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			JumpAndGravity();
-			GroundedCheck();
-			Move();
+			//JumpAndGravity();
+			//GroundedCheck();
+			//Move();
 		}
 
 		private void LateUpdate()

@@ -99,9 +99,6 @@ public class ActorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (duplicateAgent != null) {
-            WalkOnShipUpdate();
-        }
         if (dialogue.activeInHierarchy)
         {
             Vector3 direction = this.transform.position - player.transform.position;
@@ -125,6 +122,15 @@ public class ActorManager : MonoBehaviour
 
         if (escort != null) {
             EscortUpdate();
+        }
+    }
+
+    private void LateUpdate()
+    {
+
+        if (duplicateAgent != null)
+        {
+            WalkOnShipUpdate();
         }
     }
 }
