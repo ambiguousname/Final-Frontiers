@@ -21,6 +21,7 @@ public class ActorManager : MonoBehaviour
     private float dialogueRadius;
 
     private float dialogueY;
+    private float thisY;
 
     private GameObject escort;
     private float escortDist;
@@ -38,6 +39,7 @@ public class ActorManager : MonoBehaviour
 
         dialogueRadius = Vector3.Magnitude(new Vector3(offset.x, 0, offset.z));
         dialogueY = dialogue.transform.position.y;
+        thisY = transform.position.y;
     }
 
     [YarnCommand("escort")]
@@ -107,6 +109,10 @@ public class ActorManager : MonoBehaviour
 
             Vector3 newPos = this.transform.position - directionXZ * dialogueRadius;
 
+            if (thisY != transform.position.y) {
+                dialogueY += transform.position.y - thisY;
+            }
+
             dialogue.transform.position = new Vector3(newPos.x, dialogueY, newPos.z);
 
             float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
@@ -123,6 +129,7 @@ public class ActorManager : MonoBehaviour
         if (escort != null) {
             EscortUpdate();
         }
+        thisY = transform.position.y;
     }
 
     private void LateUpdate()

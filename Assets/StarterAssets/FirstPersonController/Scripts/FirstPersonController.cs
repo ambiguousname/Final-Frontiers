@@ -95,7 +95,7 @@ namespace StarterAssets
 		private void Update()
 		{
 			//JumpAndGravity();
-			//GroundedCheck();
+			GroundedCheck();
 			Move();
 		}
 
@@ -126,7 +126,8 @@ namespace StarterAssets
 				CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
 
 				// rotate the player left and right
-				transform.Rotate(Vector3.up * _rotationVelocity);
+				GetComponent<ShipSticker>().RotateUpdate(Vector3.up * _rotationVelocity);
+				//transform.Rotate(Vector3.up * _rotationVelocity);
 			}
 		}
 
@@ -174,8 +175,8 @@ namespace StarterAssets
 			}
 
 			// move the player
-			GetComponent<ShipSticker>().MoveUpdate(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
-			//_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+			//GetComponent<ShipSticker>().MoveUpdate(_controller.velocity * Time.deltaTime);
 		}
 
 		private void JumpAndGravity()

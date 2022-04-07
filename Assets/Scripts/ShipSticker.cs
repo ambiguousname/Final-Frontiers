@@ -18,7 +18,11 @@ public class ShipSticker : MonoBehaviour
     }
 
     public void MoveUpdate(Vector3 move) {
-        currOffset += move;
+        currOffset += move * 10;
+    }
+
+    public void RotateUpdate(Vector3 rot) {
+        currRot += rot;
     }
 
     

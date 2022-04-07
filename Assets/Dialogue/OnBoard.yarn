@@ -6,6 +6,7 @@ tags:
 <<startWalkOnShip "Officer Dabo" ShipPrefab ShipMeshReference>>
 
 <<startAnim ShipPrefab LeaveDock>>
+<<lockDoor AirlockDoor true>>
 
 <<set $crewTrust to 0>>
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
