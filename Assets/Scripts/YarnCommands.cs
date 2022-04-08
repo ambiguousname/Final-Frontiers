@@ -43,4 +43,9 @@ public class YarnCommands : MonoBehaviour
     public static void StartBakedAnim(GameObject gameObject, string animToPlay) {
         gameObject.GetComponent<BakedAnimPlayer>().StartAnim(animToPlay);
     }
+
+    [YarnCommand("shipWarp")]
+    public static void ShipWarp(string sceneName) {
+        GameObject.FindObjectOfType<WarpTransition>().Warp(sceneName);
+    }
 }

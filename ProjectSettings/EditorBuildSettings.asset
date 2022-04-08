@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Introduction.unity
     guid: 4ef32b05082406446a5a3850bf4a32a4
   - enabled: 1
+    path: Assets/Scenes/Warp.unity
+    guid: 3ff2a8891534cb443a4ffc65467e48f7
+  - enabled: 1
     path: Assets/Scenes/Dead.unity
     guid: 33d69059d82d14949a08d7b373708a6b
   m_configObjects: {}

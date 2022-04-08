@@ -326,7 +326,7 @@ MonoBehaviour:
   tagsAllowed:
   - Player
   - Actor
-  locked: 0
+  locked: 1
 --- !u!1 &2823230948058391026
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +918,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2823230948817569647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 260.9, y: 1.96, z: 22.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2823230947752404760}

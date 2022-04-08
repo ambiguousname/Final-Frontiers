@@ -29,6 +29,6 @@ public class MembraneDoorTrigger : DoorTrigger
 
     private void Update()
     {
-        currMaterial.SetFloat("_Alpha", Mathf.Lerp(currMaterial.GetFloat("_Alpha"), targetAlpha, Time.deltaTime * 5));
+        currMaterial.SetFloat("_Alpha", Mathf.Lerp(currMaterial.GetFloat("_Alpha"), targetAlpha, Time.deltaTime));
     }
 }
