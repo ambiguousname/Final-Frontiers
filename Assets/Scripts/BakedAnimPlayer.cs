@@ -40,13 +40,16 @@ public class BakedAnimPlayer : MonoBehaviour
                 _timeToNextFrame = 0;
                 _frame += 1;
 
-                objectToAnimate.transform.position += (getNegative ? -1 : 1) * _animation.position[_frame];
-
-                objectToAnimate.transform.RotateAround(this.transform.position, Vector3.right, (getNegative ? -1 : 1) * _animation.rotation[_frame][0]);
-                objectToAnimate.transform.RotateAround(this.transform.position, Vector3.up, (getNegative ? -1 : 1) * _animation.rotation[_frame][1]);
-                objectToAnimate.transform.RotateAround(this.transform.position, Vector3.forward, (getNegative ? -1 : 1) * _animation.rotation[_frame][2]);
-                if (_frame >= _animation.frames) {
+                if (_frame >= _animation.frames)
+                {
                     _isPlaying = false;
+                }
+                else {
+                    objectToAnimate.transform.position += (getNegative ? -1 : 1) * _animation.position[_frame];
+
+                    objectToAnimate.transform.RotateAround(this.transform.position, Vector3.right, (getNegative ? -1 : 1) * _animation.rotation[_frame][0]);
+                    objectToAnimate.transform.RotateAround(this.transform.position, Vector3.up, (getNegative ? -1 : 1) * _animation.rotation[_frame][1]);
+                    objectToAnimate.transform.RotateAround(this.transform.position, Vector3.forward, (getNegative ? -1 : 1) * _animation.rotation[_frame][2]);
                 }
             }
         }
