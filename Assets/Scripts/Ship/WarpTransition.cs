@@ -42,8 +42,8 @@ public class WarpTransition : MonoBehaviour
         shipActors = GameObject.Find("ShipActors");
         player = GameObject.FindGameObjectWithTag("Player");
         warpAnimator = GameObject.FindObjectOfType<WarpAnimator>();
-        warpAnimator.SetReveal(500);
-        warpAnimator.TransitionReveal(-50);
+        warpAnimator.SetReveal(0);
+        warpAnimator.TransitionReveal(1);
         for (int i = 0; i < shipActors.transform.childCount; i++)
         {
             Transform child = shipActors.transform.GetChild(i);
