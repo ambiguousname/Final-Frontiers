@@ -5,45 +5,52 @@ using UnityEngine.SceneManagement;
 
 public class WarpTransition : MonoBehaviour
 {
-    public GameObject shipActors;
+    GameObject shipActors;
     GameObject player;
     GameObject ship;
     WarpAnimator warpAnimator;
+    Vector3 playerOffset;
+    Vector3 playerLook;
+    Dictionary<string, Vector3> actorOffsets;
     // Start is called before the first frame update
     void OnEnable()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         ship = GameObject.Find("ShipPrefab");
-        DontDestroyOnLoad(shipActors);
-        DontDestroyOnLoad(player);
-        DontDestroyOnLoad(GameObject.FindGameObjectWithTag("MainCamera"));
-        DontDestroyOnLoad(GameObject.Find("PlayerFollowCamera"));
-        DontDestroyOnLoad(this);
-        DontDestroyOnLoad(GameObject.Find("Canvas"));
+        shipActors = GameObject.Find("ShipActors");
     }
 
     public void Warp(string levelName) {
-        Vector3 playerOffset = player.transform.position - ship.transform.position;
-        Vector3[] actorOffsets = new Vector3[shipActors.transform.childCount];
-        int i = 0;
-        foreach (Transform t in shipActors.transform) {
-            actorOffsets[i] = t.transform.position - ship.transform.position;
-            i++;
+        SetPositions();
+        SceneManager.LoadSceneAsync("Warp", LoadSceneMode.Single);
+        SceneManager.sceneLoaded += UpdatePositions;
+    }
+
+    private void SetPositions() {
+        playerOffset = player.transform.position - ship.transform.position;
+        playerLook = player.transform.eulerAngles;
+        actorOffsets = new Dictionary<string, Vector3>(shipActors.transform.childCount);
+        for (int i = 0; i < shipActors.transform.childCount; i++)
+        {
+            Transform child = shipActors.transform.GetChild(i);
+            actorOffsets[child.name] = child.position - ship.transform.position;
         }
-        SceneManager.LoadScene("Warp");
-        SceneManager.sceneLoaded += (Scene scene, LoadSceneMode mode) => {
-            ship = GameObject.Find("ShipPrefab");
-            warpAnimator = GameObject.FindObjectOfType<WarpAnimator>();
-            warpAnimator.SetReveal(50);
-            warpAnimator.TransitionReveal(-50);
-            i = 0;
-            foreach (Transform t in shipActors.transform)
-            {
-                t.position = actorOffsets[i] + ship.transform.position;
-                i++;
-            }
-            player.transform.position = ship.transform.position + playerOffset;
-        };
+    }
+
+    private void UpdatePositions(Scene scene, LoadSceneMode mode) {
+        ship = GameObject.Find("ShipPrefab");
+        shipActors = GameObject.Find("ShipActors");
+        player = GameObject.FindGameObjectWithTag("Player");
+        warpAnimator = GameObject.FindObjectOfType<WarpAnimator>();
+        warpAnimator.SetReveal(500);
+        warpAnimator.TransitionReveal(-50);
+        for (int i = 0; i < shipActors.transform.childCount; i++)
+        {
+            Transform child = shipActors.transform.GetChild(i);
+            child.position = ship.transform.position + actorOffsets[child.name];
+        }
+        player.transform.position = ship.transform.position + playerOffset;
+        player.transform.rotation = Quaternion.Euler(playerLook);
     }
 
     // Update is called once per frame

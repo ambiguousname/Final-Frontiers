@@ -17405,7 +17405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915029e18fca4d646aed0233283f8976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipActors: {fileID: 597471837}
 --- !u!1 &528839109
 GameObject:
   m_ObjectHideFlags: 0
@@ -18261,7 +18260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 597471838}
   m_Layer: 0
-  m_Name: Actors
+  m_Name: ShipActors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WarpAnimator : MonoBehaviour
 {
-    private float targetReveal;
+    private float targetReveal = 1;
     Material currMaterial;
     // Start is called before the first frame update
     void OnEnable()
@@ -24,6 +24,6 @@ public class WarpAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currMaterial.SetFloat("_Reveal", Mathf.Lerp(currMaterial.GetFloat("_Reveal"), targetReveal, Time.deltaTime));
+        currMaterial.SetFloat("_Reveal", Mathf.Lerp(currMaterial.GetFloat("_Reveal"), targetReveal, Time.deltaTime * 0.1f));
     }
 }

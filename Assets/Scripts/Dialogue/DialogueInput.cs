@@ -9,7 +9,11 @@ public class DialogueInput : MonoBehaviour
     private DialogueCreator creator;
     private void Start()
     {
-        creator = GameObject.Find("DialogueManager").GetComponent<DialogueCreator>();
+        var manager = GameObject.Find("DialogueManager");
+        if (manager != null)
+        {
+            GameObject.Find("DialogueManager").TryGetComponent<DialogueCreator>(out creator);
+        }
     }
 
     void OnOne(InputValue value) {
