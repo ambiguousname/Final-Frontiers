@@ -9,6 +9,7 @@ public class BakedAnimation : ScriptableObject
     public Vector3[] position;
     public Vector3[] rotation;
     public float secondsPerFrame;
+    public int frames;
     public string animationName;
 }
 

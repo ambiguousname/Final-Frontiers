@@ -15,12 +15,11 @@ public class BakeAnimation : EditorWindow
     }
 
     private void UpdateVectorArray(ref Vector3[] arr, Vector3 toAdd, AnimationCurve c, int numFrames, float frameRate) {
-        for (int i = 0; i < numFrames; i++) {
-            float time = i / frameRate;
-            Debug.Log(time);
-            arr[i] += toAdd * c.Evaluate(time);
+        arr[0] = Vector3.zero;
+        for (int i = 1; i < numFrames; i++) {
+            float time = (i - 1) / frameRate;
+            arr[i] += (toAdd * (c.Evaluate(time + (1 / frameRate)) - c.Evaluate(time)));
         }
-        Debug.Log(arr[numFrames - 1] + " " + c.Evaluate(5.0f));
     }
 
     private void OnGUI()
@@ -65,6 +64,7 @@ public class BakeAnimation : EditorWindow
             saveTo.rotation = rotation;
             saveTo.secondsPerFrame = 1 / animToBake.frameRate;
             saveTo.animationName = animToBake.name;
+            saveTo.frames = size;
         }
     }
 }

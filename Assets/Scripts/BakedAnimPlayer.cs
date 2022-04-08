@@ -6,20 +6,17 @@ public class BakedAnimPlayer : MonoBehaviour
 {
     public bool getNegative = true;
 
+    public GameObject objectToAnimate;
+
     public List<BakedAnimation> animsToPlay;
     private BakedAnimation _animation;
     private int _frame;
     private float _timeToNextFrame;
     private bool _isPlaying = false;
 
-    private GameObject geometry;
-    private Vector3 geometryOffset;
-
     // Start is called before the first frame update
     void Start()
     {
-        geometry = GameObject.Find("Geometry");
-        geometryOffset = geometry.transform.position;
     }
 
     public void StartAnim(string currAnim) {
@@ -38,17 +35,20 @@ public class BakedAnimPlayer : MonoBehaviour
         if (_isPlaying)
         {
             _timeToNextFrame += Time.deltaTime;
-            Debug.Log(_frame);
             if (_timeToNextFrame >= _animation.secondsPerFrame)
             {
                 _timeToNextFrame = 0;
                 _frame += 1;
-                if (_frame >= animsToPlay.Count) {
+
+                objectToAnimate.transform.position += (getNegative ? -1 : 1) * _animation.position[_frame];
+
+                objectToAnimate.transform.RotateAround(this.transform.position, Vector3.right, (getNegative ? -1 : 1) * _animation.rotation[_frame][0]);
+                objectToAnimate.transform.RotateAround(this.transform.position, Vector3.up, (getNegative ? -1 : 1) * _animation.rotation[_frame][1]);
+                objectToAnimate.transform.RotateAround(this.transform.position, Vector3.forward, (getNegative ? -1 : 1) * _animation.rotation[_frame][2]);
+                if (_frame >= _animation.frames) {
                     _isPlaying = false;
                 }
             }
-            geometry.transform.position = geometryOffset + (getNegative ? -1 : 1) * _animation.position[_frame];
-            geometry.transform.rotation = Quaternion.Euler((getNegative ? -1 : 1) * _animation.rotation[_frame]);
         }
     }
 }
