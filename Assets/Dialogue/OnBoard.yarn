@@ -4,7 +4,6 @@ tags:
 
 <<set $crewTrust to 0>>
 
-
 <<lockDoor AirlockDoor true>>
 <<startBakedAnim ShipPrefab LeaveDock OB_Warp>>
 

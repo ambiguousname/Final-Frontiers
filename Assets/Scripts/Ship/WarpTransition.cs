@@ -27,6 +27,9 @@ public class WarpTransition : MonoBehaviour
     public void Warp(string levelName) {
         SetPositions();
         //Application.backgroundLoadingPriority = ThreadPriority.Low;
+        // The Character Controller does not handle teleportation well. So we just disable it. We don't need to re-enable it, since the new
+        // player will have their CharacterController enabled.
+        player.GetComponent<CharacterController>().enabled = false;
         SceneManager.LoadScene("Warp", LoadSceneMode.Single);
         SceneManager.sceneLoaded += UpdatePositions;
     }
@@ -58,6 +61,7 @@ public class WarpTransition : MonoBehaviour
             Transform child = shipActors.transform.GetChild(i);
             child.position = ship.transform.position + actorOffsets[child.name];
         }
+        Debug.Log(playerOffset + " " + ship.transform.position);
         player.transform.position = ship.transform.position + playerOffset;
         player.transform.rotation = Quaternion.Euler(playerLook);
     }
