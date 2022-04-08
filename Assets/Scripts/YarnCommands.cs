@@ -40,8 +40,10 @@ public class YarnCommands : MonoBehaviour
     }
 
     [YarnCommand("startBakedAnim")]
-    public static void StartBakedAnim(GameObject gameObject, string animToPlay) {
-        gameObject.GetComponent<BakedAnimPlayer>().StartAnim(animToPlay);
+    public static void StartBakedAnim(GameObject gameObject, string animToPlay, string onComplete) {
+        gameObject.GetComponent<BakedAnimPlayer>().StartAnim(animToPlay, () => {
+            GameObject.FindObjectOfType<DialogueRunner>().StartDialogue(onComplete);
+        });
     }
 
     [YarnCommand("shipWarp")]

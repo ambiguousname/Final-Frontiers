@@ -1,11 +1,16 @@
 ﻿title: OnBoard
 tags:
 ---
-<<shipWarp Dead>>
 
 <<set $crewTrust to 0>>
 
+
+<<lockDoor AirlockDoor true>>
+<<startBakedAnim ShipPrefab LeaveDock OB_Warp>>
+
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
+
+<<shipWarp Dead>>
 
 -> You: A pleasure to meet you.
     Officer Roquell: Hopefully. Let's talk when there's time.
@@ -180,7 +185,11 @@ title: OB_Plot
 -> You: Plot a course for the Aratel system.
 Commander Corwin: Yes Captain!
 <<lockDoor AirlockDoor true>>
-<<startBakedAnim ShipPrefab LeaveDock>>
+<<startBakedAnim ShipPrefab LeaveDock OB_Warp>>
+===
+title: OB_Warp
+---
+<<shipWarp Aratel>>
 ===
 title: OB_Orders
 ---

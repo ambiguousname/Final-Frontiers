@@ -104,6 +104,10 @@ namespace StarterAssets
 			CameraRotation();
 		}
 
+		public void SetPitch(float pitch) {
+			_cinemachineTargetPitch = pitch;
+		}
+
 		private void GroundedCheck()
 		{
 			// set sphere position, with offset

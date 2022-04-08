@@ -28,6 +28,7 @@ public class BakeAnimation : EditorWindow
         animToBake = (AnimationClip)EditorGUILayout.ObjectField(animToBake, typeof(AnimationClip), false);
         saveTo = (BakedAnimation)EditorGUILayout.ObjectField(saveTo, typeof(BakedAnimation), false);
         if (GUILayout.Button("Bake Anim")) {
+            EditorUtility.SetDirty(saveTo);
             EditorCurveBinding[] bindings = AnimationUtility.GetCurveBindings(animToBake);
             int size = (int) (animToBake.length * animToBake.frameRate);
             Vector3[] position = new Vector3[size];

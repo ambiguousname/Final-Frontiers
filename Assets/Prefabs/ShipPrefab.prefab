@@ -902,7 +902,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2823230948817569644}
-  - component: {fileID: 4401819947172771303}
   m_Layer: 0
   m_Name: ShipPrefab
   m_TagString: Untagged
@@ -933,25 +932,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &4401819947172771303
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2823230948817569647}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c1fa52916497b34ca4183f7e7ea18c2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6893600581700663346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1099,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: 886efee8a8cf4f648bdeae6323bce99e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df63c91b43fa3d34e94b1a5571e02580, type: 2}
+    - target: {fileID: -2964225117148605397, guid: 886efee8a8cf4f648bdeae6323bce99e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c5efc2ff7dfc304cb6b4901a53180bb, type: 2}
     - target: {fileID: -2804440125542394014, guid: 886efee8a8cf4f648bdeae6323bce99e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -1127,6 +1115,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1990968323811559735, guid: 886efee8a8cf4f648bdeae6323bce99e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c201e61ab8664f4db8be5b6d48bd7a7, type: 2}
     - target: {fileID: -1684543897826104800, guid: 886efee8a8cf4f648bdeae6323bce99e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -1143,10 +1135,30 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 7071182760956848314, guid: 886efee8a8cf4f648bdeae6323bce99e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c201e61ab8664f4db8be5b6d48bd7a7, type: 2}
+    - target: {fileID: 7071182760956848314, guid: 886efee8a8cf4f648bdeae6323bce99e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c6d4721424b989e4b8d1f171d50c7176, type: 2}
+    - target: {fileID: 7202271454713460447, guid: 886efee8a8cf4f648bdeae6323bce99e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df63c91b43fa3d34e94b1a5571e02580, type: 2}
     - target: {fileID: 7202271454713460447, guid: 886efee8a8cf4f648bdeae6323bce99e, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 01ce91012395d2b44b1e211f38b6cf30, type: 2}
+    - target: {fileID: 7280415688546089554, guid: 886efee8a8cf4f648bdeae6323bce99e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df63c91b43fa3d34e94b1a5571e02580, type: 2}
+    - target: {fileID: 7286404445567960789, guid: 886efee8a8cf4f648bdeae6323bce99e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df63c91b43fa3d34e94b1a5571e02580, type: 2}
     - target: {fileID: 7672991477969496682, guid: 886efee8a8cf4f648bdeae6323bce99e, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 

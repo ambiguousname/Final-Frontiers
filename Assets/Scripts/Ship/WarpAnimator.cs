@@ -24,6 +24,6 @@ public class WarpAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currMaterial.SetFloat("_Reveal", Mathf.Lerp(currMaterial.GetFloat("_Reveal"), targetReveal, Time.deltaTime * 0.1f));
+        currMaterial.SetFloat("_Reveal", Mathf.Lerp(currMaterial.GetFloat("_Reveal"), targetReveal, Time.deltaTime * 0.06f));
     }
 }

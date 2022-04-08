@@ -13,13 +13,15 @@ public class BakedAnimPlayer : MonoBehaviour
     private int _frame;
     private float _timeToNextFrame;
     private bool _isPlaying = false;
+    private System.Action callback;
 
     // Start is called before the first frame update
     void Start()
     {
     }
 
-    public void StartAnim(string currAnim) {
+    public void StartAnim(string currAnim, System.Action toCallback) {
+        callback = toCallback;
         _animation = animsToPlay.Find(anim => anim.animationName == currAnim);
         if (_animation != null)
         {
@@ -43,6 +45,7 @@ public class BakedAnimPlayer : MonoBehaviour
                 if (_frame >= _animation.frames)
                 {
                     _isPlaying = false;
+                    callback();
                 }
                 else {
                     objectToAnimate.transform.position += (getNegative ? -1 : 1) * _animation.position[_frame];
