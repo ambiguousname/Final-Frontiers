@@ -2,6 +2,8 @@
 tags:
 ---
 <<set $crewTrust to 0>>
+<<lockDoor AirlockDoor true>>
+<<startBakedAnim ShipPrefab LeaveDock>>
 
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
 
@@ -116,7 +118,7 @@ title: OB_Speech_Sandwich
     <<set $sandwich to $sandwich + "2">>
 -> You: LETTUCE!
     <<set $sandwich to $sandwich + "3">>
--> You: UDON!
+-> You: UBE!
     <<set $sandwich to $sandwich + "4">>
 -> You: OREGANO!
     <<set $sandwich to $sandwich + "5">>
@@ -178,8 +180,8 @@ title: OB_Plot
 -> You: Plot a course for the Aratel system.
 Commander Corwin: Yes Captain!
 <<lockDoor AirlockDoor true>>
-<<stickTo Player ShipPrefab>>
-<<startAnim ShipPrefab LeaveDock>>
+<<wait 2>>
+Commander Corwin: This part of the game isn't done yet.
 ===
 title: OB_Orders
 ---

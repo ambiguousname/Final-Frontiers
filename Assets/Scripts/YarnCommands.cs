@@ -39,8 +39,8 @@ public class YarnCommands : MonoBehaviour
         gameObject.GetComponent<Animator>().Play(animName);
     }
 
-    [YarnCommand("stickTo")]
-    public static void StickTo(GameObject toStick, GameObject target) {
-        toStick.GetComponent<StickCharacter>().SetTarget(target);
+    [YarnCommand("startBakedAnim")]
+    public static void StartBakedAnim(GameObject gameObject, string animToPlay) {
+        gameObject.GetComponent<BakedAnimPlayer>().StartAnim(animToPlay);
     }
 }
