@@ -1,3 +1,4 @@
 - Moving star background (so that the skybox actually looks like it's rotating.)
 - Allow loading different dialogues during warp
 - Warp transition into a level.
+- Fix lighting to be brighter
