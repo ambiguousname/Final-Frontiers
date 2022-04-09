@@ -3,8 +3,9 @@ title: AratelWarp
 Commander Corwin: Computer estimates about 2 minutes until arrival.
 Officer Roquell: Mission brief is in your quarters, Captain.
 -> You: Thank you.
+    Officer Roquell: This part of the game has yet to be finished. Please sit here and do nothing.
 -> You: Mind showing me the way?
-<<escort "Officer Roquell" CaptainCabin Player 10>>
+    <<escort "Officer Roquell" CaptainCabin Player 10>>
 ===
 title: AW_ArriveAtQuarters
 ---
@@ -19,6 +20,7 @@ title: AW_ArriveAtQuarters
         Officer Roquell: It's adjustable. A membranic technician should be able to fix it.
     -> You: Ah.
 -> You: Thank you.
+Officer Roquell: This part of the game has yet to be finished. Please sit here and do nothing.
 <<moveTo "Officer Roquell" XOStation>>
 ===
 title: Introductions

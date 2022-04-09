@@ -79,10 +79,12 @@ public class ActorManager : MonoBehaviour
             float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             dialogue.transform.rotation = Quaternion.Euler(0, angle, 0);
 
-            Vector3 sizeVector = (player.transform.position - this.transform.position)/6;
+            Vector3 sizeDir = player.transform.position - this.transform.position;
+            Vector3 sizeXZ = new Vector3(sizeDir.x, 0, sizeDir.z);
+            Vector3 sizeVector = (sizeXZ)/4;
             float size = sizeVector.magnitude;
-            if (size > 4) {
-                size = 4;
+            if (size > 3) {
+                size = 3;
             }
             dialogue.transform.localScale = new Vector3(size, size, 1);
         }

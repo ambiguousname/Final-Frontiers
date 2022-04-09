@@ -51,16 +51,20 @@ public class DialogueInput : MonoBehaviour
     }
 
     void OnMenu() {
-        if (menu.activeInHierarchy)
+        if (menu != null)
         {
-            menu.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        else {
-            menu.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            if (menu.activeInHierarchy)
+            {
+                menu.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else
+            {
+                menu.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
         
     }
