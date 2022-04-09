@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class WarpTransition : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class WarpTransition : MonoBehaviour
     Vector3 playerLook;
     Vector3 cameraPitch;
     Dictionary<string, Vector3> actorOffsets;
+
+    string warpDialogueToLoad;
+    string levelToLoad;
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -24,14 +28,17 @@ public class WarpTransition : MonoBehaviour
         cinemachine = player.transform.GetChild(0).gameObject;
     }
 
-    public void Warp(string levelName) {
+    public void Warp(string levelName, string dialogueToStart) {
         SetPositions();
+        levelToLoad = levelName;
+        warpDialogueToLoad = dialogueToStart;
         //Application.backgroundLoadingPriority = ThreadPriority.Low;
         // The Character Controller does not handle teleportation well. So we just disable it. We don't need to re-enable it, since the new
         // player will have their CharacterController enabled.
         player.GetComponent<CharacterController>().enabled = false;
         SceneManager.LoadScene("Warp", LoadSceneMode.Single);
         SceneManager.sceneLoaded += UpdatePositions;
+        SceneManager.sceneLoaded += LoadYarnDialogue;
     }
 
     private void SetPositions() {
@@ -61,9 +68,18 @@ public class WarpTransition : MonoBehaviour
             Transform child = shipActors.transform.GetChild(i);
             child.position = ship.transform.position + actorOffsets[child.name];
         }
-        Debug.Log(playerOffset + " " + ship.transform.position);
+        // Disable the new player's locomotion so they don't mess up the teleportation.
+        player.GetComponent<CharacterController>().enabled = false;
         player.transform.position = ship.transform.position + playerOffset;
         player.transform.rotation = Quaternion.Euler(playerLook);
+        // Re-enable:
+        player.GetComponent<CharacterController>().enabled = true;
+    }
+
+    private void LoadYarnDialogue(Scene scene, LoadSceneMode mode) {
+        if (warpDialogueToLoad != null) {
+            GameObject.FindObjectOfType<DialogueRunner>().StartDialogue(warpDialogueToLoad);
+        }
     }
 
     // Update is called once per frame

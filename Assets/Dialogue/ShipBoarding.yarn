@@ -1,7 +1,7 @@
 ﻿title: ShipBoarding
 tags:
 ---
-<<set $shipName to "The Ship">>
+<<set $shipName to "the ship">>
 <<set $name to "Captain">>
 Initiate O'kurr: Here we are. Whaddya think? #line:0f56d33 
 
@@ -31,6 +31,7 @@ title: SB_Naming
 title: SB_ShipName
 ---
 Initiate O'kurr: Ah, the SS {$shipName}. I kinda like it. #line:015266d 
+<<set $shipName to "the SS " + $shipName>>
 <<jump SB_End>>
 ===
 title: SB_Name

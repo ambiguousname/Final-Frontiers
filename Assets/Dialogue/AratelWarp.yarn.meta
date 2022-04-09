@@ -1,0 +1,123 @@
+fileFormatVersion: 2
+guid: 5eac305261730654da72dd0fc73bc544
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  LastImportHadImplicitStringIDs: 0
+  LastImportHadAnyStrings: 0
+  isSuccessfullyParsed: 0
+  parseErrorMessages:
+  - 'Assets/Dialogue/AratelWarp.yarn: 8:0: Error: token recognition error at: ''<'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 8:1: Error: token recognition error at: ''<'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 8:6: Error: token recognition error at: ''$'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 8:34: Error: token recognition error at: ''"'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 8:42: Error: token recognition error at: ''"'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 8:43: Error: token recognition error at: ''>'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 8:44: Error: token recognition error at: ''>'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 9:0: Error: token recognition error at: ''->'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 13:4: Error: token recognition error at: ''->'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 19:4: Error: token recognition error at: ''->'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 20:8: Error: token recognition error at: ''<'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 20:9: Error: token recognition error at: ''<'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 20:14: Error: token recognition error at: ''$'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 20:42: Error: token recognition error at: ''"'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 20:48: Error: token recognition error at: ''"'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 20:49: Error: token recognition error at: ''>'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 20:50: Error: token recognition error at: ''>'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 25:4: Error: token recognition error at: ''->'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 26:4: Error: token recognition error at: ''->'''
+  - 'Assets/Dialogue/AratelWarp.yarn: 27:0: Error: token recognition error at: ''->'''
+  - "Assets/Dialogue/AratelWarp.yarn: 8:7: Error: missing HEADER_DELIMITER at 'commanderCorwinAttitude'\r\n<<set
+    $commanderCorwinAttitude to \"provoke\">>\r\r\n       ^^^^^^^^^^^^^^^^^^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 8:31: Error: missing HEADER_DELIMITER at 'to'\r\n<<set
+    $commanderCorwinAttitude to \"provoke\">>\r\r\n                              
+    ^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 8:35: Error: missing HEADER_DELIMITER at 'provoke'\r\n<<set
+    $commanderCorwinAttitude to \"provoke\">>\r\r\n                                  
+    ^^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 9:3: Error: extraneous input 'You' expecting
+    HEADER_DELIMITER\r\n-> You: That still leaves time for proper introductions.\r\r\n  
+    ^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 10:4: Error: extraneous input '<indent to 4>'
+    expecting {ID, '---'}\r\n    Officer Roquell: You already got part of the gist,
+    but I am your First Officer.\r\r\n    \r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 10:12: Error: extraneous input 'Roquell' expecting
+    HEADER_DELIMITER\r\n    Officer Roquell: You already got part of the gist, but
+    I am your First Officer.\r\r\n            ^^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 11:12: Error: extraneous input 'Roquell' expecting
+    HEADER_DELIMITER\r\n    Officer Roquell: Our files are available in your quarters
+    whenever you'd like to take a look.\r\r\n            ^^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 12:14: Error: extraneous input 'Corwin' expecting
+    HEADER_DELIMITER\r\n    Commander Corwin: First Officer, you have to actually
+    *introduce* yourself. Captain, I am Navigational Genius Wair Corwin. 100% human,
+    100% Earth-born, and 200% proud of it.\r\r\n              ^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 14:8: Error: extraneous input '<indent to 8>'
+    expecting {ID, '---'}\r\n        Commander Corwin: And you too, Captain. I ever
+    tell you that I almost crashed the ULSS Invincible?\r\r\n        \r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 14:18: Error: extraneous input 'Corwin' expecting
+    HEADER_DELIMITER\r\n        Commander Corwin: And you too, Captain. I ever tell
+    you that I almost crashed the ULSS Invincible?\r\r\n                  ^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 15:18: Error: extraneous input 'Rikt' expecting
+    HEADER_DELIMITER\r\n        Commander Rikt: Almost killing me in the process.\r\r\n                 
+    ^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 16:18: Error: extraneous input 'Corwin' expecting
+    HEADER_DELIMITER\r\n        Commander Corwin: Which brings us to my buddy from
+    the academy toiling away in the armpit of {$shipName}. Jesh.\r\r\n                 
+    ^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 17:18: Error: extraneous input 'Rikt' expecting
+    HEADER_DELIMITER\r\n        Commander Rikt: We *agreed* we wouldn't let you introduce
+    us in tandem anymore. I'm Jesh _Rikt_, and *my ship* is not an armpit.\r\r\n                 
+    ^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 18:18: Error: extraneous input 'Corwin' expecting
+    HEADER_DELIMITER\r\n        Commander Corwin: I never called it an armpit, I
+    said you were *working* in the armpit.\r\r\n                  ^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 19:4: Error: extraneous input '<dedent from
+    8>' expecting {ID, '---'}\r\n    -> You: Corwin, I expect a certain amount of
+    deference among my crew. Respect your commanding officers.\r\r\n    \r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 20:8: Error: extraneous input '<indent to 8>'
+    expecting {ID, '---'}\r\n        <<set $commanderCorwinAttitude to \"defer\">>\r\r\n       
+    \r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 20:15: Error: missing HEADER_DELIMITER at 'commanderCorwinAttitude'\r\n       
+    <<set $commanderCorwinAttitude to \"defer\">>\r\r\n               ^^^^^^^^^^^^^^^^^^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 20:39: Error: missing HEADER_DELIMITER at 'to'\r\n       
+    <<set $commanderCorwinAttitude to \"defer\">>\r\r\n                                      
+    ^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 20:43: Error: missing HEADER_DELIMITER at 'defer'\r\n       
+    <<set $commanderCorwinAttitude to \"defer\">>\r\r\n                                          
+    ^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 21:8: Error: missing HEADER_DELIMITER at 'Commander'\r\n       
+    Commander Corwin: Yes, Captain. Sorry, First Officer.\r\r\n        ^^^^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 21:18: Error: extraneous input 'Corwin' expecting
+    HEADER_DELIMITER\r\n        Commander Corwin: Yes, Captain. Sorry, First Officer.\r\r\n                 
+    ^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 22:16: Error: extraneous input 'Roquell' expecting
+    HEADER_DELIMITER\r\n        Officer Roquell: Thank you, Commander Corwin.\r\r\n               
+    ^^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 23:18: Error: extraneous input 'Rikt' expecting
+    HEADER_DELIMITER\r\n        Commander Rikt: And I'm Jesh Rikt. Sorry I can't
+    be on the bridge Captain, but the engines require near-constant care.\r\r\n                 
+    ^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 24:4: Error: extraneous input '<dedent from
+    8>' expecting {ID, '---'}\r\n    Commander Rikt: I'm from Glxnbqwut. For humans
+    like yourselves, we prefer it if you just say \"Guh\" whenever you give up trying
+    to pronounce it correctly.\r\r\n    \r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 24:14: Error: extraneous input 'Rikt' expecting
+    HEADER_DELIMITER\r\n    Commander Rikt: I'm from Glxnbqwut. For humans like yourselves,
+    we prefer it if you just say \"Guh\" whenever you give up trying to pronounce
+    it correctly.\r\r\n              ^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 27:0: Error: extraneous input '<dedent from
+    4>' expecting {ID, '---'}\r\n-> You: Where's my mission brief?\r\r\n\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 28:4: Error: extraneous input '<indent to 4>'
+    expecting {ID, '---'}\r\n    Officer Roquell: In your quarters, Captain.\r\n   
+    \r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 28:12: Error: extraneous input 'Roquell' expecting
+    HEADER_DELIMITER\r\n    Officer Roquell: In your quarters, Captain.\r\n           
+    ^^^^^^^\r\n"
+  - "Assets/Dialogue/AratelWarp.yarn: 28:47: Error: extraneous input '<dedent: 4>'
+    expecting {ID, '---'}\r\n    Officer Roquell: In your quarters, Captain.\r\n                                              
+    \r\n"

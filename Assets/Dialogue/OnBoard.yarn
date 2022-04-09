@@ -9,7 +9,7 @@ tags:
 
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
 
-<<shipWarp Dead>>
+<<shipWarp Aratel AratelWarp>>
 
 -> You: A pleasure to meet you.
     Officer Roquell: Hopefully. Let's talk when there's time.
@@ -48,14 +48,14 @@ Officer Roquell: And Union Command couldn't afford to supply a doctor in time. D
         Commander Corwin: Yes, First Officer.
         <<jump OB_Plot>>
     -> You: Will you be okay just manning the helm?
-        Commander Rikt: Yes. I'll just be silently sobbing here over the tragic loss of our outward genitalia.
-        Commander Corwin: What?
-        Commander Rikt: Wair, I'm talking about the inoperable sex organs-
+        Commander Corwin: Yes. I'll just be silently sobbing here over the tragic loss of our outward genitalia.
+        Commander Rikt: What?
+        Commander Corwin: Jesh, I'm talking about the inoperable sex organs-
         Officer Dabo: Ewwww! That's disgusting.
         Officer Roquell: Commander, some species aren't comfortable with discussing reproductive processes. Focus, please.
-        Commander Rikt: Oh no! I'm really sorry. Uhhh...
+        Commander Corwin: Oh no! I'm really sorry. Uhhh...
         Officer Roquell: Just don't do it again.
-        Commander Rikt: Yes, First Officer.
+        Commander Corwin: Yes, First Officer.
         <<jump OB_Plot>>
 -> You: Before we get underway, if I could make a short speech...
     <<jump OB_Speech>>

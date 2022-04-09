@@ -47,7 +47,7 @@ public class YarnCommands : MonoBehaviour
     }
 
     [YarnCommand("shipWarp")]
-    public static void ShipWarp(string sceneName) {
-        GameObject.FindObjectOfType<WarpTransition>().Warp(sceneName);
+    public static void ShipWarp(string sceneName, string dialogueToStart = null) {
+        GameObject.FindObjectOfType<WarpTransition>().Warp(sceneName, dialogueToStart);
     }
 }

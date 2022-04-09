@@ -1,0 +1,48 @@
+title: AratelWarp
+---
+Commander Corwin: Computer estimates about 2 minutes until arrival.
+Officer Roquell: Mission brief is in your quarters, Captain.
+-> You: Thank you.
+-> You: Mind showing me the way?
+<<escort "Officer Roquell" CaptainCabin Player 10>>
+===
+title: AW_ArriveAtQuarters
+---
+-> You: Why is the door see-through?
+    Officer Roquell: You can darken it if you get a membranic technician to look at it.
+    -> You: And where is my bed?
+        Officer Roquell: I guess your room doesn't come with one. We can pick one up as soon as possible.
+    -> You: Ah.
+-> You: Where is my bed?
+    Officer Roquell: Not sure. We can pick one up later.
+    -> You: And why is the door see-through?
+        Officer Roquell: It's adjustable. A membranic technician should be able to fix it.
+    -> You: Ah.
+-> You: Thank you.
+<<moveTo "Officer Roquell" XOStation>>
+===
+title: Introductions
+---
+// Scrapped, move this to conference room scene post Aratel arrival.
+<<set $commanderCorwinAttitude to "provoke">>
+-> You: That still leaves time for proper introductions.
+    Officer Roquell: You already got part of the gist, but I am your First Officer.
+    Officer Roquell: Our files are available in your quarters whenever you'd like to take a look.
+    Commander Corwin: First Officer, you have to actually *introduce* yourself. Captain, I am Navigational Genius Wair Corwin. 100% human, 100% Earth-born, and 200% proud of it.
+    -> You: Nice to make a proper introduction, Commander.
+        Commander Corwin: And you too, Captain. I ever tell you that I almost crashed the ULSS Invincible?
+        Commander Rikt: Almost killing me in the process.
+        Commander Corwin: Which brings us to my buddy from the academy toiling away in the armpit of {$shipName}. Jesh.
+        Commander Rikt: We *agreed* we wouldn't let you introduce us in tandem anymore. I'm Jesh _Rikt_, and *my ship* is not an armpit.
+        Commander Corwin: I never called it an armpit, I said you were *working* in the armpit.
+    -> You: Corwin, I expect a certain amount of deference among my crew. Respect your commanding officers.
+        <<set $commanderCorwinAttitude to "defer">>
+        Commander Corwin: Yes, Captain. Sorry, First Officer.
+        Officer Roquell: Thank you, Commander Corwin.
+        Commander Rikt: And I'm Jesh Rikt. Sorry I can't be on the bridge Captain, but the engines require near-constant care.
+    Commander Rikt: I'm from Glxnbqwut. For humans like yourselves, we prefer it if you just say "Guh" whenever you give up trying to pronounce it correctly.
+    -> You: And what is Gwlx... Guh like?
+    -> You:   
+-> You: Where's my mission brief?
+    Officer Roquell: In your quarters, Captain.
+===

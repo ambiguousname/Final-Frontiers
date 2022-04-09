@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class DialogueInput : MonoBehaviour
 {
     private DialogueCreator creator;
+    private GameObject menu;
     private void Start()
     {
         var manager = GameObject.Find("DialogueManager");
@@ -14,6 +15,7 @@ public class DialogueInput : MonoBehaviour
         {
             GameObject.Find("DialogueManager").TryGetComponent<DialogueCreator>(out creator);
         }
+        menu = GameObject.Find("Menu");
     }
 
     void OnOne(InputValue value) {
@@ -46,5 +48,20 @@ public class DialogueInput : MonoBehaviour
 
     void OnEight() {
         creator.PressNumButton(8);
+    }
+
+    void OnMenu() {
+        if (menu.activeInHierarchy)
+        {
+            menu.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else {
+            menu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        
     }
 }

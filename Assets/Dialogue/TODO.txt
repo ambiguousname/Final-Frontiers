@@ -2,3 +2,4 @@
 - Allow loading different dialogues during warp
 - Warp transition into a level.
 - Fix lighting to be brighter
+- Fix bug where player can give looking around input during warp transition 
