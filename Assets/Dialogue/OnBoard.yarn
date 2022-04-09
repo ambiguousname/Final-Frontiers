@@ -182,7 +182,7 @@ Commander Corwin: Yes Captain!
 ===
 title: OB_Warp
 ---
-<<shipWarp Aratel>>
+<<shipWarp Aratel AratelWarp>>
 ===
 title: OB_Orders
 ---
