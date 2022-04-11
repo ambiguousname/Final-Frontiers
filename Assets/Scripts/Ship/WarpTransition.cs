@@ -78,7 +78,8 @@ public class WarpTransition : MonoBehaviour
 
     private void LoadYarnDialogue(Scene scene, LoadSceneMode mode) {
         if (warpDialogueToLoad != null) {
-            GameObject.FindObjectOfType<DialogueRunner>().StartDialogue(warpDialogueToLoad);
+            GameObject.FindObjectOfType<DialogueRunner>().startAutomatically = true;
+            GameObject.FindObjectOfType<DialogueRunner>().startNode = warpDialogueToLoad;
         }
     }
 
