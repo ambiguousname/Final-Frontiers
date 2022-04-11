@@ -2350,7 +2350,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Payroll management is disabled.
+  m_Text: Bell 103A Compliant Modem required for payroll.
 --- !u!1 &6122378216082379618
 GameObject:
   m_ObjectHideFlags: 0
