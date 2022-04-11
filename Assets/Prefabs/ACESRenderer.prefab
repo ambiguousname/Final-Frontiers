@@ -2550,7 +2550,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Maps don't exist in space.
+  m_Text: Maps don't exist in space, stupid.
 --- !u!1 &6143940047412318314
 GameObject:
   m_ObjectHideFlags: 0
