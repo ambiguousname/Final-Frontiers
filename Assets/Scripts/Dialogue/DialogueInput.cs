@@ -15,7 +15,7 @@ public class DialogueInput : MonoBehaviour
         {
             GameObject.Find("DialogueManager").TryGetComponent<DialogueCreator>(out creator);
         }
-        menu = GameObject.Find("Menu");
+        menu = GameObject.Find("ACESUI");
     }
 
     void OnOne(InputValue value) {
@@ -53,18 +53,7 @@ public class DialogueInput : MonoBehaviour
     void OnMenu() {
         if (menu != null)
         {
-            if (menu.activeInHierarchy)
-            {
-                menu.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-            else
-            {
-                menu.SetActive(true);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
+            menu.GetComponent<ACESController>().ToggleShowMenu();
         }
         
     }
