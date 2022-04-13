@@ -212,6 +212,12 @@ public class ACESController : UpDownMenu
         var currTime = System.DateTime.Now;
         var percentage = Mathf.Floor(100 * (currTime.Minute * 60 + currTime.Second)/3600);
         string percentDisplay = percentage.ToString();
+
+        if (percentage < 10)
+        {
+            percentDisplay = "0" + percentDisplay;
+        }
+
         displays["time"].GetComponent<TextMeshPro>().text = currTime.ToString("HH") + "." + percentDisplay;
     }
 }
