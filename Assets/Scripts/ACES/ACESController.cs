@@ -81,6 +81,23 @@ public class ACESController : UpDownMenu
             displays[order[i]].SetActive(true);
             yield return new WaitForSecondsRealtime(0.1f);
         }
+
+        if (_currentlySelected > 0)
+        {
+            _buttons[0].interactable = true;
+            _buttons[0].GetComponentInChildren<Text>().text = "Up";
+        }
+
+        if (_currentlySelected < selectedOptions.Count - 1)
+        {
+            _buttons[3].GetComponentInChildren<Text>().text = "Down";
+            _buttons[3].interactable = true;
+        }
+
+        _buttons[1].interactable = true;
+        _buttons[5].interactable = true;
+
+        _buttons[1].GetComponentInChildren<Text>().text = "Select";
         _buttons[5].GetComponentInChildren<Text>().text = "Exit";
     }
 
@@ -123,6 +140,9 @@ public class ACESController : UpDownMenu
         if (number == 6 && _activeMenu != this)
         {
             _activeMenu.SetOff();
+            _activeMenu = this;
+            _buttons[5].GetComponentInChildren<Text>().text = "";
+            _buttons[5].interactable = false;
             StopCoroutine(activeDisplayChange);
             activeDisplayChange = _activeMenu.Draw();
             StartCoroutine(activeDisplayChange);
@@ -160,7 +180,8 @@ public class ACESController : UpDownMenu
             StopCoroutine(activeDisplayChange);
         }
         if (active)
-        {   
+        {
+            _activeMenu = this;
             activeDisplayChange = HideMenu(g);
             StartCoroutine(activeDisplayChange);
         }

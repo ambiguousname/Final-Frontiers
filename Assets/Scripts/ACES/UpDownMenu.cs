@@ -9,7 +9,7 @@ public class UpDownMenu : ACESMenu
 
     protected int _currentlySelected;
 
-    private struct MenuOption {
+    protected struct MenuOption {
         public GameObject attachedObject;
         public TextMeshPro attachedText;
         public SpriteRenderer attachedRenderer;
@@ -18,7 +18,7 @@ public class UpDownMenu : ACESMenu
     }
 
     Button[] _buttons;
-    private List<MenuOption> selectedOptions;
+    protected List<MenuOption> selectedOptions;
     private Color _selectedColor;
     private Color _selectedTextColor;
 
