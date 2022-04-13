@@ -50,4 +50,9 @@ public class YarnCommands : MonoBehaviour
     public static void ShipWarp(string sceneName, string dialogueToStart = null) {
         GameObject.FindObjectOfType<WarpTransition>().Warp(sceneName, dialogueToStart);
     }
+
+    [YarnCommand("addDataBlock")]
+    public static void AddDataBlock(string blockName) {
+        GameObject.FindObjectOfType<DataBlockController>().AddDataBlock(Resources.Load<TextAsset>("/DataBlocks/" + blockName + ".txt"));
+    }
 }

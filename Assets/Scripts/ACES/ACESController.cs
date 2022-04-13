@@ -4,14 +4,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ACESController : MonoBehaviour
+public class ACESController : UpDownMenu
 {
     Dictionary<string, GameObject> displays;
     Dictionary<string, Color> originalColor;
-    string[] menu = { "mail", "data", "settings", "menu" };
-    int currMenuOption;
+
+    ACESMenu _activeMenu;
 
     private IEnumerator activeDisplayChange;
+
+    private void AddMenuDisplays(string title, GameObject g) {
+        displays.Add(title, g);
+        this.AddMenuOption(g);
+    }
 
     private void Start()
     {
@@ -21,10 +26,10 @@ public class ACESController : MonoBehaviour
         displays.Add("time", gameObject.FindChildWithName("Time"));
         displays.Add("date", gameObject.FindChildWithName("Date"));
         displays.Add("messageCount", gameObject.FindChildWithName("MessageCount"));
-        displays.Add("mail", gameObject.FindChildWithName("Mail"));
-        displays.Add("data", gameObject.FindChildWithName("Data"));
-        displays.Add("settings", gameObject.FindChildWithName("Settings"));
-        displays.Add("menu", gameObject.FindChildWithName("MainMenu"));
+        AddMenuDisplays("mail", gameObject.FindChildWithName("Mail"));
+        AddMenuDisplays("data", gameObject.FindChildWithName("Data"));
+        AddMenuDisplays("settings", gameObject.FindChildWithName("Settings"));
+        AddMenuDisplays("menu", gameObject.FindChildWithName("MainMenu"));
         displays.Add("maps", gameObject.FindChildWithName("Maps"));
         displays.Add("games", gameObject.FindChildWithName("Games"));
         displays.Add("button1", gameObject.FindChildWithName("Button1"));
@@ -45,13 +50,16 @@ public class ACESController : MonoBehaviour
         originalColor.Add("settings", displays["settings"].GetComponent<SpriteRenderer>().color);
         originalColor.Add("menu", displays["menu"].GetComponent<SpriteRenderer>().color);
 
-        currMenuOption = 0;
-        displays[menu[currMenuOption]].GetComponent<SpriteRenderer>().color = Color.white;
+        _activeMenu = this;
+
         MoveUp();
         SetOff();
+
+        SetUp(displays["button1"], displays["button4"], Color.white);
+        GetComponentInChildren<DataBlockController>().InitController(displays["button1"], displays["button4"], displays["button2"].GetComponent<Button>(), displays["button5"].GetComponent<Button>(), displays["button6"].GetComponent<Button>());
     }
 
-    IEnumerator DrawMainMenu() {
+    public override IEnumerator Draw() {
         string[] order = { "title", "time", "date", "messageCount", "mail", "data", "settings", "menu", "maps", "games", "button1", "button4", "button2", "button5", "button3", "button6" };
         for (int i = 0; i < order.Length; i++) {
             displays[order[i]].SetActive(true);
@@ -59,60 +67,40 @@ public class ACESController : MonoBehaviour
         }
     }
 
-    public void SetOff() {
+    public void ResetDisplay() {
         foreach (KeyValuePair<string, GameObject> display in displays) {
             display.Value.SetActive(false);
         }
     }
 
-    public void MoveUp() {
-        if (currMenuOption > 0) {
-            displays[menu[currMenuOption]].GetComponent<SpriteRenderer>().color = originalColor[menu[currMenuOption]];
-            StartCoroutine(MoveInDirection(-1));
-        }
-
-        if (currMenuOption == 0)
+    public void PushButton(int number) {
+        if (number == 6 && _activeMenu != this)
         {
-            displays["button1"].transform.GetChild(0).gameObject.SetActive(false);
-            displays["button1"].GetComponent<Button>().interactable = false;
+            _activeMenu.SetOff();
+            activeDisplayChange = _activeMenu.Draw();
+            StartCoroutine(activeDisplayChange);
         }
-        else
+        else if (number == 2 && _activeMenu == this)
         {
-            displays["button4"].transform.GetChild(0).gameObject.SetActive(true);
-            displays["button4"].GetComponent<Button>().interactable = true;
-        }
-    }
-
-    public void MoveDown() {
-        if (currMenuOption < menu.Length - 1) {
-            displays[menu[currMenuOption]].GetComponent<SpriteRenderer>().color = originalColor[menu[currMenuOption]];
-            StartCoroutine(MoveInDirection(1));
-        }
-
-        if (currMenuOption == menu.Length - 1)
-        {
-            displays["button4"].transform.GetChild(0).gameObject.SetActive(false);
-            displays["button4"].GetComponent<Button>().interactable = false;
+            Select();
         }
         else {
-            displays["button1"].transform.GetChild(0).gameObject.SetActive(true);
-            displays["button1"].GetComponent<Button>().interactable = true;
+            _activeMenu.ButtonsCallback(number);
         }
-    }
-
-    IEnumerator MoveInDirection(int dir) {
-        currMenuOption += dir;
-        yield return new WaitForSecondsRealtime(0.5f);
-        displays[menu[currMenuOption]].GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     public void Select()
     {
-        switch (currMenuOption) {
+        switch (_currentlySelected) {
+            case 1:
+                _activeMenu = GetComponentInChildren<DataBlockController>();
+                break;
             default:
-                Debug.LogError("Unrecognized menu option " + currMenuOption);
+                Debug.LogError("Unrecognized menu option " + _currentlySelected);
                 break;
         }
+        activeDisplayChange = _activeMenu.Draw();
+        StartCoroutine(activeDisplayChange);
     }
 
     public void ToggleShowMenu() {
@@ -133,13 +121,13 @@ public class ACESController : MonoBehaviour
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            activeDisplayChange = DrawMainMenu();
+            activeDisplayChange = Draw();
             StartCoroutine(activeDisplayChange);
         }
     }
 
     private IEnumerator HideMenu(GameObject g) {
-        SetOff();
+        ResetDisplay();
         yield return new WaitForSecondsRealtime(0.2f);
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
@@ -153,6 +141,6 @@ public class ACESController : MonoBehaviour
         var currTime = System.DateTime.Now;
         var percentage = Mathf.Floor(100 * (currTime.Minute * 60 + currTime.Second)/3600);
         string percentDisplay = percentage.ToString();
-        displays["time"].GetComponent<TextMeshPro>().text = currTime.Hour + "." + percentDisplay;
+        displays["time"].GetComponent<TextMeshPro>().text = currTime.ToString("HH") + "." + percentDisplay;
     }
 }
