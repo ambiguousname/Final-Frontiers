@@ -27,6 +27,8 @@ public class ACESController : UpDownMenu
         displays.Add("button5", gameObject.FindChildWithName("Button5"));
         displays.Add("button6", gameObject.FindChildWithName("Button6"));
 
+        SetUp(displays["button1"], displays["button4"], Color.white);
+
         dataBlockController = gameObject.FindChildWithName("DataMenu").GetComponent<DataBlockController>();
         dataBlockController.InitController(displays["button1"], displays["button4"], displays["button2"].GetComponent<Button>(), displays["button5"].GetComponent<Button>(), displays["button6"].GetComponent<Button>());
     }
@@ -61,9 +63,6 @@ public class ACESController : UpDownMenu
         originalColor.Add("menu", displays["menu"].GetComponent<SpriteRenderer>().color);
 
         _activeMenu = this;
-
-        SetUp(displays["button1"], displays["button4"], Color.white);
-        
         MoveUp();
         ResetDisplay();
     }
@@ -83,16 +82,23 @@ public class ACESController : UpDownMenu
         }
     }
 
+    public override void ButtonsCallback(int number)
+    {
+        base.ButtonsCallback(number);
+        if (number == 6) {
+            ToggleShowMenu();
+        }
+        if (number == 2) {
+            Select();
+        }
+    }
+
     public void PushButton(int number) {
         if (number == 6 && _activeMenu != this)
         {
             _activeMenu.SetOff();
             activeDisplayChange = _activeMenu.Draw();
             StartCoroutine(activeDisplayChange);
-        }
-        else if (number == 2 && _activeMenu == this)
-        {
-            Select();
         }
         else {
             _activeMenu.ButtonsCallback(number);

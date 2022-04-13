@@ -28,6 +28,7 @@ public class UpDownMenu : ACESMenu
         downButton = dButton;
         _selectedColor = selectedColor;
         _selectedTextColor = selectedTextColor;
+        selectedOptions = new List<MenuOption>();
     }
 
     protected void AddMenuOption(GameObject option) {
@@ -40,6 +41,15 @@ public class UpDownMenu : ACESMenu
         {
             o.prevTextColor = o.attachedText.color;
         }
+
+        if (selectedOptions.Count == _currentlySelected) {
+            o.attachedRenderer.color = _selectedColor;
+            if (o.attachedText != null) {
+                o.attachedText.color = _selectedTextColor;
+            }
+        }
+
+        selectedOptions.Add(o);
     }
 
     public override IEnumerator SetOff()
@@ -81,15 +91,15 @@ public class UpDownMenu : ACESMenu
             StartCoroutine(MoveInDirection(-1));
         }
 
-        if (_currentlySelected == selectedOptions.Count - 1)
+        if (_currentlySelected == 0)
         {
-            downButton.transform.GetChild(0).gameObject.SetActive(false);
-            downButton.GetComponent<Button>().interactable = false;
+            upButton.transform.GetChild(0).gameObject.SetActive(false);
+            upButton.GetComponent<Button>().interactable = false;
         }
         else
         {
-            upButton.transform.GetChild(0).gameObject.SetActive(true);
-            upButton.GetComponent<Button>().interactable = true;
+            downButton.transform.GetChild(0).gameObject.SetActive(true);
+            downButton.GetComponent<Button>().interactable = true;
         }
     }
 
