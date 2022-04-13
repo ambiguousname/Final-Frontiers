@@ -6,13 +6,13 @@ public class LogController : ACESMenu
 {
     public override IEnumerator Draw()
     {
-        this.transform.GetChild(0).gameObject.SetActive(true);
+        gameObject.SetActive(true);
         yield return null;
     }
 
     public override void SetOff()
     {
-        
+        gameObject.SetActive(false);
         return;
     }
 

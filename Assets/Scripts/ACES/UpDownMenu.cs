@@ -57,6 +57,25 @@ public class UpDownMenu : ACESMenu
         }
     }
 
+    protected void SetUpDownButtons()
+    {
+        _buttons[0].interactable = true;
+        _buttons[3].interactable = true;
+        _buttons[0].GetComponentInChildren<Text>().text = "Up";
+        _buttons[3].GetComponentInChildren<Text>().text = "Down";
+        if (_currentlySelected == 0)
+        {
+            _buttons[0].GetComponentInChildren<Text>().text = "";
+            _buttons[0].GetComponent<Button>().interactable = false;
+        }
+
+        if (_currentlySelected >= selectedOptions.Count - 1)
+        {
+            _buttons[3].GetComponentInChildren<Text>().text = "";
+            _buttons[3].GetComponent<Button>().interactable = false;
+        }
+    }
+
     public override IEnumerator Draw()
     {
         for (int i = 0; i < selectedOptions.Count; i++)
@@ -64,11 +83,7 @@ public class UpDownMenu : ACESMenu
             selectedOptions[i].attachedObject.SetActive(true);
             yield return new WaitForSecondsRealtime(0.1f);
         }
-
-        _buttons[0].interactable = true;
-        _buttons[3].interactable = true;
-        _buttons[0].GetComponentInChildren<Text>().text = "Up";
-        _buttons[3].GetComponentInChildren<Text>().text = "Down";
+        SetUpDownButtons();
     }
 
     public override void ButtonsCallback(int number)
@@ -84,7 +99,7 @@ public class UpDownMenu : ACESMenu
         }
     }
 
-    public void MoveUp() {
+    protected void MoveUp() {
         if (_currentlySelected > 0) {
             if (selectedOptions[_currentlySelected].attachedText != null) {
                 selectedOptions[_currentlySelected].attachedText.color = selectedOptions[_currentlySelected].prevTextColor;
@@ -98,14 +113,14 @@ public class UpDownMenu : ACESMenu
             _buttons[0].GetComponentInChildren<Text>().text = "";
             _buttons[0].GetComponent<Button>().interactable = false;
         }
-        else
+        else if (_currentlySelected < selectedOptions.Count - 1)
         {
             _buttons[3].GetComponentInChildren<Text>().text = "Down";
             _buttons[3].GetComponent<Button>().interactable = true;
         }
     }
 
-    public void MoveDown() {
+    protected void MoveDown() {
         if (_currentlySelected < selectedOptions.Count - 1)
         {
             if (selectedOptions[_currentlySelected].attachedText != null)
@@ -121,7 +136,7 @@ public class UpDownMenu : ACESMenu
             _buttons[3].GetComponentInChildren<Text>().text = "";
             _buttons[3].GetComponent<Button>().interactable = false;
         }
-        else
+        else if (_currentlySelected > 0)
         {
             _buttons[0].GetComponentInChildren<Text>().text = "Up";
             _buttons[0].GetComponent<Button>().interactable = true;

@@ -70,7 +70,7 @@ public class ACESController : UpDownMenu
         originalColor.Add("menu", displays["menu"].GetComponent<SpriteRenderer>().color);
 
         _activeMenu = this;
-        MoveUp();
+        SetUpDownButtons();
         ResetDisplay();
     }
 
@@ -78,8 +78,8 @@ public class ACESController : UpDownMenu
         string[] order = { "title", "time", "date", "messageCount", "log", "data", "settings", "menu", "maps", "games", "button1", "button4", "button2", "button5", "button3", "button6" };
         for (int i = 0; i < order.Length; i++)
         {
+            yield return new WaitForSecondsRealtime(0.05f);
             displays[order[i]].SetActive(true);
-            yield return new WaitForSecondsRealtime(0.1f);
         }
 
         if (_currentlySelected > 0)
@@ -181,6 +181,7 @@ public class ACESController : UpDownMenu
         }
         if (active)
         {
+            _activeMenu.SetOff();
             _activeMenu = this;
             activeDisplayChange = HideMenu(g);
             StartCoroutine(activeDisplayChange);

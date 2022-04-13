@@ -6,8 +6,13 @@ using UnityEngine.UI;
 
 public class DataBlockController : UpDownMenu
 {
+    protected struct DataBlock {
+        public GameObject header;
+        public string text;
+    }
+
     public GameObject dataBlockPrefab;
-    List<GameObject> dataBlocks;
+    List<DataBlock> dataBlocks;
     GameObject blockList;
     TextMeshPro blockView;
     Button[] _buttons;
@@ -17,18 +22,17 @@ public class DataBlockController : UpDownMenu
         SetUp(buttons, Color.white, Color.black);
         blockList = gameObject.FindChildWithName("BlockSelection");
         blockView = gameObject.FindChildWithName("BlockViewText").GetComponent<TextMeshPro>();
-        dataBlocks = new List<GameObject>();
+        dataBlocks = new List<DataBlock>();
     }
 
     public override IEnumerator Draw() {
         gameObject.SetActive(true);
-        base.Draw();
-        blockView.gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(0.1f);
-        _buttons[1].GetComponentInChildren<Text>().text = "Pg. Up";
-        _buttons[4].GetComponentInChildren<Text>().text = "Pg. Down";
-        _buttons[1].interactable = true;
+        _buttons[1].GetComponentInChildren<Text>().text = "";
+        _buttons[4].GetComponentInChildren<Text>().text = "Pg. Dn";
+        _buttons[1].interactable = false;
         _buttons[4].interactable = true;
+        StartCoroutine(base.Draw());
     }
 
     public override void SetOff()
@@ -37,41 +41,61 @@ public class DataBlockController : UpDownMenu
         _buttons[4].GetComponentInChildren<Text>().text = "";
         _buttons[1].interactable = false;
         _buttons[4].interactable = false;
-        blockView.gameObject.SetActive(false);
         base.SetOff();
         gameObject.SetActive(false);
     }
 
     public void AddDataBlock(TextAsset data) {
-        var dataBlock = Instantiate(dataBlockPrefab, blockList.transform);
-        var text = dataBlock.GetComponentInChildren<TextMeshPro>();
+        var dataBlock = new DataBlock();
+        dataBlock.header = Instantiate(dataBlockPrefab, blockList.transform);
+        var text = dataBlock.header.GetComponentInChildren<TextMeshPro>();
         text.text = data.name;
+        dataBlock.text = data.text;
         dataBlocks.Add(dataBlock);
         if (dataBlocks.Count == 1) {
-            dataBlock.GetComponent<SpriteRenderer>().color = Color.white;
+            dataBlock.header.GetComponent<SpriteRenderer>().color = Color.white;
             text.color = Color.black;
+            blockView.text = data.text;
         }
-        AddMenuOption(dataBlock);
+        AddMenuOption(dataBlock.header);
     }
 
-    public void ButtonsCallback(int buttonNumber, Button buttonObject) {
+    private void ResetMove() {
+        blockView.pageToDisplay = 0;
+        blockView.text = dataBlocks[_currentlySelected].text;
+
+        _buttons[1].GetComponentInChildren<Text>().text = "";
+        _buttons[1].interactable = false;
+    }
+
+    protected new void MoveUp() {
+        base.MoveUp();
+        ResetMove();
+    }
+
+    protected new void MoveDown() {
+        base.MoveDown();
+        ResetMove();
+    }
+
+    public override void ButtonsCallback(int buttonNumber) {
         if (buttonNumber == 2)
         {
-            _buttons[4].transform.GetChild(0).gameObject.SetActive(true);
+            _buttons[4].GetComponentInChildren<Text>().text = "Pg. Dn";
             _buttons[4].interactable = true;
-            if (blockView.pageToDisplay > 0)
+            if (blockView.pageToDisplay > 1)
             {
                 blockView.pageToDisplay -= 1;
             }
-            if (blockView.pageToDisplay == 0)
+            if (blockView.pageToDisplay == 1)
             {
-                buttonObject.transform.GetChild(0).gameObject.SetActive(false);
-                buttonObject.interactable = false;
+                _buttons[1].GetComponentInChildren<Text>().text = "";
+                _buttons[1].interactable = false;
             }
         }
         if (buttonNumber == 5)
         {
-            _buttons[1].transform.GetChild(0).gameObject.SetActive(true);
+            _buttons[1].GetComponentInChildren<Text>().text = "Pg. Up";
             _buttons[1].interactable = true;
             if (blockView.pageToDisplay < blockView.textInfo.pageCount)
             {
@@ -79,8 +103,8 @@ public class DataBlockController : UpDownMenu
             }
             if (blockView.pageToDisplay == blockView.textInfo.pageCount)
             {
-                buttonObject.transform.GetChild(0).gameObject.SetActive(false);
-                buttonObject.interactable = false;
+                _buttons[4].GetComponentInChildren<Text>().text = "";
+                _buttons[4].interactable = false;
             }
         }
     }
