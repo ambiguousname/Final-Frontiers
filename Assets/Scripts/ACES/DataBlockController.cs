@@ -10,29 +10,36 @@ public class DataBlockController : UpDownMenu
     List<GameObject> dataBlocks;
     GameObject blockList;
     TextMeshPro blockView;
-    Button _pageUp;
-    Button _pageDown;
-    Button _exit;
+    Button[] _buttons;
 
-    public void InitController(GameObject upButton, GameObject downButton, Button pageUp, Button pageDown, Button exit) {
-        SetUp(upButton, downButton, Color.white, Color.black);
-        _pageUp = pageUp;
-        _pageDown = pageDown;
-        _exit = exit;
+    public void InitController(Button[] buttons) {
+        _buttons = buttons;
+        SetUp(buttons, Color.white, Color.black);
         blockList = gameObject.FindChildWithName("BlockSelection");
         blockView = gameObject.FindChildWithName("BlockViewText").GetComponent<TextMeshPro>();
         dataBlocks = new List<GameObject>();
     }
 
     public override IEnumerator Draw() {
+        gameObject.SetActive(true);
         base.Draw();
         blockView.gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(0.1f);
-        _exit.GetComponentInChildren<Text>().text = "Back";
-        _pageUp.GetComponentInChildren<Text>().text = "Pg. Up";
-        _pageDown.GetComponentInChildren<Text>().text = "Pg. Down";
-        _pageDown.interactable = true;
-        _pageUp.interactable = true;
+        _buttons[1].GetComponentInChildren<Text>().text = "Pg. Up";
+        _buttons[4].GetComponentInChildren<Text>().text = "Pg. Down";
+        _buttons[1].interactable = true;
+        _buttons[4].interactable = true;
+    }
+
+    public override void SetOff()
+    {
+        _buttons[1].GetComponentInChildren<Text>().text = "";
+        _buttons[4].GetComponentInChildren<Text>().text = "";
+        _buttons[1].interactable = false;
+        _buttons[4].interactable = false;
+        blockView.gameObject.SetActive(false);
+        base.SetOff();
+        gameObject.SetActive(false);
     }
 
     public void AddDataBlock(TextAsset data) {
@@ -50,8 +57,8 @@ public class DataBlockController : UpDownMenu
     public void ButtonsCallback(int buttonNumber, Button buttonObject) {
         if (buttonNumber == 2)
         {
-            _pageDown.transform.GetChild(0).gameObject.SetActive(true);
-            _pageDown.interactable = true;
+            _buttons[4].transform.GetChild(0).gameObject.SetActive(true);
+            _buttons[4].interactable = true;
             if (blockView.pageToDisplay > 0)
             {
                 blockView.pageToDisplay -= 1;
@@ -64,8 +71,8 @@ public class DataBlockController : UpDownMenu
         }
         if (buttonNumber == 5)
         {
-            _pageUp.transform.GetChild(0).gameObject.SetActive(true);
-            _pageUp.interactable = true;
+            _buttons[1].transform.GetChild(0).gameObject.SetActive(true);
+            _buttons[1].interactable = true;
             if (blockView.pageToDisplay < blockView.textInfo.pageCount)
             {
                 blockView.pageToDisplay += 1;

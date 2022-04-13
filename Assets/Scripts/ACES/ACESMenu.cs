@@ -6,7 +6,7 @@ public abstract class ACESMenu : MonoBehaviour
 {
     public abstract void ButtonsCallback(int number);
 
-    public abstract IEnumerator SetOff();
+    public abstract void SetOff();
 
     public abstract IEnumerator Draw();
 }

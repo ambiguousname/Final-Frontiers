@@ -8,11 +8,14 @@ public class ACESController : UpDownMenu
 {
     [HideInInspector]
     public DataBlockController dataBlockController;
+    [HideInInspector]
+    public LogController logController;
 
     Dictionary<string, GameObject> displays;
     Dictionary<string, Color> originalColor;
 
     ACESMenu _activeMenu;
+    Button[] _buttons;
 
     private IEnumerator activeDisplayChange;
 
@@ -27,10 +30,14 @@ public class ACESController : UpDownMenu
         displays.Add("button5", gameObject.FindChildWithName("Button5"));
         displays.Add("button6", gameObject.FindChildWithName("Button6"));
 
-        SetUp(displays["button1"], displays["button4"], Color.white);
+        _buttons = new Button[] { displays["button1"].GetComponent<Button>(), displays["button2"].GetComponent<Button>(), displays["button3"].GetComponent<Button>(),
+        displays["button4"].GetComponent<Button>(), displays["button5"].GetComponent<Button>(), displays["button6"].GetComponent<Button>()};
+
+        SetUp(_buttons, Color.white);
 
         dataBlockController = gameObject.FindChildWithName("DataMenu").GetComponent<DataBlockController>();
-        dataBlockController.InitController(displays["button1"], displays["button4"], displays["button2"].GetComponent<Button>(), displays["button5"].GetComponent<Button>(), displays["button6"].GetComponent<Button>());
+        dataBlockController.InitController(_buttons);
+        logController = gameObject.FindChildWithName("LogMenu").GetComponent<LogController>();
     }
 
     private void AddMenuDisplays(string title, GameObject g) {
@@ -44,20 +51,20 @@ public class ACESController : UpDownMenu
         displays.Add("time", gameObject.FindChildWithName("Time"));
         displays.Add("date", gameObject.FindChildWithName("Date"));
         displays.Add("messageCount", gameObject.FindChildWithName("MessageCount"));
-        AddMenuDisplays("mail", gameObject.FindChildWithName("Mail"));
+        AddMenuDisplays("log", gameObject.FindChildWithName("Log"));
         AddMenuDisplays("data", gameObject.FindChildWithName("Data"));
         AddMenuDisplays("settings", gameObject.FindChildWithName("Settings"));
         AddMenuDisplays("menu", gameObject.FindChildWithName("MainMenu"));
         displays.Add("maps", gameObject.FindChildWithName("Maps"));
         displays.Add("games", gameObject.FindChildWithName("Games"));
 
-        originalColor.Add("button1", displays["button1"].GetComponent<Image>().color);
-        originalColor.Add("button2", displays["button2"].GetComponent<Image>().color);
-        originalColor.Add("button3", displays["button3"].GetComponent<Image>().color);
-        originalColor.Add("button4", displays["button4"].GetComponent<Image>().color);
-        originalColor.Add("button5", displays["button5"].GetComponent<Image>().color);
-        originalColor.Add("button6", displays["button6"].GetComponent<Image>().color);
-        originalColor.Add("mail", displays["mail"].GetComponent<SpriteRenderer>().color);
+        originalColor.Add("button1", _buttons[0].GetComponent<Image>().color);
+        originalColor.Add("button2", _buttons[1].GetComponent<Image>().color);
+        originalColor.Add("button3", _buttons[2].GetComponent<Image>().color);
+        originalColor.Add("button4", _buttons[3].GetComponent<Image>().color);
+        originalColor.Add("button5", _buttons[4].GetComponent<Image>().color);
+        originalColor.Add("button6", _buttons[5].GetComponent<Image>().color);
+        originalColor.Add("log", displays["log"].GetComponent<SpriteRenderer>().color);
         originalColor.Add("data", displays["data"].GetComponent<SpriteRenderer>().color);
         originalColor.Add("settings", displays["settings"].GetComponent<SpriteRenderer>().color);
         originalColor.Add("menu", displays["menu"].GetComponent<SpriteRenderer>().color);
@@ -68,12 +75,13 @@ public class ACESController : UpDownMenu
     }
 
     public override IEnumerator Draw() {
-        string[] order = { "title", "time", "date", "messageCount", "mail", "data", "settings", "menu", "maps", "games", "button1", "button4", "button2", "button5", "button3", "button6" };
+        string[] order = { "title", "time", "date", "messageCount", "log", "data", "settings", "menu", "maps", "games", "button1", "button4", "button2", "button5", "button3", "button6" };
         for (int i = 0; i < order.Length; i++)
         {
             displays[order[i]].SetActive(true);
             yield return new WaitForSecondsRealtime(0.1f);
         }
+        _buttons[5].GetComponentInChildren<Text>().text = "Exit";
     }
 
     public void ResetDisplay() {
@@ -89,7 +97,25 @@ public class ACESController : UpDownMenu
             ToggleShowMenu();
         }
         if (number == 2) {
-            Select();
+            StartCoroutine(Select());
+        }
+    }
+
+    public override void SetOff()
+    {
+        base.SetOff();
+        displays["title"].SetActive(false);
+        displays["time"].SetActive(false);
+        displays["date"].SetActive(false);
+        displays["messageCount"].SetActive(false);
+        displays["games"].SetActive(false);
+        displays["maps"].SetActive(false);
+
+        _buttons[5].GetComponentInChildren<Text>().text = "Back";
+
+        for (int i = 0; i < _buttons.Length - 1; i++) {
+            _buttons[i].gameObject.GetComponentInChildren<Text>().text = "";
+            _buttons[i].interactable = false;
         }
     }
 
@@ -97,6 +123,7 @@ public class ACESController : UpDownMenu
         if (number == 6 && _activeMenu != this)
         {
             _activeMenu.SetOff();
+            StopCoroutine(activeDisplayChange);
             activeDisplayChange = _activeMenu.Draw();
             StartCoroutine(activeDisplayChange);
         }
@@ -105,16 +132,22 @@ public class ACESController : UpDownMenu
         }
     }
 
-    public void Select()
+    public IEnumerator Select()
     {
+        _activeMenu.SetOff();
+        yield return new WaitForSecondsRealtime(0.5f);
         switch (_currentlySelected) {
+            case 0:
+                _activeMenu = logController;
+                break;
             case 1:
-                _activeMenu = GetComponentInChildren<DataBlockController>();
+                _activeMenu = dataBlockController;
                 break;
             default:
                 Debug.LogError("Unrecognized menu option " + _currentlySelected);
                 break;
         }
+        StopCoroutine(activeDisplayChange);
         activeDisplayChange = _activeMenu.Draw();
         StartCoroutine(activeDisplayChange);
     }

@@ -17,15 +17,13 @@ public class UpDownMenu : ACESMenu
         public Color prevTextColor;
     }
 
-    private GameObject upButton;
-    private GameObject downButton;
+    Button[] _buttons;
     private List<MenuOption> selectedOptions;
     private Color _selectedColor;
     private Color _selectedTextColor;
 
-    public void SetUp(GameObject uButton, GameObject dButton, Color selectedColor, Color selectedTextColor = default(Color)) {
-        upButton = uButton;
-        downButton = dButton;
+    public void SetUp(Button[] buttons, Color selectedColor, Color selectedTextColor = default(Color)) {
+        _buttons = buttons;
         _selectedColor = selectedColor;
         _selectedTextColor = selectedTextColor;
         selectedOptions = new List<MenuOption>();
@@ -52,11 +50,10 @@ public class UpDownMenu : ACESMenu
         selectedOptions.Add(o);
     }
 
-    public override IEnumerator SetOff()
+    public override void SetOff()
     {
         for (int i = 0; i < selectedOptions.Count; i++) {
             selectedOptions[i].attachedObject.SetActive(false);
-            yield return new WaitForSecondsRealtime(0.1f);
         }
     }
 
@@ -67,6 +64,11 @@ public class UpDownMenu : ACESMenu
             selectedOptions[i].attachedObject.SetActive(true);
             yield return new WaitForSecondsRealtime(0.1f);
         }
+
+        _buttons[0].interactable = true;
+        _buttons[3].interactable = true;
+        _buttons[0].GetComponentInChildren<Text>().text = "Up";
+        _buttons[3].GetComponentInChildren<Text>().text = "Down";
     }
 
     public override void ButtonsCallback(int number)
@@ -93,13 +95,13 @@ public class UpDownMenu : ACESMenu
 
         if (_currentlySelected == 0)
         {
-            upButton.transform.GetChild(0).gameObject.SetActive(false);
-            upButton.GetComponent<Button>().interactable = false;
+            _buttons[0].GetComponentInChildren<Text>().text = "";
+            _buttons[0].GetComponent<Button>().interactable = false;
         }
         else
         {
-            downButton.transform.GetChild(0).gameObject.SetActive(true);
-            downButton.GetComponent<Button>().interactable = true;
+            _buttons[3].GetComponentInChildren<Text>().text = "Down";
+            _buttons[3].GetComponent<Button>().interactable = true;
         }
     }
 
@@ -116,13 +118,13 @@ public class UpDownMenu : ACESMenu
 
         if (_currentlySelected == selectedOptions.Count - 1)
         {
-            downButton.transform.GetChild(0).gameObject.SetActive(false);
-            downButton.GetComponent<Button>().interactable = false;
+            _buttons[3].GetComponentInChildren<Text>().text = "";
+            _buttons[3].GetComponent<Button>().interactable = false;
         }
         else
         {
-            upButton.transform.GetChild(0).gameObject.SetActive(true);
-            upButton.GetComponent<Button>().interactable = true;
+            _buttons[0].GetComponentInChildren<Text>().text = "Up";
+            _buttons[0].GetComponent<Button>().interactable = true;
         }
     }
 
