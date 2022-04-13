@@ -3,7 +3,6 @@ tags:
 ---
 
 <<set $crewTrust to 0>>
-<<addDataBlock "Aratel Brief">>
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
 
 -> You: A pleasure to meet you.

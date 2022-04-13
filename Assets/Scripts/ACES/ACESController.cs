@@ -128,9 +128,7 @@ public class ACESController : UpDownMenu
         displays["games"].SetActive(false);
         displays["maps"].SetActive(false);
 
-        _buttons[5].GetComponentInChildren<Text>().text = "Back";
-
-        for (int i = 0; i < _buttons.Length - 1; i++) {
+        for (int i = 0; i < _buttons.Length; i++) {
             _buttons[i].gameObject.GetComponentInChildren<Text>().text = "";
             _buttons[i].interactable = false;
         }
@@ -155,7 +153,6 @@ public class ACESController : UpDownMenu
     public IEnumerator Select()
     {
         _activeMenu.SetOff();
-        yield return new WaitForSecondsRealtime(0.5f);
         switch (_currentlySelected) {
             case 0:
                 _activeMenu = logController;
@@ -168,6 +165,9 @@ public class ACESController : UpDownMenu
                 break;
         }
         StopCoroutine(activeDisplayChange);
+        yield return new WaitForSecondsRealtime(0.5f);
+        _buttons[5].GetComponentInChildren<Text>().text = "Back";
+        _buttons[5].interactable = true;
         activeDisplayChange = _activeMenu.Draw();
         StartCoroutine(activeDisplayChange);
     }

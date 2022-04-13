@@ -7,3 +7,6 @@
 - Fix lighting to be brighter
 - Fix bug where player can give looking around input during warp transition
 - SFX
+- Disable jumping during time pause
+- Add settings menu
+- Add main menu (and link to settings menu from A.C.E.S)
