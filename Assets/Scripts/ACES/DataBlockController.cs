@@ -19,6 +19,9 @@ public class DataBlockController : UpDownMenu
         _pageUp = pageUp;
         _pageDown = pageDown;
         _exit = exit;
+        blockList = gameObject.FindChildWithName("BlockSelection");
+        blockView = gameObject.FindChildWithName("BlockViewText").GetComponent<TextMeshPro>();
+        dataBlocks = new List<GameObject>();
     }
 
     public override IEnumerator Draw() {
@@ -36,7 +39,6 @@ public class DataBlockController : UpDownMenu
         var dataBlock = Instantiate(dataBlockPrefab, blockList.transform);
         var text = dataBlock.GetComponentInChildren<TextMeshPro>();
         text.text = data.name;
-
         dataBlocks.Add(dataBlock);
         if (dataBlocks.Count == 1) {
             dataBlock.GetComponent<SpriteRenderer>().color = Color.white;
@@ -74,13 +76,6 @@ public class DataBlockController : UpDownMenu
                 buttonObject.interactable = false;
             }
         }
-    }
-
-    // Start is called before the first frame update
-    void OnEnable()
-    {
-        blockList = gameObject.FindChildWithName("BlockSelection");
-        blockView = gameObject.FindChildWithName("BlockViewText").GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame

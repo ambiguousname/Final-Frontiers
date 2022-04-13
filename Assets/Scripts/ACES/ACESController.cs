@@ -6,12 +6,30 @@ using UnityEngine.UI;
 
 public class ACESController : UpDownMenu
 {
+    [HideInInspector]
+    public DataBlockController dataBlockController;
+
     Dictionary<string, GameObject> displays;
     Dictionary<string, Color> originalColor;
 
     ACESMenu _activeMenu;
 
     private IEnumerator activeDisplayChange;
+
+    private void Awake()
+    {
+        displays = new Dictionary<string, GameObject>();
+        originalColor = new Dictionary<string, Color>();
+        displays.Add("button1", gameObject.FindChildWithName("Button1"));
+        displays.Add("button2", gameObject.FindChildWithName("Button2"));
+        displays.Add("button3", gameObject.FindChildWithName("Button3"));
+        displays.Add("button4", gameObject.FindChildWithName("Button4"));
+        displays.Add("button5", gameObject.FindChildWithName("Button5"));
+        displays.Add("button6", gameObject.FindChildWithName("Button6"));
+
+        dataBlockController = gameObject.FindChildWithName("DataMenu").GetComponent<DataBlockController>();
+        dataBlockController.InitController(displays["button1"], displays["button4"], displays["button2"].GetComponent<Button>(), displays["button5"].GetComponent<Button>(), displays["button6"].GetComponent<Button>());
+    }
 
     private void AddMenuDisplays(string title, GameObject g) {
         displays.Add(title, g);
@@ -20,8 +38,6 @@ public class ACESController : UpDownMenu
 
     private void Start()
     {
-        displays = new Dictionary<string, GameObject>();
-        originalColor = new Dictionary<string, Color>();
         displays.Add("title", gameObject.FindChildWithName("ACESTitleBig"));
         displays.Add("time", gameObject.FindChildWithName("Time"));
         displays.Add("date", gameObject.FindChildWithName("Date"));
@@ -32,12 +48,6 @@ public class ACESController : UpDownMenu
         AddMenuDisplays("menu", gameObject.FindChildWithName("MainMenu"));
         displays.Add("maps", gameObject.FindChildWithName("Maps"));
         displays.Add("games", gameObject.FindChildWithName("Games"));
-        displays.Add("button1", gameObject.FindChildWithName("Button1"));
-        displays.Add("button2", gameObject.FindChildWithName("Button2"));
-        displays.Add("button3", gameObject.FindChildWithName("Button3"));
-        displays.Add("button4", gameObject.FindChildWithName("Button4"));
-        displays.Add("button5", gameObject.FindChildWithName("Button5"));
-        displays.Add("button6", gameObject.FindChildWithName("Button6"));
 
         originalColor.Add("button1", displays["button1"].GetComponent<Image>().color);
         originalColor.Add("button2", displays["button2"].GetComponent<Image>().color);
@@ -52,16 +62,16 @@ public class ACESController : UpDownMenu
 
         _activeMenu = this;
 
-        MoveUp();
-        SetOff();
-
         SetUp(displays["button1"], displays["button4"], Color.white);
-        GetComponentInChildren<DataBlockController>().InitController(displays["button1"], displays["button4"], displays["button2"].GetComponent<Button>(), displays["button5"].GetComponent<Button>(), displays["button6"].GetComponent<Button>());
+        
+        MoveUp();
+        ResetDisplay();
     }
 
     public override IEnumerator Draw() {
         string[] order = { "title", "time", "date", "messageCount", "mail", "data", "settings", "menu", "maps", "games", "button1", "button4", "button2", "button5", "button3", "button6" };
-        for (int i = 0; i < order.Length; i++) {
+        for (int i = 0; i < order.Length; i++)
+        {
             displays[order[i]].SetActive(true);
             yield return new WaitForSecondsRealtime(0.1f);
         }

@@ -36,7 +36,10 @@ public class UpDownMenu : ACESMenu
         o.attachedObject.TryGetComponent<TextMeshPro>(out o.attachedText);
         o.attachedRenderer = option.GetComponent<SpriteRenderer>();
         o.prevObjectColor = o.attachedRenderer.color;
-        o.prevTextColor = o.attachedText.color;
+        if (o.attachedText != null)
+        {
+            o.prevTextColor = o.attachedText.color;
+        }
     }
 
     public override IEnumerator SetOff()
@@ -125,7 +128,7 @@ public class UpDownMenu : ACESMenu
     }
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         selectedOptions = new List<MenuOption>();
         _currentlySelected = 0;

@@ -53,6 +53,6 @@ public class YarnCommands : MonoBehaviour
 
     [YarnCommand("addDataBlock")]
     public static void AddDataBlock(string blockName) {
-        GameObject.FindObjectOfType<DataBlockController>().AddDataBlock(Resources.Load<TextAsset>("/DataBlocks/" + blockName + ".txt"));
+        GameObject.FindObjectOfType<ACESController>().dataBlockController.AddDataBlock(Resources.Load<TextAsset>("DataBlocks/" + blockName));
     }
 }
