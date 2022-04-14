@@ -11,3 +11,4 @@
 - Add settings menu
 - Add main menu (and link to settings menu from A.C.E.S)
 - Add color to characters
+- Add shuttle
