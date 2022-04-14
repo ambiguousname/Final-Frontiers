@@ -1,6 +1,4 @@
 - Moving star background (so that the skybox actually looks like it's rotating.)
-- Allow loading different dialogues during warp
-- Warp transition into a level.
 - Adjustable dialogue size
 - Smaller dialogue size
 - Faster LeaveDock animation at the end
@@ -12,3 +10,4 @@
 - Add main menu (and link to settings menu from A.C.E.S)
 - Add color to characters
 - Add shuttle
+- Return to main menu from dead screen.

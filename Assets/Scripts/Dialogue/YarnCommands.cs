@@ -52,6 +52,12 @@ public class YarnCommands : MonoBehaviour
         GameObject.FindObjectOfType<WarpTransition>().Warp(sceneName, dialogueToStart);
     }
 
+    [YarnCommand("exitWarp")]
+    public static void ExitWarp() {
+
+        GameObject.FindObjectOfType<WarpTransition>().ExitWarp();
+    }
+
     [YarnCommand("addDataBlock")]
     public static void AddDataBlock(string blockName) {
         GameObject.FindObjectOfType<ACESController>().dataBlockController.AddDataBlock(Resources.Load<TextAsset>("DataBlocks/" + blockName));

@@ -19,6 +19,8 @@ public class WarpTransition : MonoBehaviour
 
     string warpDialogueToLoad;
     string levelToLoad;
+
+    AsyncOperation levelLoading;
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -32,13 +34,30 @@ public class WarpTransition : MonoBehaviour
         SetPositions();
         levelToLoad = levelName;
         warpDialogueToLoad = dialogueToStart;
-        //Application.backgroundLoadingPriority = ThreadPriority.Low;
         // The Character Controller does not handle teleportation well. So we just disable it. We don't need to re-enable it, since the new
         // player will have their CharacterController enabled.
         player.GetComponent<CharacterController>().enabled = false;
         SceneManager.LoadScene("Warp", LoadSceneMode.Single);
         SceneManager.sceneLoaded += UpdatePositions;
         SceneManager.sceneLoaded += LoadYarnDialogue;
+
+
+        Application.backgroundLoadingPriority = ThreadPriority.Low;
+        levelLoading = SceneManager.LoadSceneAsync(levelToLoad, LoadSceneMode.Additive);
+        levelLoading.allowSceneActivation = false;
+    }
+
+    public void ExitWarp() {
+        StartCoroutine(AwaitExitWarp());
+    }
+
+    private IEnumerator AwaitExitWarp() {
+        yield return new WaitUntil(() => {
+            SetPositions();
+            return levelLoading.isDone; 
+        });
+        levelLoading.allowSceneActivation = true;
+        Application.backgroundLoadingPriority = ThreadPriority.Normal;
     }
 
     private void SetPositions() {

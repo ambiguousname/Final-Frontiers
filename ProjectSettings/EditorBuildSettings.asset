@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dead.unity
     guid: 33d69059d82d14949a08d7b373708a6b
+  - enabled: 1
+    path: Assets/Scenes/Aratel.unity
+    guid: 5ca929d20c714884a9931a5d44c30231
   m_configObjects: {}
