@@ -20,6 +20,8 @@ public class WarpTransition : MonoBehaviour
     string warpDialogueToLoad;
     string levelToLoad;
 
+    private bool canExitWarp = false;
+
     AsyncOperation levelLoading;
     // Start is called before the first frame update
     void OnEnable()
@@ -41,23 +43,27 @@ public class WarpTransition : MonoBehaviour
         SceneManager.sceneLoaded += UpdatePositions;
         SceneManager.sceneLoaded += LoadYarnDialogue;
 
-
+        canExitWarp = false;
         Application.backgroundLoadingPriority = ThreadPriority.Low;
+        StartCoroutine(WarpLoad());
+    }
+
+    private IEnumerator WarpLoad() {
+        yield return null;
         levelLoading = SceneManager.LoadSceneAsync(levelToLoad, LoadSceneMode.Additive);
         levelLoading.allowSceneActivation = false;
+
+        while (!levelLoading.isDone) {
+            if (canExitWarp && levelLoading.progress >= 0.9f) {
+                SetPositions();
+                levelLoading.allowSceneActivation = true;
+                Application.backgroundLoadingPriority = ThreadPriority.Normal;
+            }
+        }
     }
 
     public void ExitWarp() {
-        StartCoroutine(AwaitExitWarp());
-    }
-
-    private IEnumerator AwaitExitWarp() {
-        yield return new WaitUntil(() => {
-            SetPositions();
-            return levelLoading.isDone; 
-        });
-        levelLoading.allowSceneActivation = true;
-        Application.backgroundLoadingPriority = ThreadPriority.Normal;
+        canExitWarp = true;
     }
 
     private void SetPositions() {

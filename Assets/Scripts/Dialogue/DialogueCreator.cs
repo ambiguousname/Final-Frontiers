@@ -126,7 +126,7 @@ public class DialogueCreator : DialogueViewBase
 
         var comm = new Yarn.Markup.MarkupAttribute();
         var isComm = dialogueLine.Text.TryGetAttributeWithName("Comm", out comm);
-        if ((isComm || name != "You") && (activeDialogue == null || name != activeDialogue.name)) {
+        if (!isComm && name != "You" && (activeDialogue == null || name != activeDialogue.name)) {
             activeDialogue = GameObject.Find(name).FindChildWithTag("ActorDialogueBox");
             activeName = activeDialogue.FindChildWithName("Name").GetComponent<Text>();
             activeText = activeDialogue.FindChildWithName("Text").GetComponent<Text>();
