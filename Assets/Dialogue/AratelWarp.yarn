@@ -108,7 +108,6 @@ Ambassador G'Vorik: Okay. Fine! I have plans, I'll just have to make them withou
         Ambassador G'Vorik: WHAT?
         Ambassador G'Vorik: ...
         Ambassador G'Vorik: Fine.
-    <<moveTo "Ambassador G'Vorik" GVorikQuarters>>
     <<lockDoor QuarterDoor true>>
     <<jump AW_ExitWarp>>
 ===
@@ -120,6 +119,8 @@ Ambassador G'Vorik: See you there, Captain.
 <<moveTo "Ambassador G'Vorik" BridgeLeft>>
 <<elseif $gvorikStatus == "independent">>
 <<moveTo "Ambassador G'Vorik" BridgeLeft>>
+<<elseif $gvorikStatus == "confined">>
+<<moveTo "Ambassador G'Vorik" GVorikQuarters>>
 <<endif>>
 
 <<enableTrigger BridgeTrigger AW_ActualExit>>
