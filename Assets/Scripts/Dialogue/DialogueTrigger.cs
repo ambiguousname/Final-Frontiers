@@ -23,7 +23,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (!hasPlayed && other.tag == tagToTrigger && runner.Dialogue.IsActive == false) {
+        if (dialogueToStart != "" && !hasPlayed && other.tag == tagToTrigger && runner.Dialogue.IsActive == false) {
             runner.StartDialogue(dialogueToStart);
             if (!canRepeat) {
                 hasPlayed = true;

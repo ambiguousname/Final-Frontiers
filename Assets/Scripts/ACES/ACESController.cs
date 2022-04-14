@@ -15,7 +15,6 @@ public class ACESController : UpDownMenu
     Dictionary<string, Color> originalColor;
 
     ACESMenu _activeMenu;
-    Button[] _buttons;
 
     private IEnumerator activeDisplayChange;
 
@@ -33,7 +32,7 @@ public class ACESController : UpDownMenu
         _buttons = new Button[] { displays["button1"].GetComponent<Button>(), displays["button2"].GetComponent<Button>(), displays["button3"].GetComponent<Button>(),
         displays["button4"].GetComponent<Button>(), displays["button5"].GetComponent<Button>(), displays["button6"].GetComponent<Button>()};
 
-        SetUp(_buttons, Color.white);
+        SetUp(Color.white);
 
         dataBlockController = gameObject.FindChildWithName("DataMenu").GetComponent<DataBlockController>();
         dataBlockController.InitController(_buttons);

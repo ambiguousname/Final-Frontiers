@@ -292,6 +292,22 @@ PrefabInstance:
       value: ACESRenderer
       objectReference: {fileID: 0}
     - target: {fileID: 2238273231824607015, guid: 98c3bb07497514743ab08b249c5dbd12, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70183617
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238273231824607015, guid: 98c3bb07497514743ab08b249c5dbd12, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0861746
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238273231824607015, guid: 98c3bb07497514743ab08b249c5dbd12, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70183617
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238273231824607015, guid: 98c3bb07497514743ab08b249c5dbd12, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0861746
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238273231824607015, guid: 98c3bb07497514743ab08b249c5dbd12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -22.265
       objectReference: {fileID: 0}
@@ -311,6 +327,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.000015258789
       objectReference: {fileID: 0}
+    - target: {fileID: 5248879328388522294, guid: 98c3bb07497514743ab08b249c5dbd12, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 9005220659476430821}
     - target: {fileID: 6936310684439030507, guid: 98c3bb07497514743ab08b249c5dbd12, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0

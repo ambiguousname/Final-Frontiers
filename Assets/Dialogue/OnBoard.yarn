@@ -1,7 +1,6 @@
 ﻿title: OnBoard
 tags:
 ---
-
 <<set $crewTrust to 0>>
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
 

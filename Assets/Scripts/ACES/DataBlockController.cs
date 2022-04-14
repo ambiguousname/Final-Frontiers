@@ -15,11 +15,10 @@ public class DataBlockController : UpDownMenu
     List<DataBlock> dataBlocks;
     GameObject blockList;
     TextMeshPro blockView;
-    Button[] _buttons;
 
     public void InitController(Button[] buttons) {
         _buttons = buttons;
-        SetUp(buttons, Color.white, Color.black);
+        SetUp(Color.white, Color.black);
         blockList = gameObject.FindChildWithName("BlockSelection");
         blockView = gameObject.FindChildWithName("BlockViewText").GetComponent<TextMeshPro>();
         dataBlocks = new List<DataBlock>();

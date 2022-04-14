@@ -17,13 +17,12 @@ public class UpDownMenu : ACESMenu
         public Color prevTextColor;
     }
 
-    Button[] _buttons;
+    protected Button[] _buttons;
     protected List<MenuOption> selectedOptions;
     private Color _selectedColor;
     private Color _selectedTextColor;
 
-    public void SetUp(Button[] buttons, Color selectedColor, Color selectedTextColor = default(Color)) {
-        _buttons = buttons;
+    public void SetUp(Color selectedColor, Color selectedTextColor = default(Color)) {
         _selectedColor = selectedColor;
         _selectedTextColor = selectedTextColor;
         selectedOptions = new List<MenuOption>();

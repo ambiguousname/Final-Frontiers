@@ -1,10 +1,14 @@
 title: AratelWarp
 ---
+<<placeActor "Ambassador G'Vorik" GVorikQuarters>>
+<<moveTo "Ambassador G'Vorik" CaptainCabin1>>
 Commander Corwin: Computer estimates about 2 minutes until arrival.
-Officer Roquell: Mission brief is in your quarters, Captain.
+Officer Roquell: Ambassador G'Vorik has your mission brief and is in your quarters, Captain.
 -> You: Thank you.
+    <<enableTrigger CaptainCabinTrigger AW_GVorik>>
 -> You: Mind showing me the way?
     <<escort "Officer Roquell" CaptainCabin Player 10>>
+    <<enableTrigger CaptainCabinTrigger AW_ArriveAtQuarters>>
 ===
 title: AW_ArriveAtQuarters
 ---
@@ -12,15 +16,26 @@ title: AW_ArriveAtQuarters
     Officer Roquell: You can darken it if you get a membranic technician to look at it.
     -> You: And where is my bed?
         Officer Roquell: I guess your room doesn't come with one. We can pick one up as soon as possible.
+        Ambassador G'Vorik: If it makes you feel any better, my room doesn't come with a bed.
     -> You: Ah.
+        Ambassador G'Vorik: There's no toilet on this deck. So that's a mixed bag.
 -> You: Where is my bed?
     Officer Roquell: Not sure. We can pick one up later.
     -> You: And why is the door see-through?
         Officer Roquell: It's adjustable. A membranic technician should be able to fix it.
+        Ambassador G'Vorik: There's no toilet on this deck. So that's a mixed bag.
     -> You: Ah.
+        Ambassador G'Vorik: If it makes you feel any better, my room doesn't come with a bed.
 -> You: Thank you.
-Officer Roquell: You can pull the data from that A.C.E.S block on your desk.
 <<moveTo "Officer Roquell" XOStation>>
+<<jump AW_GVorik>>
+===
+title: AW_GVorik
+---
+Ambassador G'Vorik: Captain. Here's your mission brief.
+<<addDataBlock "Aratel Brief">>
+Ambassador G'Vorik: You can access it by pressing "TAB" or "ESC". I transferred it to your A.C.E.S system under "Data". I'll give you a second to read it.
+Ambassador G'Vorik: Okay.
 ===
 title: Introductions
 ---
