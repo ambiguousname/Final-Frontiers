@@ -19,10 +19,9 @@ public class WarpTransition : MonoBehaviour
 
     string warpDialogueToLoad;
     string levelToLoad;
+    AsyncOperation levelLoading;
 
     private bool canExitWarp = false;
-
-    AsyncOperation levelLoading;
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -44,26 +43,21 @@ public class WarpTransition : MonoBehaviour
         SceneManager.sceneLoaded += LoadYarnDialogue;
 
         canExitWarp = false;
-        Application.backgroundLoadingPriority = ThreadPriority.Low;
         StartCoroutine(WarpLoad());
     }
 
     private IEnumerator WarpLoad() {
-        yield return null;
-        levelLoading = SceneManager.LoadSceneAsync(levelToLoad, LoadSceneMode.Additive);
-        levelLoading.allowSceneActivation = false;
+        SceneManager.sceneLoaded -= UpdatePositions;
+        SceneManager.sceneLoaded -= LoadYarnDialogue;
 
-        while (!levelLoading.isDone) {
-            if (canExitWarp && levelLoading.progress >= 0.9f) {
-                SetPositions();
-                levelLoading.allowSceneActivation = true;
-                Application.backgroundLoadingPriority = ThreadPriority.Normal;
-            }
-        }
+        levelLoading = SceneManager.LoadSceneAsync(levelToLoad);
+        levelLoading.allowSceneActivation = false;
+        yield return levelLoading;
     }
 
     public void ExitWarp() {
-        canExitWarp = true;
+        SetPositions();
+        SceneManager.LoadScene(levelToLoad);
     }
 
     private void SetPositions() {
@@ -106,6 +100,7 @@ public class WarpTransition : MonoBehaviour
             GameObject.FindObjectOfType<DialogueRunner>().startAutomatically = true;
             GameObject.FindObjectOfType<DialogueRunner>().startNode = warpDialogueToLoad;
         }
+        GameObject.FindObjectOfType<WarpTransition>().levelToLoad = levelToLoad;
     }
 
     // Update is called once per frame

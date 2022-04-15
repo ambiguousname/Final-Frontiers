@@ -3,6 +3,7 @@ title: AratelWarp
 <<placeActor "Ambassador G'Vorik" GVorikQuarters>>
 <<moveTo "Ambassador G'Vorik" CaptainCabin1>>
 Commander Corwin: Computer estimates about 2 minutes until arrival.
+<<exitWarp>>
 Officer Roquell: Ambassador G'Vorik has your mission brief and is in your quarters, Captain.
 -> You: Thank you.
     <<enableTrigger CaptainCabinTrigger AW_GVorik>>
@@ -51,7 +52,7 @@ Ambassador G'Vorik: I think the Aratel are in the midst of a *radical* cultural 
 
 -> You: What can you tell me about the revolution?
     Ambassador G'Vorik: That's the even weirder part. We know both sides have agreed to a ceasefire in advance for our negotiations, but...
-    Ambassador G'Vorik: We've picked up bursts of radiation from Aratel through subspace. The Aratel are more than likely using nuclear weapons.
+    Ambassador G'Vorik: We've picked up bursts of radiation from the Aratel system through subspace. The Aratel are more than likely using nuclear weapons.
     Ambassador G'Vorik: And we are in wild speculation territory now, but I suspect there might be more than a few radical third parties intentionally making things worse.
     Ambassador G'Vorik: But we don't have enough information on the Aratel to extrapolate any further, which brings me to our strategy. 
     -> You: None of this was mentioned in the brief.

@@ -2,6 +2,7 @@
 tags:
 ---
 <<set $crewTrust to 0>>
+<<shipWarp Aratel AratelWarp>>
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
 
 -> You: A pleasure to meet you.
