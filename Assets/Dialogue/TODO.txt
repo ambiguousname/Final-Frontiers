@@ -2,7 +2,6 @@
 - Adjustable dialogue size
 - Smaller dialogue size
 - Faster LeaveDock animation at the end
-- Fix lighting to be brighter
 - Fix bug where player can give looking around input during warp transition
 - SFX
 - Disable jumping during time pause
