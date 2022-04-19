@@ -106,6 +106,14 @@ public class DialogueCreator : DialogueViewBase
 
     public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)
     {
+        string[] optionText = new string[dialogueOptions.Length];
+        for (int i = 0; i < dialogueOptions.Length; i++) {
+            optionText[i] = dialogueOptions[i].Line.TextWithoutCharacterName.Text;
+        }
+        RunOptions(optionText, onOptionSelected);
+    }
+
+    public void RunOptions(string[] dialogueOptions, Action<int> onOptionSelected) {
         activeChoice = onOptionSelected;
         canChoose = true;
         activeName.text = "You";
@@ -113,7 +121,7 @@ public class DialogueCreator : DialogueViewBase
         continueText.SetActive(false);
         for (int i = 0; i < dialogueOptions.Length; i++)
         {
-            activeText.text += (i + 1) + ". " + dialogueOptions[i].Line.TextWithoutCharacterName.Text + "\n";
+            activeText.text += (i + 1) + ". " + dialogueOptions[i] + "\n";
         }
         numChoices = dialogueOptions.Length;
         activeDialogue.SetActive(true);

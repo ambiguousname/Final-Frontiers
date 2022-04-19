@@ -1,4 +1,4 @@
-title: AratelWarp
+title: InAratelWarp
 ---
 <<placeActor "Ambassador G'Vorik" GVorikQuarters>>
 <<moveTo "Ambassador G'Vorik" CaptainCabin1>>
@@ -39,7 +39,7 @@ Ambassador G'Vorik: Captain. Here's your mission brief.
 Ambassador G'Vorik: I transferred it to your A.C.E.S system under "Data". You can access it by pressing "TAB" or "ESC". I'll give you a censecond to read it.
 <<wait 2>>
 Ambassador G'Vorik: Okay. Let's talk strategy.
--> You: Lets.
+-> You: Let's.
     <<jump AW_Strategy>>
 -> You: Strategy? Who needs strategy?
     <<jump AW_NoStrategy>>
@@ -52,7 +52,7 @@ Ambassador G'Vorik: I think the Aratel are in the midst of a *radical* cultural 
 
 -> You: What can you tell me about the revolution?
     Ambassador G'Vorik: That's the even weirder part. We know both sides have agreed to a ceasefire in advance for our negotiations, but...
-    Ambassador G'Vorik: We've picked up bursts of radiation from the Aratel system through subspace. The Aratel are more than likely using nuclear weapons.
+    Ambassador G'Vorik: We've picked up bursts of weapons fire from the Aratel system through subspace.
     Ambassador G'Vorik: And we are in wild speculation territory now, but I suspect there might be more than a few radical third parties intentionally making things worse.
     Ambassador G'Vorik: But we don't have enough information on the Aratel to extrapolate any further, which brings me to our strategy. 
     -> You: None of this was mentioned in the brief.
@@ -62,11 +62,47 @@ Ambassador G'Vorik: I think the Aratel are in the midst of a *radical* cultural 
     -> You: Go on.
 -> You: So what's the plan?
 
-Ambassador G'Vorik: Firstly, do whatever you can to encourage peaceful cooperation when we arrive.
-Ambassador G'Vorik: The two major sides may have a very temporary ceasefire, but that won't stop some Aratel. Especially fanatic Aratel.
+Ambassador G'Vorik: Do whatever you can to encourage peaceful cooperation when we arrive. Tensions are bound to be high, and we need to do anything and everything to defuse them.
 Ambassador G'Vorik: Secondly, gather as much information on the Aratel as much as you can. Monitor communications, scan their ships, whatever you can do.
 Ambassador G'Vorik: We only have snippets of information as to what this conflict is really about. The more we understand the root causes, the better I can work with both sides to stop it.
 Ambassador G'Vorik: I wish there was more I could give you, but that's it as far as relevant information goes.
+-> You: Understood.
+-> You: What a crock of tanj.
+    Ambassador G'Vorik: What? Captain...
+    -> You: That was so long and boring.
+    -> You: Your strategy sucks.
+    -> You: Nevermind.
+        <<set $gvorikStatus to "onBridge">>
+        <<jump AW_ExitWarp>>
+
+    Ambassador G'Vorik: Listen, I had 10 minutes to come up with a plan to prevent all out war with the Aratel. This is as good as it gets.
+    -> You: New plan. My plan.
+        Ambassador G'Vorik: Captain, please.
+
+        <<set $gvorikStatus to "independent">>
+        -> You: LA LA LA. NOT LISTENING.
+            <<jump AW_ExitWarp>>
+        -> You: I gave you a chance. I heard you out, and I'm saying no.
+            <<jump AW_ExitWarp>>
+        -> You: Fine.
+    -> You: It can get significantly better. You're confined to quarters.
+        <<if $gvorikStatus == "confined">>
+            Ambassador G'Vorik: You just tried pulling this!
+        <<else>>
+            Ambassador G'Vorik: What? You can't do that.
+            <<set $gvorikStatus to "confined">>
+        <<endif>>
+
+        Ambassador G'Vorik: I'm not listening anyways. My strategy will work. I just need your compliance. Please, Captain.
+        -> You: Remember when I said I was kidding? I wasn't. <<if $gvorikStatus == "confined">>
+            <<jump AW_ExitWarp>>
+        -> You: You know where you can shove your "compliance"?
+            Ambassador G'Vorik: When this is over, I will have your career.
+            <<jump AW_ExitWarp>>
+        -> You: ... Fine.
+    -> You: We'll give it a try. 
+        Ambassador G'Vorik: Thank you, Captain.
+<<set $gvorikStatus to "onBridge">>
 <<jump AW_ExitWarp>>
 ===
 title: AW_NoStrategy
@@ -105,6 +141,7 @@ Ambassador G'Vorik: Okay. Fine! I have plans, I'll just have to make them withou
                 Ambassador G'Vorik: Okay.
                 <<jump AW_ExitWarp>>
         -> You: Fat chance.
+            <<jump AW_ExitWarp>>
     -> You: I could kill you. Your choice.
         Ambassador G'Vorik: WHAT?
         Ambassador G'Vorik: ...

@@ -175,12 +175,15 @@ Officer Roquell: ...
 ===
 title: OB_Plot
 ---
--> You: Plot a course for the Aratel system.
-Commander Corwin: Yes Captain!
+Commander Corwin: I need your go-ahead, Captain.
+===
+title: WarpToAratel
+---
+Commander Corwin: Yes, Captain!
 <<lockDoor AirlockDoor true>>
 <<startBakedAnim ShipPrefab LeaveDock OB_Warp>>
 ===
 title: OB_Warp
 ---
-<<shipWarp Aratel AratelWarp>>
+<<shipWarp Aratel InAratelWarp>>
 ===
