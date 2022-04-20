@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 13555276}
   - component: {fileID: 13555275}
   - component: {fileID: 13555274}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: OnBridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8367,7 +8367,7 @@ GameObject:
   - component: {fileID: 284771379}
   - component: {fileID: 284771378}
   - component: {fileID: 284771377}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShipBoarding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16775,7 +16775,7 @@ GameObject:
   - component: {fileID: 511074519}
   - component: {fileID: 511074518}
   - component: {fileID: 511074517}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: OnBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16843,7 +16843,7 @@ GameObject:
   - component: {fileID: 528839110}
   - component: {fileID: 528839111}
   - component: {fileID: 528839112}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SpaceStationDoorOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18937,7 +18937,7 @@ GameObject:
   - component: {fileID: 820607463}
   - component: {fileID: 820607461}
   - component: {fileID: 820607464}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WalkAndTalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79512,7 +79512,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1735188949}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Triggers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89999,6 +89999,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 3876221558534861509, guid: e68741eb255ba95498c07875ecc2db2c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4133947628815022097, guid: e68741eb255ba95498c07875ecc2db2c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -90062,6 +90066,10 @@ PrefabInstance:
     - target: {fileID: 5839317432477631576, guid: e68741eb255ba95498c07875ecc2db2c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294813553083296821, guid: e68741eb255ba95498c07875ecc2db2c, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6298005462270169241, guid: e68741eb255ba95498c07875ecc2db2c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y

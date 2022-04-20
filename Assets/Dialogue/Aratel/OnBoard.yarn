@@ -3,6 +3,8 @@ tags:
 ---
 <<set $crewTrust to 0>>
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
+<<readyOrders DialogueManager>>
+<<stop>>
 
 -> You: A pleasure to meet you.
     Officer Roquell: Hopefully. Let's talk when there's time.

@@ -1050,7 +1050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6923114712046906793}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShipTriggers
   m_TagString: Untagged
   m_Icon: {fileID: 0}

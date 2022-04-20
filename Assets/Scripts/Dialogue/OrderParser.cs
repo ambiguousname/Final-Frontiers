@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Yarn.Unity;
 
@@ -32,6 +33,7 @@ public class OrderParser : MonoBehaviour
     public void EPressed()
     {
         if (_selected != null) {
+            _selectText.SetActive(false);
             _runner.StartDialogue(_selected.orderDialogue);
         }
     }
@@ -39,16 +41,9 @@ public class OrderParser : MonoBehaviour
     private void Update()
     {
         Physics.Raycast(_camera.transform.position, _camera.transform.forward, out RaycastHit hit);
-        if (hit.transform.CompareTag("Actor"))
+        if (ordersEnabled && !_runner.IsDialogueRunning && hit.transform.TryGetComponent(out _selected))
         {
-            _selected = hit.transform.GetComponent<ActorManager>();
-            if (_selected.canGiveOrders)
-            {
-                _selectText.SetActive(true);
-            }
-            else {
-                _selected = null;
-            }
+            _selectText.SetActive(true);
         }
         else if (_selectText.activeInHierarchy){
             _selectText.SetActive(false);
