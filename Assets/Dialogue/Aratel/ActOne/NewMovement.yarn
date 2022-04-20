@@ -1,0 +1,52 @@
+title: NewMovementPlot
+---
+===
+title: NewMovementAggress
+---
+===
+title: NewMovementAggressBlind
+---
+===
+title: NewMovementShortScan
+---
+Officer Dabo: Sure thing, Captain.
+<<wait 4>>
+Officer Dabo: Everything appears to be normal, I'm not detecting anything unusual.
+Officer Dabo: If you let me perform a more long-form scan, I might be able to find something else.
+===
+title: NewMovementLongScan
+---
+<<if $scanTarget == "NewMovement">>
+    Officer Dabo: Captain, you already have me scanning the New Movement ship.
+    <<stop>>
+<<elseif $scanTarget != "">>
+    Officer Dabo: Captain, I'm already scanning something else. I can switch priorities if you'd like.
+    -> You: Go ahead.
+    -> You: Nevermind.
+        <<stop>>
+<<endif>>
+<<set $scanTarget to "NewMovement">>
+Officer Dabo: Sure thing, Captain. Scanning New Movement ship now.
+===
+title: NewMovementHail
+---
+<<if hasInfo "metNewMovement">>
+    <<jump NewMovementDiscussion>>
+<<else>>
+    <<jump NewMovementFirstContact>>
+<<endif>>
+===
+title: NewMovementMonitor
+---
+<<if $monitorTarget == "NewMovement">>
+    Commander Rikt: Captain, I'm already monitoring the New Movement's ship.
+    <<stop>>
+<<elseif $monitorTarget != "">>
+    Commander Rikt: Captain, I'm already monitoring something else. I can switch to this, though.
+    -> You: Make it so.
+    -> You: No, keep going.
+        <<stop>>
+<<endif>>
+<<set $monitorTarget to "NewMovement">>
+Commander Rikt: Alright, beginning monitor.
+===

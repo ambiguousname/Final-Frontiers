@@ -1,0 +1,60 @@
+title: YvikShortScan
+---
+Officer Dabo: Sure thing. One second...
+<<wait 4>>
+<<if hasInfo "Yvik">>
+    <<jump MissingContinent>>
+<<else>>
+    Officer Dabo: Other than the missing landmass, I'm not detecting much else Captain.
+<<endif>>
+===
+title: MissingContinent
+---
+<<setInfo "Yvik">>
+Officer Dabo: Uhh, Captain? The um, planet? I'm getting some really weird scans.
+Officer Dabo: The planet appears to be missing an entire continent.
+Officer Roquell: Wait, what?
+-> You: What do you mean?
+-> You: Alright.
+Officer Dabo: I pulled up our survey data from the Union's last visit...
+Officer Dabo: There's no mistaking it. The Aratel Homeworld is missing 40% of its landmass.
+<<wait 2>>
+Commander Corwin: How is that even possible?
+Officer Roquell: Maybe the Aratel would know.
+===
+title: YvikLongScan
+---
+<<if $scanTarget == "Yvik">>
+    Officer Dabo: I'm already scanning the homeworld.
+    <<stop>>
+<<elseif $scanTarget != "">>
+    Officer Dabo: Captain, I'm already scanning something else. I can switch priorities if you'd like.
+    -> You: Go ahead.
+    -> You: Nevermind.
+        <<stop>>
+<<endif>>
+<<if hasInfo "Yvik">>
+    Officer Dabo: Continuing long scan of Aratel Homeworld...
+<<else>>
+    <<set $scanTarget = "Yvik">>
+    Officer Dabo: Sure thing.
+    <<wait 2>>
+    Officer Dabo: Hold on...
+    <<wait 2>>
+    <<jump MissingContinent>>
+<<endif>>
+===
+title: YvikMonitor
+---
+<<if $monitorTarget == "Yvik">>
+    Commander Rikt: Captain, I'm already monitoring the Aratel Homeworld.
+    <<stop>>
+<<elseif $monitorTarget != "">>
+    Commander Rikt: Captain, I'm already monitoring something else. I can switch to this, though.
+    -> You: Make it so.
+    -> You: No, keep going.
+        <<stop>>
+<<endif>>
+<<set $monitorTarget to "Yvik">>
+Commander Rikt: Alright, beginning monitor.
+===

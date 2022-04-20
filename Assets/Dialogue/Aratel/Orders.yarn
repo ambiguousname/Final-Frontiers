@@ -5,11 +5,12 @@ title: HelmOrders
 -> You: Change orbit to...
     <<listOrders DialogueManager Orbit>>
 -> You: Raise shields and lock weapons on...
-    <<listOrders DialogueManager Agress>>
+    <<listOrders DialogueManager Aggress>>
 -> You: Fire blindly at...
-    <<listOrders DialogueManager Agress>>
+    <<listOrders DialogueManager AggressBlind>>
 -> You: Evasive manuevers!
-    Commander Corwin: Yep, that's... what I'm gonna do.
+    Commander Corwin: Captain, there's... nothing to evade.
+    <<jump HelmOrders>>
 -> You: Nevermind.
 ===
 title: ScienceOrders
@@ -30,12 +31,22 @@ title: EngineeringOrders
     <<listOrders DialogueManager DivertPower>>
 -> You: Repair...
     <<listOrders DialogueManager Repair>>
--> You: Begin monitoring...
+-> You: Begin covertly monitoring...
     <<listOrders DialogueManager Monitor>>
 -> You: Status report.
     Commander Rikt: All systems nominal.
+    <<jump EngineeringOrders>>
 -> You: Activate autodestruct.
-    Commander Rikt: Err... that feature's not in yet, Captain.
+    Computer: State your name and code.
+    -> You: {$name}, Bread Ube Ube Thyme. <<if $sandwich == "1466">>
+        Computer: Backdoor Autodestruct enabled.
+        Officer Roquell: Not this again.
+        <<jump BackdoorAutodestruct>>
+    -> You: I forget.
+    -> You: Cancel.
+    
+    Computer: Cancelled.
+    <<jump EngineeringOrders>>
 -> You: Nevermind.
 ===
 title: XOOrders
@@ -43,8 +54,36 @@ title: XOOrders
 -> You: You have the bridge.
     Officer Roquell: Okay.
 -> You: How are the crew?
-    Officer Roquell: Okay.
--> You: Everyone, to the ready room.
-    Officer Roquell: Okay.
+    <<if $crewTrust >= 0>>
+    Officer Roquell: Nothing to report, Captain.
+    <<elseif $crewTrust >= -10>>
+    Officer Roquell: We could be better, Captain.
+    <<else>>
+    Officer Roquell: ...
+    Officer Roquell: I wish you were a better Captain.
+    <<endif>>
 -> You: Nevermind.
+===
+title: BackdoorAutodestruct
+---
+Computer: 5.
+-> You: Cancel!
+    <<stop>>
+-> You: (Say Nothing)
+Computer: 4.
+Officer Roquell: Captain.
+-> You: Cancel!
+    <<set $crewTrust to $crewTrust - 10>>
+    <<stop>>
+-> You: (Say Nothing)
+Computer: 3.
+Officer Roquell: Captain!
+Computer: 2.
+-> You: Cancel!
+    <<set $crewTrust to $crewTrust - 20>>
+    <<stop>>
+-> You: (Say Nothing)
+Computer: 1.
+<<wait 2>>
+<<loadScene Dead>>
 ===

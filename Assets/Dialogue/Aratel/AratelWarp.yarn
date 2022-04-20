@@ -33,6 +33,9 @@ title: AW_ArriveAtQuarters
 title: AW_GVorik
 ---
 <<set $gvorikStatus to "onBridge">>
+// Opinion only matters if G'Vorik is not confined to quarters.
+// Otherwise, what the hell does their opinion matter?
+<<set $gvorikOpinion to 0>>
 Ambassador G'Vorik: Captain. Here's your mission brief.
 <<addDataBlock "Aratel Brief">>
 Ambassador G'Vorik: I transferred it to your A.C.E.S system under "Data". You can access it by pressing "TAB" or "ESC". I'll give you a censecond to read it.
@@ -80,8 +83,10 @@ Ambassador G'Vorik: I wish there was more I could give you, but that's it as far
 
         <<set $gvorikStatus to "independent">>
         -> You: LA LA LA. NOT LISTENING.
+            <<set $gvorikOpinion to $gvorikOpinion - 5>>
             <<jump AW_ExitWarp>>
         -> You: I gave you a chance. I heard you out, and I'm saying no.
+            <<set $gvorikOpinion to $gvorikOpinion - 5>>
             <<jump AW_ExitWarp>>
         -> You: Fine.
     -> You: It can get significantly better. You're confined to quarters.
@@ -123,6 +128,7 @@ Ambassador G'Vorik: {$name}, I need you to be on board with this.
 Ambassador G'Vorik: Okay. Fine! I have plans, I'll just have to make them without you, Captain.
 
 -> You: Fine then.
+    <<set $gvorikOpinion to $gvorikOpinion - 5>>
     <<set $gvorikStatus to "independent">>
     <<jump AW_ExitWarp>>
 -> You: No you won't. I'm confining you to quarters.

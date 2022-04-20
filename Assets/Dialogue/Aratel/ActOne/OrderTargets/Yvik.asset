@@ -10,5 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d37380f649a4bc840affe53ef2c6f35c, type: 3}
-  m_Name: NewMovement
+  m_Name: Yvik
   m_EditorClassIdentifier: 
+  orderName: The Aratel Homeworld.
+  nodeTarget: Yvik
+  allowedOrders:
+  - ShortScan
+  - LongScan
+  - Monitor

@@ -1,11 +1,64 @@
 title: AratelEnter
 ---
-Commander Rikt: Captain, I'm detecting two opposing Aratel fleets. Neither of them appear to be moving.
+<<set $newMovementPOC to "Captain">>
+<<set $newMovementOpinion to 0>>
+<<set $lesserAugurOpinion to 0>>
+<<set $scanTarget to "">>
+<<set $monitorTarget to "">>
+Officer Dabo: Captain, I'm detecting two opposing Aratel fleets. Neither of them appear to be moving.
+Officer Dabo: One flagship claims to be hailing from the "New Movement fleet", while the other is dead silent.
+<<readyOrders DialogueManager>>
 ===
-title: NewMovementTalk
+title: NewMovementFirstContact
 ---
+<<setInfo "metNewMovement">>
+Ratet Hud: Greetings, Union ship. I am Ratet Hud of the New Movement.
+-> You: Greetings. I am the Captain of the {$shipName}.
+-> You: Hello. I am {$name} of the {$shipName}. <<if $name != "Captain">>
+-> You: Hi.
+-> You: Tanj off.
+    <<if $gvorikStatus != "confined">>
+        Ambassador G'Vorik: Captain!
+        <<set $gvorikOpinion to $gvorikOpinion - 5>>
+        <<if $gvorikStatus == "independent">>
+            Ambassador G'Vorik: Apologies, Ratet Hud. It is good to meet you, despite our first impressions. 
+            <<set $newMovementPOC to "gvorik">>
+        <<endif>>
+    <<endif>>
+    Ratet Hud: Union ship, we are here to negotiate. We do not appreciate percieved hostilities.
+    <<if $gvorikStatus == "independent">>
+        Ratet Hud: We appreciate the apology.
+    <<endif>>
+    Ratet Hud: We can forgive transgressions in return for your aid.
+
+Ratet Hud: I will make this simple, Captain. The Augurs of the other ship refuse to communicate with us.
+<<if $newMovementPOC == "gvorik">>
+    Ratet Hud: We are only interested in peace, Ambassador.
+<<else>>
+    Ratet Hud: We are only interested in peace, Captain.
+<<endif>>
+Ratet Hud: If the Augurs do not wish to speak with us, then we cannot make peace.
+
+-> You: We will do everything we can to ensure peace between your peoples.
+-> You: Understood.
+-> You: Who needs peace, anyways?
+    <<set $newMovementOpinion to $newMovementOpinion - 5>>
+    Ratet Hud: I see.
+<<jump NewMovementDiscussion>>
 ===
-title: LesserAugurTalk
+title: NewMovementDiscussion
+---
+Ratet Hud: Anything I can do for you, Captain?
+-> You: What can you tell me about yourselves?
+-> You: What can you tell me about the Augurs?
+-> You: That's all. Offscreen.
+===
+title: LesserAugurFirstContact
+---
+Morrigor: Union.
+
+===
+title: LesserAugurDiscussion
 ---
 
 ===

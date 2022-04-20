@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: f344f86042ac78f4a9133945ef720e96
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  LastImportHadImplicitStringIDs: 0
+  LastImportHadAnyStrings: 0
+  isSuccessfullyParsed: 0
+  parseErrorMessages:
+  - "Assets/Dialogue/Aratel/ActOne/LesserAugurs.yarn: 37:13: Error: missing '(' at
+    '\"metLesserAugur\"'\r\n<<if hasInfo \"metLesserAugur\">>\r\r\n             ^^^^^^^^^^^^^^^^\r\n"
+  - "Assets/Dialogue/Aratel/ActOne/LesserAugurs.yarn: 37:29: Error: Unexpected \">>\"
+    while reading a function call\r\n<<if hasInfo \"metLesserAugur\">>\r\r\n                            
+    ^^\r\n"
