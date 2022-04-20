@@ -1,10 +1,10 @@
 title: HelmOrders
 ---
--> You: Plot a course...
+-> You: Plot a course for...
     <<listOrders DialogueManager Plot>>
--> You: Change orbit...
+-> You: Change orbit to...
     <<listOrders DialogueManager Orbit>>
--> You: Raise shields and lock weapons...
+-> You: Raise shields and lock weapons on...
     <<listOrders DialogueManager Agress>>
 -> You: Fire blindly at...
     <<listOrders DialogueManager Agress>>
@@ -36,6 +36,7 @@ title: EngineeringOrders
     Commander Rikt: All systems nominal.
 -> You: Activate autodestruct.
     Commander Rikt: Err... that feature's not in yet, Captain.
+-> You: Nevermind.
 ===
 title: XOOrders
 ---
@@ -45,4 +46,5 @@ title: XOOrders
     Officer Roquell: Okay.
 -> You: Everyone, to the ready room.
     Officer Roquell: Okay.
+-> You: Nevermind.
 ===

@@ -7,6 +7,9 @@ using Yarn.Unity;
 
 public class DialogueCreator : DialogueViewBase
 {
+    [HideInInspector]
+    public bool dialogueFinished = true;
+
     private GameObject activeDialogue;
     private Text activeName;
     private Text activeText;
@@ -26,8 +29,8 @@ public class DialogueCreator : DialogueViewBase
 
     private IEnumerator activeTextPrint;
 
-    bool dialogueFinished = true;
     bool canChoose = false;
+    bool extraDialogueAfterFinish = false;
 
     private void Start()
     {
@@ -158,10 +161,19 @@ public class DialogueCreator : DialogueViewBase
         StartCoroutine(activeTextPrint);
     }
 
+    public void DialogueStartExtra() {
+        dialogueFinished = false;
+        extraDialogueAfterFinish = true;
+    }
+
     public override void DialogueComplete()
     {
-        activeDialogue.SetActive(false);
-        dialogueFinished = true;
+        if (!extraDialogueAfterFinish)
+        {
+            activeDialogue.SetActive(false);
+            dialogueFinished = true;
+        }
+        extraDialogueAfterFinish = false;
     }
 
     IEnumerator AddText(string t, Text ui) {

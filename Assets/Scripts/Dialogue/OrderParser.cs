@@ -15,6 +15,7 @@ public class OrderParser : MonoBehaviour
 
     private GameObject _camera;
     private DialogueRunner _runner;
+    private DialogueCreator _creator;
     private GameObject _selectText;
 
     private ActorManager _selected;
@@ -25,6 +26,7 @@ public class OrderParser : MonoBehaviour
     {
         _camera = GameObject.FindGameObjectWithTag("MainCamera");
         _runner = GameObject.FindObjectOfType<DialogueRunner>();
+        _creator = GetComponent<DialogueCreator>();
         _selectText = GameObject.Find("OrderText");
         _selectText.SetActive(false);
         ordersEnabled = false;
@@ -34,7 +36,7 @@ public class OrderParser : MonoBehaviour
     {
         if (_selected != null) {
             _selectText.SetActive(false);
-            GetComponent<DialogueCreator>().SwitchSpeaker(_selected.gameObject);
+            _creator.SwitchSpeaker(_selected.gameObject);
             _runner.StartDialogue(_selected.orderDialogue);
         }
     }
@@ -42,7 +44,7 @@ public class OrderParser : MonoBehaviour
     private void Update()
     {
         Physics.Raycast(_camera.transform.position, _camera.transform.forward, out RaycastHit hit);
-        if (ordersEnabled && !_runner.IsDialogueRunning && hit.transform.TryGetComponent(out _selected))
+        if (ordersEnabled && _creator.dialogueFinished && hit.transform.TryGetComponent(out _selected))
         {
             _selectText.SetActive(true);
         }
@@ -74,10 +76,14 @@ public class OrderParser : MonoBehaviour
             }
         }
         orderText.Add("Nevermind.");
-        GetComponent<DialogueCreator>().SwitchSpeaker(_selected.gameObject);
-        GetComponent<DialogueCreator>().RunOptions(orderText.ToArray(), (int selected) => {
-            Debug.Log(orderText[selected]);
-            if (orderText[selected] != "Nevermind.") {
+        _creator.DialogueStartExtra();
+        _creator.SwitchSpeaker(_selected.gameObject);
+        _creator.RunOptions(orderText.ToArray(), (int selected) => {
+            if (orderText[selected] == "Nevermind.")
+            {
+                _runner.StartDialogue(_selected.orderDialogue);
+            }
+            else {
                 _runner.StartDialogue(orderID[selected] + tag);
             }
         });
