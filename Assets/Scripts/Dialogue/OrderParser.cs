@@ -34,6 +34,7 @@ public class OrderParser : MonoBehaviour
     {
         if (_selected != null) {
             _selectText.SetActive(false);
+            GetComponent<DialogueCreator>().SwitchSpeaker(_selected.gameObject);
             _runner.StartDialogue(_selected.orderDialogue);
         }
     }
