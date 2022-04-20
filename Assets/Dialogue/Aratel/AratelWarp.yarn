@@ -3,7 +3,6 @@ title: InAratelWarp
 <<placeActor "Ambassador G'Vorik" GVorikQuarters>>
 <<moveTo "Ambassador G'Vorik" CaptainCabin1>>
 Commander Corwin: Computer estimates about 2 minutes until arrival.
-<<exitWarp>>
 Officer Roquell: Ambassador G'Vorik has your mission brief and is in your quarters, Captain.
 -> You: Thank you.
     <<enableTrigger CaptainCabinTrigger AW_GVorik>>

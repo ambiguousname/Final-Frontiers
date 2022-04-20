@@ -127,6 +127,18 @@ public class DialogueCreator : DialogueViewBase
         activeDialogue.SetActive(true);
     }
 
+    public void SwitchSpeaker(GameObject actor)
+    {
+        var box = actor.FindChildWithTag("ActorDialogueBox");
+        if (box != null)
+        {
+            activeDialogue = box;
+            activeName = activeDialogue.FindChildWithName("Name").GetComponent<Text>();
+            activeText = activeDialogue.FindChildWithName("Text").GetComponent<Text>();
+            continueText = activeDialogue.FindChildWithName("Continue");
+        }
+    }
+
     public override void RunLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
     {
         activeLine = onDialogueLineFinished;
@@ -135,10 +147,7 @@ public class DialogueCreator : DialogueViewBase
         var comm = new Yarn.Markup.MarkupAttribute();
         var isComm = dialogueLine.Text.TryGetAttributeWithName("Comm", out comm);
         if (!isComm && name != "You" && (activeDialogue == null || name != activeDialogue.name)) {
-            activeDialogue = GameObject.Find(name).FindChildWithTag("ActorDialogueBox");
-            activeName = activeDialogue.FindChildWithName("Name").GetComponent<Text>();
-            activeText = activeDialogue.FindChildWithName("Text").GetComponent<Text>();
-            continueText = activeDialogue.FindChildWithName("Continue");
+            SwitchSpeaker(GameObject.Find(name));
         }
         activeDialogue.SetActive(true);
         continueText.SetActive(false);

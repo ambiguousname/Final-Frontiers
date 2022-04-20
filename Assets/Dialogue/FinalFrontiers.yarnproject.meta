@@ -14,6 +14,7 @@ ScriptedImporter:
   - {fileID: 6391573757903218779, guid: 581558424bd04b54988e145ee37a952a, type: 3}
   - {fileID: 6391573757903218779, guid: 4a92e2fcca184e54986ec1aca20f69d9, type: 3}
   - {fileID: 6391573757903218779, guid: 5eac305261730654da72dd0fc73bc544, type: 3}
+  - {fileID: 6391573757903218779, guid: 241731d139f9c7141816346b5b5e4584, type: 3}
   compileErrors: []
   serializedDeclarations:
   - name: $reason
@@ -45,7 +46,7 @@ ScriptedImporter:
     defaultValueBool: 0
     defaultValueNumber: 0
     defaultValueString: 
-    description: OnBoard.yarn, node OnBoard, line 1
+    description: OnBoard.yarn, node OnBoard, line 0
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: 4a92e2fcca184e54986ec1aca20f69d9, type: 3}
   - name: $sandwich
@@ -56,6 +57,22 @@ ScriptedImporter:
     description: OnBoard.yarn, node OB_Speech, line 26
     isImplicit: 1
     sourceYarnAsset: {fileID: 6391573757903218779, guid: 4a92e2fcca184e54986ec1aca20f69d9, type: 3}
+  - name: $gvorikStatus
+    typeName: String
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: AratelWarp.yarn, node AW_GVorik, line 0
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 5eac305261730654da72dd0fc73bc544, type: 3}
+  - name: $commanderCorwinAttitude
+    typeName: String
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: AratelWarp.yarn, node Introductions, line 1
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 5eac305261730654da72dd0fc73bc544, type: 3}
   defaultLanguage: en-US
   languagesToSourceAssets: []
   useAddressableAssets: 0

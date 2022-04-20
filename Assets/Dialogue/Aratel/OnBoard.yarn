@@ -2,7 +2,6 @@
 tags:
 ---
 <<set $crewTrust to 0>>
-<<shipWarp Aratel AratelWarp>>
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
 
 -> You: A pleasure to meet you.
@@ -176,9 +175,11 @@ Officer Roquell: ...
 title: OB_Plot
 ---
 Commander Corwin: I need your go-ahead, Captain.
+<<readyOrders DialogueManager>>
 ===
-title: WarpToAratel
+title: AratelSystemPlot
 ---
+<<stopOrders DialogueManager>>
 Commander Corwin: Yes, Captain!
 <<lockDoor AirlockDoor true>>
 <<startBakedAnim ShipPrefab LeaveDock OB_Warp>>

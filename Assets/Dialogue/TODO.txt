@@ -10,3 +10,4 @@
 - Add color to characters
 - Add shuttle
 - Return to main menu from dead screen.
+- Hide order text on pause menu

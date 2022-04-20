@@ -6,13 +6,10 @@ using Yarn.Unity;
 
 public class ActorManager : MonoBehaviour
 {
+    public bool canGiveOrders;
+    public string orderDialogue;
+
     private NavMeshAgent agent;
-
-    private GameObject activeShip;
-
-    private GameObject meshShip;
-
-    private GameObject duplicateAgent;
 
     private GameObject dialogue;
 

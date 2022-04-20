@@ -57,4 +57,8 @@ public class DialogueInput : MonoBehaviour
         }
         
     }
+
+    void OnE() {
+        GameObject.FindObjectOfType<OrderParser>().EPressed();
+    }
 }

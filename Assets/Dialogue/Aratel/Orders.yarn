@@ -1,30 +1,48 @@
 title: HelmOrders
 ---
 -> You: Plot a course...
+    <<listOrders DialogueManager Plot>>
 -> You: Change orbit...
+    <<listOrders DialogueManager Orbit>>
 -> You: Raise shields and lock weapons...
+    <<listOrders DialogueManager Agress>>
 -> You: Fire blindly at...
+    <<listOrders DialogueManager Agress>>
 -> You: Evasive manuevers!
+    Commander Corwin: Yep, that's... what I'm gonna do.
 -> You: Nevermind.
 ===
 title: ScienceOrders
 ---
 -> You: Start a brief scan...
+    <<listOrders DialogueManager ShortScan>>
 -> You: Start a long scan...
+    <<listOrders DialogueManager LongScan>>
 -> You: Hail...
+    <<listOrders DialogueManager Hail>>
 -> You: Broadcast the following on all known frequencies...
+    <<listOrders DialogueManager Broadcast>>
+-> You: Nevermind.
 ===
 title: EngineeringOrders
 ---
 -> You: Divert power...
+    <<listOrders DialogueManager DivertPower>>
 -> You: Repair...
+    <<listOrders DialogueManager Repair>>
 -> You: Begin monitoring...
+    <<listOrders DialogueManager Monitor>>
 -> You: Status report.
+    Commander Rikt: All systems nominal.
 -> You: Activate autodestruct.
+    Commander Rikt: Err... that feature's not in yet, Captain.
 ===
 title: XOOrders
 ---
 -> You: You have the bridge.
+    Officer Roquell: Okay.
 -> You: How are the crew?
+    Officer Roquell: Okay.
 -> You: Everyone, to the ready room.
+    Officer Roquell: Okay.
 ===
