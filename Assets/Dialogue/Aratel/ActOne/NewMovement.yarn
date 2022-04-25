@@ -30,7 +30,7 @@ Officer Dabo: Sure thing, Captain. Scanning New Movement ship now.
 ===
 title: NewMovementHail
 ---
-<<if hasInfo "metNewMovement">>
+<<if hasInfo("metNewMovement")>>
     <<jump NewMovementDiscussion>>
 <<else>>
     <<jump NewMovementFirstContact>>

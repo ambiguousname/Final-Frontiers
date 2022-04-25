@@ -30,7 +30,7 @@ Officer Dabo: Sure thing, Captain. Scanning Augur ship now.
 ===
 title: LesserAugurHail
 ---
-<<if hasInfo "metLesserAugur">>
+<<if hasInfo("metLesserAugur")>>
     <<jump LesserAugurDiscussion>>
 <<else>>
     <<jump LesserAugurFirstContact>>

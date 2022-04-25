@@ -2,7 +2,7 @@ title: YvikShortScan
 ---
 Officer Dabo: Sure thing. One second...
 <<wait 4>>
-<<if hasInfo "Yvik">>
+<<if hasInfo("Yvik")>>
     <<jump MissingContinent>>
 <<else>>
     Officer Dabo: Other than the missing landmass, I'm not detecting much else Captain.
@@ -33,7 +33,7 @@ title: YvikLongScan
     -> You: Nevermind.
         <<stop>>
 <<endif>>
-<<if hasInfo "Yvik">>
+<<if hasInfo("Yvik")>>
     Officer Dabo: Continuing long scan of Aratel Homeworld...
 <<else>>
     <<set $scanTarget = "Yvik">>

@@ -48,17 +48,91 @@ Ratet Hud: If the Augurs do not wish to speak with us, then we cannot make peace
 ===
 title: NewMovementDiscussion
 ---
-Ratet Hud: Anything I can do for you, Captain?
+Ratet Hud: Anything else I can do for you, Captain?
 -> You: What can you tell me about yourselves?
+    Ratet Hud: We are the New Movement.
+    -> You: Is that it?
+    -> You: Okay...
+    -> You: Your movement name is very creative. A+, no explanation necessary.
+    Ratet Hud: ... I am trying to think of a way to summarize ourselves.
+    Ratet Hud: The New Movement is representative of all Aratel. 100 years ago, the Augurs claimed they would lead us to salvation.
+    Ratet Hud: But it was a lie. We are forced to comply with every demand, and while we have made many advances, it was at the cost of our own freedom.
+    Ratet Hud: We would like the ability to govern ourselves.
+    <<jump NewMovementDiscussion>>
 -> You: What can you tell me about the Augurs?
+    Ratet Hud: They are our ruling class. They tend not to concern themselves with our day to day lives.
+    Ratet Hud: Which is exactly why they are so ineffective and callous.
+    Ratet Hud: It is beyond their capabilities to care. I am surprised they even agreed to negotiate.
+    Ratet Hud: But now, they shoot at us if we get too close.
+    <<jump NewMovementDiscussion>>
+-> You: Are you aware that your Homeworld is missing an entire continent? <<if hasInfo("Yvik")>>
+    Ratet Hud: Yvik's Eye. Yes, I am aware.
+    Ratet Hud: We'll transfer the relevant information into your databanks.
+    Ratet Hud: Standby for transmission.
+    Officer Dabo: Transmission recieved. Data block added to your data pad, Captain.
+    <<addDataBlock "Yvik's Eye">>
+    <<jump NewMovementDiscussion>>
+-> You: What's the deal with Morrigor? <<if hasInfo("metLesserAugur") and not hasInfo("dealingWithLesser")>>
+    <<setInfo "dealingWithLesser">>
+    Ratet Hud: Morrigor?
+    Ratet Hud: *Lesser* Augur Morrigor?
+    Ratet Hud: How DARE they. Captain, the Augurs are refusing to seriously consider our offer.
+    Ratet Hud: *Lesser* Augur Morrigor is nothing more than a... a dog, blindly obeying their commands.
+    Ratet Hud: We WILL NOT negotiate unless we can speak to the Augurs themselves.
+    -> You: My first priority is just to get Morrigor to agree to talks. Demands can come after.
+    -> You: Understood.
+    -> You: Whiners. Be grateful that they sent someone at all.
+        <<set $gvorikOpinion to $gvorikOpinion - 5>>
+        <<set $newMovementOpinion to $newMovementOpinion - 5>>
+    <<jump NewMovementDiscussion>>
 -> You: That's all. Offscreen.
 ===
 title: LesserAugurFirstContact
 ---
-Morrigor: Union.
+Morrigor: Union. What do you want?
+-> You: I am the Captain of the {$shipName}. We are here to negotiate peace.
+-> You: Hello, Augurs. I am {$name} of the {$shipName}. <<if $name != "Captain">>
+-> You: I honestly don't know.
+    <<if $gvorikStatus != "confined">>
+        Ambassador G'Vorik: Captain.
+        <<set $gvorikOpinion to $gvorikOpinion - 5>>
+        <<if $gvorikStatus == "independent">>
+            Ambassador G'Vorik: Great Augurs, we're here to negotiate peace and resolve your conflict.
+        <<endif>>
+    <<endif>>
+
+Morrigor: I don't care. But you may call me Morrigor. And the Augurs don't need your involvement.
+Morrigor: Take your Union ship, use your human urethras to wet yourselves, and go.
+
+-> You: I'm willing to ignore your blatant insult in the interest of peace, Morrigor.
+    Morrigor: You are far more forgiving than I would ever be.
+    Morrigor: I guess the Union *is* full of peace-loving simpletons.
+-> You: You're excluding a lot of other species that work on this ship.
+    Morrigor: They can "pee" themselves in whatever manner they choose. I imagine you could "pee" yourself easily, though.
+    Morrigor: Seeing as how you are a human.
+-> You: Oh yeah? Well why don't YOU wet YOURSELVES?
+    Morrigor: Perhaps I am too busy engaging in coitus with your mother. And your father.
+
+Morrigor: Offscreen.
+
+<<setInfo "metLesserAugur">>
+
+Commander Corwin: I didn't know anyone was allowed to hang up on us.
+Officer Dabo: They agreed to negotiations. Why would they be so dismissive?
+
+<<if $gvorikStatus == "onBridge">>
+    Ambassador G'Vorik: It's strange. They're purposefully trying to jeopardize whatever chance at peace they could have.
+    Ambassador G'Vorik: I'm not sure why, though.
+<<endif>>
+
+-> You: Interesting.
+-> You: I'm not taking tanj. Raise shields and lock weapons.
+    <<jump LesserAugurAggress>>
+-> You: Well, I'm not done yet. Hail them again.
+    <<jump LesserAugurDiscussion>>
 
 ===
 title: LesserAugurDiscussion
 ---
-
+Morrigor: Is there anything more you can do to waste my time, Captain Simpleton?
 ===
