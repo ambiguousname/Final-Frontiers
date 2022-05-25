@@ -5,6 +5,7 @@ title: AratelEnter
 <<set $lesserAugurOpinion to 0>>
 <<set $scanTarget to "">>
 <<set $monitorTarget to "">>
+<<set $augurAttendance to "">>
 Officer Dabo: Captain, I'm detecting two opposing Aratel fleets. Neither of them appear to be moving.
 Officer Dabo: One flagship claims to be hailing from the "New Movement fleet", while the other is dead silent.
 <<readyOrders DialogueManager>>
@@ -70,7 +71,7 @@ title: NewMovementDiscussion
     Ratet Hud: It may be beyond their capabilities to care for the common Aratel. I am surprised they even agreed to negotiate.
     Ratet Hud: But now, they shoot at us if we get too close.
     <<jump NewMovementDiscussion>>
--> You: Are you aware that your Homeworld is missing an entire continent? <<if hasInfo("Yvik")>>
+-> You: Are you aware that your Homeworld is missing an entire continent? <<if hasInfo("Yvik") and not hasInfo("Yvik's Eye read")>>
     Ratet Hud: Yvik's Eye. Yes, I am aware.
     Ratet Hud: We'll transfer the relevant information into your databanks.
     Ratet Hud: Standby for transmission.
@@ -90,23 +91,97 @@ title: NewMovementDiscussion
         <<set $gvorikOpinion to $gvorikOpinion - 5>>
         <<set $newMovementOpinion to $newMovementOpinion - 5>>
     <<jump NewMovementDiscussion>>
--> You: Clarify Yvik's eye for me. <<if hasInfo("Yvik's Eye read")>>
+-> You: Clarify Yvik's Eye for me. <<if hasInfo("Yvik's Eye read")>>
     <<jump YviksEyeDiscussion>>
+-> You: I'm ending negotiations.
+    UNFINISHED
+-> You: Could you hold, please?
 -> You: That's all. Offscreen.
 ===
 title: YviksEyeDiscussion
 ---
--> You: The Augurs couldn't have possibly flung a continent into space. What really happened? 
+-> You: The Augurs flung Urjvor into space?
+    Ratet Hud: Yes.
+    -> You: That's not possible.
+        Ratet Hud: It is, if you're the Augurs.
+    -> You: Could you elaborate?
+        Ratet Hud: What is there to elaborate on?
+        Ratet Hud: Jvor displeased the Augurs, so they exterminated him and his kind.
+    -> You: (Say Nothing)
+    
+    Officer Dabo: That doesn't make any sense.
+    Officer Dabo: Captain, the Augurs are the rulers of the Aratel, that's certain.
+    Officer Dabo: But the technology they'd need to rip out a continent and send it flying?
+    Officer Dabo: That's way beyond even our current capabilities.
+
+    -> You: Ratet Hud, why do *you* think the Augurs would be able to do it?
+        Ratet Hud: If I'm being honest Captain, I don't know.
+        Ratet Hud: It's been five generations since the Augurs came to us, and hardly any have questioned their place since Yvik's Eye.
+        Ratet Hud: Now that I am questioning them, I am not sure where to even begin.
+        Ratet Hud: Maybe everything they've told us is a lie. But that can't be true, can it?
+        Ratet Hud: Surely there is truth in the Augurs' Word.
+    -> You: Do you know how the Augurs might have been able to remove Urjvor?
+        Ratet Hud: No. The Augurs tell us nothing.
+        Officer Dabo: No ideas here, Captain.
+    -> You: Maybe they thought about it, really hard. With their powerful minds.
+        Officer Dabo: ... Sure thing, Captain.
+        <<set $daboO to $daboO - 1>>
+    -> You: They probably made the whole thing up.
+        Ratet Hud: Why would they lie? Urjvor is gone, Captain. You can see it for yourself.
+    <<jump YviksEyeDiscussion>>
+
 -> You: Who is Jvor?
+    Ratet Hud: The Emperor of Urjvor. We don't know much about him outside of the Word of the Augurs.
+    Ratet Hud: Urjvor was supposed to be mighty, and massive. But the Word tells of his unspeakable cruelty.
+    Ratet Hud: Before Yvik's Eye, he was initially chosen by the Augurs to help his people.
+    Ratet Hud: But he rebelled, and the Word describes how he tortured and enslaved anyone who believed the Augurs' truth.
+    Ratet Hud: Then he attempted to ascend into the sky and remove the Augurs.
+    Ratet Hud: He failed.
+    <<jump YviksEyeDiscussion>> 
 -> You: What is Urjvor?
+    Ratet Hud: Urjvor was the greatest accomplishment of the old Aratel.
+    Ratet Hud: It was an Empire so vast and wide that it encompassed nearly all of Yvik.
+    Ratet Hud: It prospered until Jvor disobeyed the Augurs.
+    <<jump YviksEyeDiscussion>> 
 -> You: When was Yvik's Eye made?
+    Ratet Hud: A hundred years ago, roughly.
+    Ratet Hud: Five generations have come and gone since.
+    <<if $gvorikStatus != "confined" and $gvorikOpinion < 0>>
+        Ambassador G'Vorik: Five generations? That's quite a lot for only a hundred years.
+    <<else>>
+        -> You: Five generations?
+        -> You: Okay.
+            <<jump YviksEyeDiscussion>>
+    <<endif>>
+
+    UNFINISHED
+
+    Ratet Hud: We live for around 15 years on average. It's short, but we make what we can of it.
+    Officer Dabo: That's not just short, it's incredibly short for sapient life.
+    Officer Dabo: Just how old are you?
+    Ratet Hud: I am 16 years old.
+    Officer Dabo: I'm impressed. Your intent clearly translates into language. I'm shocked you've found the time to invest in rhetoric, given everything you've had to manage.
+    Ratet Hud: It is a form rarely practiced, and it has been squandered under the rule of the Augurs. Circumstances dictate that I master oration.
+    Ratet Hud: Words are important when it comes to image. The Augurs bless us with short lives, agressive tempers, and endless work. Our frustrations manifest through petulance.
+    Ratet Hud: I do my best to project the opposite so that I might command respect. Be assured however, I can be just as petulant as any other Aratel.
+
+    <<jump YviksEyeDiscussion>>
+-> You: Please come up with a better naming system, I feel like I'm choking on a bag of marbles. <<if not hasInfo("hatesAratelNames")>>
+    <<setInfo "hatesAratelNames">>
+    <<set $gvorikOpinion to $gvorikOpinion - 5>>
+    <<set $crewTrust to $crewTrust - 5>>
+    <<set $newMovementOpinion to $newMovementOpinion - 5>>
+    <<if $gvorikStatus != "confined">>
+        <<set $newMovementPOC to "gvorik">>
+    <<endif>>
+    <<jump NewMovementDiscussion>>
 -> You: Back to my other questions...
     <<jump NewMovementDiscussion>>
 ===
 title: LesserAugurFirstContact
 ---
 Morrigor: Union. What do you want?
--> You: I am the Captain of the {$shipName}. We are here to negotiate peace.
+-> You: I am the Captain of the {$shipName}. We are here to mediate negotiations.
 -> You: Hello, Augurs. I am {$name} of the {$shipName}. <<if $name != "Captain">>
 -> You: I honestly don't know.
     <<if $gvorikStatus != "confined">>
@@ -117,7 +192,7 @@ Morrigor: Union. What do you want?
         <<endif>>
     <<endif>>
 
-Morrigor: I don't care. But you may call me Morrigor. And the Augurs don't need your involvement.
+Morrigor: You may call me Morrigor. We are not interested in Union involvement.
 Morrigor: Take your Union ship, use your human urethras to wet yourselves, and go.
 
 -> You: I'm willing to ignore your blatant insult in the interest of peace, Morrigor.
@@ -150,5 +225,89 @@ Officer Dabo: They agreed to negotiations. Why would they be so dismissive?
 ===
 title: LesserAugurDiscussion
 ---
-Morrigor: Is there anything more you can do to waste my time, Captain Simpleton?
+<<set $numHangups to 0>>
+<<if hasInfo("morrigorRattled")>>
+    Morrigor: Yes, Captain? What... Peace-loving stool sample, I mean... yes?
+<<else>>
+    Morrigor: Is there anything more you can do to waste my time, Captain Simpleton?
+<<endif>>
+-> You: What can you tell me about yourself?
+    <<if hasInfo("morrigorRattled")>>
+        UNFINISHED
+        Morrigor: I am 
+    <<else>>
+        Morrigor: Captain, must I really explain?
+        Morrigor: We are the AUGURS. Ingrate. Offscreen.
+        <<set $numHangups to $numHangups + 1>>
+        <<stop>>
+    <<endif>>
+-> You: What can you tell me about the New Movement?
+    Morrigor: I'm sure they'd be happy to fill your head with nonsense themselves. Offscreen.
+    <<set $numHangups to $numHangups + 1>>
+    <<stop>>
+-> You: Could you PLEASE stop disconnecting? <<if $numHangups > 1>>
+    Morrigor: Offscreen.
+    <<set $numHangups to $numHangups + 1>>
+    <<stop>>
+-> You: LESSER Augur Morrigor, the New Movement is insisting that you contact your superiors. <<if hasInfo("dealingWithLesser") and not hasInfo("attemptedLesserDeal")>>
+    <<setInfo "attemptedLesserDeal">>
+    Morrigor: What? But...
+    Morrigor: No, Captain. I am in charge here. The Augurs cannot be bothered with this trivial rebellion.
+    -> You: The New Movement have the right to bring their demands directly to the Augurs.
+        Morrigor: Are you an idiot?
+        Morrigor: The New Movement has no power here. We're only here to, to, make a few morons happy.
+        Morrigor: They have no rights. They knew what they were doing when they decided to speak against the Word of the Augurs.
+        -> You: Shouldn't that be for the Augurs themselves to decide?
+            <<setInfo "morrigorRattled">>
+            Morrigor: No, Captain. I, I mean... Their Word is truth, you understand? They can't be bothered by you, by anyone.
+            Morrigor: My duty is to them.
+            Morrigor: Offscreen, please.
+            <<set $numHangups to $numHangups + 1>>
+            <<stop>>
+        -> You: Are you listening to yourself?
+            Morrigor: I am always listening, Captain.
+            Morrigor: You may not be able to wrap your simple head around it, but what I speak is truth.
+            Morrigor: Offscreen.
+            <<set $numHangups to $numHangups + 1>>
+            <<stop>>
+    -> You: I am mediating here. I will decide what is and isn't trivial.
+        Morrigor: Very well.
+        Morrigor: Tell me then, buffoon, what is and isn't trivial?
+        UNFINISHED
+        -> You: The Augurs' Presence in negotiations.
+    -> You: Fine, have it your way.
+        Morrigor: Good. Unless you need to waste more of my time?
+        -> You: But that means YOU have to be at the negotiating table.
+            Morrigor: Captain, be reasonable.
+            -> You: Sorry, who are you calling unreasonable?
+            UNFINISHED
+        -> You: No. Offscreen.
+            <<set $lesserAugurOpinion to $lesserAugurOpinion + 10>>
+            <<stop>>
+-> You: Are you aware that your Homeworld is missing an entire continent? <<if hasInfo("Yvik") and not hasInfo("Yvik's Eye read")>>
+    Morrigor: Why do you care? You're conducting negotiations. What does it matter?
+    -> You: It's an anomaly, and we want to understand it.
+        Morrigor: If Yvik matters that much to you, I'd be more than happy to send your garbage scow plummeting to its surface.
+        Morrigor: We don't deal in anomalies. We deal in truth, in the word of the Augurs. That is all that needs to be understood.
+        Morrigor: Offscreen.
+        <<set $numHangups to $numHangups + 1>>
+        <<stop>>
+    -> You: We're trying to understand you better.
+        Morrigor: There is no benefit to understanding us.
+        Morrigor: Understand that you are only here because some care little enough to tolerate you.
+        Morrigor: That's all you need to know about us. Your breath, your presence, your fecal matter, they are all wastes of space.
+        Morrigor: Offscreen.
+        <<set $numHangups to $numHangups + 1>>
+        <<stop>>
+    -> You: Why do you care? It's a simple question.
+        Morrigor: Do yourselves a favor, and focus on your job, instead of useless information.
+        Morrigor: Offscreen.
+        <<set $numHangups to $numHangups + 1>>
+        <<stop>>
+-> You: I've read the Augurs' Word about Yvik's Eye. Would you mind clarifying a few things? <<if hasInfo("Yvik's Eye read")>>
+-> You: That's it, I'm calling off negotiations.
+-> You: Could you hold, please?
+-> You: Nevermind. Offscreen.
+
+UNFINISHED
 ===

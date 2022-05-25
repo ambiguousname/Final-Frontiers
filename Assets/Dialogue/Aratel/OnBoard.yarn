@@ -2,6 +2,10 @@
 tags:
 ---
 <<set $crewTrust to 0>>
+<<set $roquellO to 0>>
+<<set $riktO to 0>>
+<<set $corwinO to 0>>
+<<set $daboO to 0>>
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
 
 -> You: A pleasure to meet you.
