@@ -201,6 +201,7 @@ Morrigor: Take your Union ship, use your human urethras to wet yourselves, and g
 -> You: You're excluding a lot of other species that work on this ship.
     Morrigor: They can "pee" themselves in whatever manner they choose. I imagine you could "pee" yourself easily, though.
     Morrigor: Seeing as how you are a human.
+-> You: Are you here to negotiate or not?
 -> You: Oh yeah? Well why don't YOU wet YOURSELVES?
     Morrigor: Perhaps I am too busy engaging in coitus with your mother. And your father.
 
@@ -209,11 +210,9 @@ Morrigor: Offscreen.
 <<setInfo "metLesserAugur">>
 
 Commander Corwin: I didn't know anyone was allowed to hang up on us.
-Officer Dabo: They agreed to negotiations. Why would they be so dismissive?
 
 <<if $gvorikStatus == "onBridge">>
-    Ambassador G'Vorik: It's strange. They're purposefully trying to jeopardize whatever chance at peace they could have.
-    Ambassador G'Vorik: I'm not sure why, though.
+    Ambassador G'Vorik: It's peculiar behavior. They're purposefully trying to jeopardize whatever chance at peace they could have.
 <<endif>>
 
 -> You: Interesting.
@@ -227,10 +226,14 @@ title: LesserAugurDiscussion
 ---
 <<set $numHangups to 0>>
 <<if hasInfo("morrigorRattled")>>
-    Morrigor: Yes, Captain? What... Peace-loving stool sample, I mean... yes?
+    Morrigor: Is there anything else, Captain? What... Peace-loving stool sample, I mean... yes?
 <<else>>
     Morrigor: Is there anything more you can do to waste my time, Captain Simpleton?
 <<endif>>
+-> You: Could I interest you in starting negotiations?
+    Morrigor: Offscreen.
+    <<set $numHangups to $numHangups + 1>>
+    <<stop>>
 -> You: What can you tell me about yourself?
     <<if hasInfo("morrigorRattled")>>
         UNFINISHED
@@ -261,20 +264,43 @@ title: LesserAugurDiscussion
             <<setInfo "morrigorRattled">>
             Morrigor: No, Captain. I, I mean... Their Word is truth, you understand? They can't be bothered by you, by anyone.
             Morrigor: My duty is to them.
-            Morrigor: Offscreen, please.
-            <<set $numHangups to $numHangups + 1>>
-            <<stop>>
+            <<jump LesserAugurDiscussion>>
         -> You: Are you listening to yourself?
             Morrigor: I am always listening, Captain.
             Morrigor: You may not be able to wrap your simple head around it, but what I speak is truth.
             Morrigor: Offscreen.
             <<set $numHangups to $numHangups + 1>>
             <<stop>>
-    -> You: I am mediating here. I will decide what is and isn't trivial.
-        Morrigor: Very well.
-        Morrigor: Tell me then, buffoon, what is and isn't trivial?
+    -> You: You don't seem in charge.
+        Morrigor: I am in charge! I am! You pathetic little skeeving...
+        -> You: Then act like a leader, and negotiate.
+            Morrigor: You don't get to tell me what is or isn't a leader!
+            Morrigor: I am a lesser Augur, and I am in CHARGE!
+            UNFINISHED
+        -> You: Are not.
+            <<set $crewTrust to $crewTrust - 1>>
+            Morrigor: Am too!
+            -> You: Are not.
+                Morrigor: Am too!
+                Officer Roquell: Captain, is there really a point to this?
+                -> You: Nope.
+                    Morrigor: Yes!
+                -> You: Yes.
+                    Morrigor: No!
+                -> You: I don't know.
+
+                Officer Roquell: Maybe we should refocus.
+                Morrigor: Listen crapfaces, it doesn't matter whether or not the Augurs are coming. Because we are not negotiating.
+                Morrigor: So be content enough to ROT. THERE.
+                Morrigor: AND I AM IN CHARGE! OFFSCREEN!
+                <<set $numHangups to $numHangups + 1>>
+                <<stop>>
+            -> You: Fine, you're in charge. What does that mean?
+            UNFINISHED
+                Morrigor: It means I am handling the situation. 
+        -> You: I very much doubt you can handle this.
+            <<set $lesserAugurOpinion to $lesserAugurOpinion - 5>>
         UNFINISHED
-        -> You: The Augurs' Presence in negotiations.
     -> You: Fine, have it your way.
         Morrigor: Good. Unless you need to waste more of my time?
         -> You: But that means YOU have to be at the negotiating table.
