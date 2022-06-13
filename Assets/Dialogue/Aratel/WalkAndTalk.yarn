@@ -2,6 +2,7 @@
 tags:
 ---
 Initiate O'kurr: How was the ceremony, Captain? #line:0fb0b27 
+<<declare $reason = "" as string>>
 
 -> You: Just show me to my ship. #line:0ed89a6
     <<wait 5>>

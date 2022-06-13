@@ -1,11 +1,11 @@
 ﻿title: OnBoard
 tags:
 ---
-<<set $crewTrust to 0>>
-<<set $roquellO to 0>>
-<<set $riktO to 0>>
-<<set $corwinO to 0>>
-<<set $daboO to 0>>
+<<declare $crewTrust = 0 as number>>
+<<declare $roquellO = 0 as number>>
+<<declare $riktO = 0 as number>>
+<<declare $corwinO = 0 as number>>
+<<declare $daboO = 0 as number>>
 Officer Roquell: {$name}, First Officer Mira Roquell reporting for duty.
 
 -> You: A pleasure to meet you.
@@ -86,7 +86,7 @@ title: OB_Speech
             -> You: To transport some random individual. I haven't read the file yet.
             -> You: To fight for peace.
 -> You: Let me describe a sandwich I had for lunch, with a few choice ingredients...
-    <<set $sandwich to "">>
+    <<declare $sandwich = "" as string>>
     Officer Roquell: Captain?
     <<jump OB_Speech_Sandwich>>
 

@@ -32,10 +32,10 @@ title: AW_ArriveAtQuarters
 ===
 title: AW_GVorik
 ---
-<<set $gvorikStatus to "onBridge">>
+<<declare $gvorikStatus = "onBridge" as string>>
 // Opinion only matters if G'Vorik is not confined to quarters.
 // Otherwise, what the hell does their opinion matter?
-<<set $gvorikOpinion to 0>>
+<<declare $gvorikOpinion = 0 as number>>
 Ambassador G'Vorik: Captain. Here's your mission brief.
 <<addDataBlock "Aratel Brief">>
 Ambassador G'Vorik: I transferred it to your A.C.E.S system under "Data". You can access it by pressing "TAB" or "ESC". I'll give you a censecond to read it.
@@ -170,7 +170,7 @@ title: AW_ActualExit
 title: Introductions
 ---
 // Scrapped, move this to conference room scene post Aratel arrival.
-<<set $commanderCorwinAttitude to "provoke">>
+<<declare $commanderCorwinAttitude = "provoke" as string>>
 -> You: That still leaves time for proper introductions.
     Officer Roquell: You already got part of the gist, but I am your First Officer.
     Officer Roquell: Our files are available in your quarters whenever you'd like to take a look.

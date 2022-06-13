@@ -1,8 +1,8 @@
 ﻿title: ShipBoarding
 tags:
 ---
-<<set $shipName to "SS As Of Yet Unnamed Union Vessel">>
-<<set $name to "Captain">>
+<<declare $shipName = "SS As Of Yet Unnamed Union Vessel" as string>>
+<<declare $name = "Captain" as string>>
 Initiate O'kurr: Here we are. Whaddya think? #line:0f56d33 
 
 -> You: What are the specifications? #line:058046c 

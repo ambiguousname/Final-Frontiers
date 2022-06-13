@@ -1,11 +1,12 @@
 title: AratelEnter
 ---
-<<set $newMovementPOC to "Captain">>
-<<set $newMovementOpinion to 0>>
-<<set $lesserAugurOpinion to 0>>
-<<set $scanTarget to "">>
-<<set $monitorTarget to "">>
-<<set $augurAttendance to "">>
+<<declare $newMovementPOC = "Captain" as string>>
+<<declare $newMovementOpinion = 0 as number>>
+<<declare $lesserAugurOpinion = 0 as number>>
+<<declare $morrigorStatus = "" as string>>
+<<declare $scanTarget = "" as string>>
+<<declare $monitorTarget = "" as string>>
+<<declare $augurAttendance = "" as string>>
 Officer Dabo: Captain, I'm detecting two opposing Aratel fleets. Neither of them appear to be moving.
 Officer Dabo: One flagship claims to be hailing from the "New Movement fleet", while the other is dead silent.
 <<readyOrders DialogueManager>>
@@ -224,9 +225,17 @@ Commander Corwin: I didn't know anyone was allowed to hang up on us.
 ===
 title: LesserAugurDiscussion
 ---
-<<set $numHangups to 0>>
-<<if hasInfo("morrigorRattled")>>
+<<if $morrigorStatus == "pissed">>
+    Officer Dabo: Captain, the Lesser Augurs are refusing our hails.
+    <<stop>>
+<<endif>>
+
+<<declare $numHangups = 0 as number>>
+<<if $morrigorStatus == "rattled">>
     Morrigor: Is there anything else, Captain? What... Peace-loving stool sample, I mean... yes?
+<<elseif $augurAttendance == "Morrigor">>
+    Morrigor: My shuttle is undergoing preparations, Captain. As I said, I will be on your ship within the hour.
+    <<stop>>
 <<else>>
     Morrigor: Is there anything more you can do to waste my time, Captain Simpleton?
 <<endif>>
@@ -235,7 +244,7 @@ title: LesserAugurDiscussion
     <<set $numHangups to $numHangups + 1>>
     <<stop>>
 -> You: What can you tell me about yourself?
-    <<if hasInfo("morrigorRattled")>>
+    <<if $morrigorStatus == "rattled">>
         UNFINISHED
         Morrigor: I am 
     <<else>>
@@ -248,6 +257,7 @@ title: LesserAugurDiscussion
     Morrigor: I'm sure they'd be happy to fill your head with nonsense themselves. Offscreen.
     <<set $numHangups to $numHangups + 1>>
     <<stop>>
+-> You: What can you tell me about Ratet Hud? <<if hasInfo("metNewMovement")>>
 -> You: Could you PLEASE stop disconnecting? <<if $numHangups > 1>>
     Morrigor: Offscreen.
     <<set $numHangups to $numHangups + 1>>
@@ -260,24 +270,60 @@ title: LesserAugurDiscussion
         Morrigor: Are you an idiot?
         Morrigor: The New Movement has no power here. We're only here to, to, make a few morons happy.
         Morrigor: They have no rights. They knew what they were doing when they decided to speak against the Word of the Augurs.
-        -> You: Shouldn't that be for the Augurs themselves to decide?
-            <<setInfo "morrigorRattled">>
+        -> You: Shouldn't that be for the Augurs and the New Movement to discuss?
+            <<set $morrigorStatus to "rattled">>
             Morrigor: No, Captain. I, I mean... Their Word is truth, you understand? They can't be bothered by you, by anyone.
             Morrigor: My duty is to them.
             <<jump LesserAugurDiscussion>>
+        -> You: That is entirely offensive. How can you be so callous?
+            Morrigor: What you see as callousness is nothing but righteousness.
+            Morrigor: How can you not get what I've been telling you? There is nothing but the Augurs. Their opinion is what matters.
+            Morrigor: I am following their instructions to the letter, and IT IS CLEAR. The New Movement do not deserve a second thought.
+            Morrigor: So don't blame me for any callousness. Blame the Augurs. Offscreen.
+            <<set $lesserAugurOpinion to $lesserAugurOpinion + 5>>
+            <<set $numHangups to $numHangups + 1>>
+            <<stop>>
         -> You: Are you listening to yourself?
             Morrigor: I am always listening, Captain.
             Morrigor: You may not be able to wrap your simple head around it, but what I speak is truth.
             Morrigor: Offscreen.
             <<set $numHangups to $numHangups + 1>>
             <<stop>>
+        -> You: Tanj off, tainted worm food.
+            Morrigor: I am repeatedly shocked that your small brain is incapable of comprehending my PURPOSE.
+            Morrigor: You just, you don't GET IT! WHY CAN'T YOU GET IT, YOU IDIOT? SIMPLETON? INCONTINENT FOOL? WE... we don't NEED YOU!
+            Morrigor: Peace-loving regurgent diglimps! Just tanjing die in a tanjing vat of tanjing thiophenol, RODENT FACE!
+            <<set $morrigorStatus to "pissed">>
+            <<stop>>
     -> You: You don't seem in charge.
+        <<set $lesserAugurOpinion to $lesserAugurOpinion - 5>>
         Morrigor: I am in charge! I am! You pathetic little skeeving...
         -> You: Then act like a leader, and negotiate.
-            Morrigor: You don't get to tell me what is or isn't a leader!
-            Morrigor: I am a lesser Augur, and I am in CHARGE!
-            UNFINISHED
+            Morrigor: I am a leader! What don't you get?
+            Morrigor: The Augurs put me in charge, to lead, and that's what I'm going to do! I am leading!
+            -> You: How?
+                Morrigor: That's just...
+                Morrigor: Just...
+                Morrigor: Because! I know what I, what I'm...
+                Morrigor: The New Movement can't be allowed to succeed. And we cannot submit to your demands.
+                <<setInfo "morrigorRattled">>
+                <<jump LesserAugurDiscussion>>
+            -> You: Then do yourself a favor: negotiate.
+                Morrigor: I can't. But I can't just end this either.
+                Morrigor: I just... I want to...
+                Morrigor: I don't know! Okay! Okay. We'll negotiate.
+                Morrigor: You can expect me within the hour, Captain. Offscreen.
+                <<set $augurAttendance to "Morrigor">>
+                Officer Dabo: Now all we have to do is convince Ratet Hud to accept negotiations with Lesser Augur Morrigor.
+                Commander Corwin: I hope it's as easy as you make it sound.
+                <<stop>>
+            -> You: Seems like it.
+                <<set $lesserAugurOpinion to $lesserAugurOpinion - 1>>
+                Morrigor: Offscreen.
+                <<set $numHangups to $numHangups + 1>>
+                <<stop>>
         -> You: Are not.
+            <<set $lesserAugurOpinion to $lesserAugurOpinion - 5>>
             <<set $crewTrust to $crewTrust - 1>>
             Morrigor: Am too!
             -> You: Are not.
@@ -288,18 +334,32 @@ title: LesserAugurDiscussion
                 -> You: Yes.
                     Morrigor: No!
                 -> You: I don't know.
+                    Morrigor: Yes!
 
                 Officer Roquell: Maybe we should refocus.
-                Morrigor: Listen crapfaces, it doesn't matter whether or not the Augurs are coming. Because we are not negotiating.
+                Morrigor: Listen smegheads, it doesn't matter whether or not the Augurs are coming. Because we are not negotiating.
                 Morrigor: So be content enough to ROT. THERE.
-                Morrigor: AND I AM IN CHARGE! OFFSCREEN!
-                <<set $numHangups to $numHangups + 1>>
+                <<set $morrigorStatus to "pissed">>
                 <<stop>>
-            -> You: Fine, you're in charge. What does that mean?
+            -> You: I know for a FACT that you are not in charge.
+                Morrigor: It's just words Captain. This task has been delegated to me.
+                Morrigor: That makes me in charge.
+                -> You: Semantics. You mean that it's just semantics.
+                    Morrigor: I don't care! Semantics, words, we can debate this all day.
+                    Morrigor: But I want to make two things clear. The two things I have attempted to make painfully clear since we started.
+                    Morrigor: Number One: I am in charge. The Augurs have made sure that I am to handle these responsibilities. They are busy.
+                    Morrigor: Number Two: I am not negotiating.
+                    -> You: Then what the tanj am I doing here?
+                        Morrigor: I don't care. Get out of my sight. Offscreen.
+                        <<set $numHangups to $numHangups + 1>>
+                        <<stop>>
+                    -> You: That leaves us at an impasse then.
+                        Morrigor: It just leaves you at an impasse. Offscreen.
+                        <<set $numHangups to $numHangups + 1>>
+                        <<stop>>
+                -> You: 
             UNFINISHED
-                Morrigor: It means I am handling the situation. 
-        -> You: I very much doubt you can handle this.
-            <<set $lesserAugurOpinion to $lesserAugurOpinion - 5>>
+        -> You: 
         UNFINISHED
     -> You: Fine, have it your way.
         Morrigor: Good. Unless you need to waste more of my time?
