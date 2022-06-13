@@ -236,6 +236,9 @@ title: LesserAugurDiscussion
 <<elseif $augurAttendance == "Morrigor">>
     Morrigor: My shuttle is undergoing preparations, Captain. As I said, I will be on your ship within the hour.
     <<stop>>
+<<elseif $augurAttendance == "Augurs">>
+    Morrigor: I'm still thinking it over, Captain. You'll hear from me soon.
+    <<stop>>
 <<else>>
     Morrigor: Is there anything more you can do to waste my time, Captain Simpleton?
 <<endif>>
@@ -270,6 +273,7 @@ title: LesserAugurDiscussion
         Morrigor: Are you an idiot?
         Morrigor: The New Movement has no power here. We're only here to, to, make a few morons happy.
         Morrigor: They have no rights. They knew what they were doing when they decided to speak against the Word of the Augurs.
+        UNFINISHED
         -> You: Shouldn't that be for the Augurs and the New Movement to discuss?
             <<set $morrigorStatus to "rattled">>
             Morrigor: No, Captain. I, I mean... Their Word is truth, you understand? They can't be bothered by you, by anyone.
@@ -357,7 +361,29 @@ title: LesserAugurDiscussion
                         Morrigor: It just leaves you at an impasse. Offscreen.
                         <<set $numHangups to $numHangups + 1>>
                         <<stop>>
-                -> You: 
+                -> You: Then make a decision already! Stop jacking around!
+                    Morrigor: What?
+                    Morrigor: Ok, you want a decision?
+                    Morrigor: It's already been made. There will be no negotiations.
+                    Officer Roquell: Okay, that's it!
+                    Morrigor: Excuse me, I am in the midst of negotiating...
+                    Officer Roquell: I apologize for my outburst. Permission to speak, Captain?
+                    -> You: Granted.
+                        <<set $roquellO += 5>>
+                        Morrigor: I appreciate your apology... whoever you are.
+                        Officer Roquell: Sit down, and shut up, Morrigor!
+                        Officer Roquell: Captain, I think I appreciate what you're trying to do here.
+                        Officer Roquell: BUT YOU, Morrigor, are the most stubborn... dingbat I've ever had the displeasure of hearing speak.
+                        Officer Roquell: Your current situation can only deteriorate. We are throwing you a lifeline here, and you are throwing it away.
+                        Officer Roquell: I honestly don't care at this point if our mission succeeds are not, because you are doing EVERYTHING you can to make sure we can't even get started.
+                        Officer Roquell: Now, do you really want to save yourselves? Let us help you. Call the Augurs, right now.
+                        Morrigor: I... have to think about this. Offscreen.
+                        <<set $augurAttendance = "Augurs">>
+                        Officer Roquell: They better.
+                        <<stop>>
+                    -> You: No, I've got this.
+                        Morrigor: I appreciate your apology... whoever you are.
+                -> You: Listen here, pond scum...
             UNFINISHED
         -> You: 
         UNFINISHED
