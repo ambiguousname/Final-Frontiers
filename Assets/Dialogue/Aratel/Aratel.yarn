@@ -365,24 +365,29 @@ title: LesserAugurDiscussion
                     Morrigor: What?
                     Morrigor: Ok, you want a decision?
                     Morrigor: It's already been made. There will be no negotiations.
-                    Officer Roquell: Okay, that's it!
-                    Morrigor: Excuse me, I am in the midst of negotiating...
-                    Officer Roquell: I apologize for my outburst. Permission to speak, Captain?
-                    -> You: Granted.
-                        <<set $roquellO += 5>>
-                        Morrigor: I appreciate your apology... whoever you are.
-                        Officer Roquell: Sit down, and shut up, Morrigor!
-                        Officer Roquell: Captain, I think I appreciate what you're trying to do here.
-                        Officer Roquell: BUT YOU, Morrigor, are the most stubborn... dingbat I've ever had the displeasure of hearing speak.
-                        Officer Roquell: Your current situation can only deteriorate. We are throwing you a lifeline here, and you are throwing it away.
-                        Officer Roquell: I honestly don't care at this point if our mission succeeds are not, because you are doing EVERYTHING you can to make sure we can't even get started.
-                        Officer Roquell: Now, do you really want to save yourselves? Let us help you. Call the Augurs, right now.
-                        Morrigor: I... have to think about this. Offscreen.
-                        <<set $augurAttendance = "Augurs">>
-                        Officer Roquell: They better.
-                        <<stop>>
-                    -> You: No, I've got this.
-                        Morrigor: I appreciate your apology... whoever you are.
+                    <<if $crewTrust >= 0>>
+                        Officer Roquell: Okay, that's it!
+                        Morrigor: Excuse me, I am in the midst of negotiating...
+                        Officer Roquell: I apologize for my outburst. Permission to speak, Captain?
+                        -> You: Granted.
+                            <<set $roquellO += 5>>
+                            Morrigor: I appreciate your apology... whoever you are.
+                            Officer Roquell: Sit down, and shut up, Morrigor!
+                            Officer Roquell: Captain, I think I appreciate what you're trying to do here.
+                            Officer Roquell: BUT YOU, Morrigor, are the most stubborn... dingbat I've ever had the displeasure of hearing speak.
+                            Officer Roquell: Your current situation can only deteriorate. We are throwing you a lifeline here, and you are throwing it away.
+                            Officer Roquell: I honestly don't care at this point if our mission succeeds are not, because you are doing EVERYTHING you can to make sure we can't even get started.
+                            Officer Roquell: Now, do you really want to save yourselves? Let us help you. Call the Augurs, right now.
+                            Morrigor: I... have to think about this. Offscreen.
+                            <<set $augurAttendance = "Augurs">>
+                            Officer Roquell: They better.
+                            <<stop>>
+                        -> You: No, I've got this.
+                            Morrigor: I appreciate your apology... whoever you are.
+                            
+                    <<else>>
+
+                    <<endif>>
                 -> You: Listen here, pond scum...
             UNFINISHED
         -> You: 
