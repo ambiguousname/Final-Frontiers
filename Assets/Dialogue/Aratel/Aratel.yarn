@@ -19,25 +19,25 @@ Ratet Hud: Greetings, Union ship. I am Ratet Hud of the New Movement.
 -> You: Hello. I am {$name} of the {$shipName}. <<if $name != "Captain">>
 -> You: Hi.
 -> You: Tanj off.
-    <<if $gvorikStatus != "confined">>
-        Ambassador G'Vorik: Captain!
-        <<set $gvorikOpinion to $gvorikOpinion - 5>>
-        <<if $gvorikStatus == "independent">>
-            Ambassador G'Vorik: Apologies, Ratet Hud. It is good to meet you, despite our first impressions. 
-            <<set $newMovementPOC to "gvorik">>
-        <<endif>>
-    <<endif>>
-    Ratet Hud: Union ship, we are here to negotiate. We do not appreciate percieved hostilities.
-    <<if $gvorikStatus == "independent">>
-        Ratet Hud: We appreciate the apology.
-    <<endif>>
-    Ratet Hud: We can forgive transgressions in return for your aid.
+	<<if $gvorikStatus != "confined">>
+		Ambassador G'Vorik: Captain!
+		<<set $gvorikOpinion to $gvorikOpinion - 5>>
+		<<if $gvorikStatus == "independent">>
+			Ambassador G'Vorik: Apologies, Ratet Hud. It is good to meet you, despite our first impressions. 
+			<<set $newMovementPOC to "gvorik">>
+		<<endif>>
+	<<endif>>
+	Ratet Hud: Union ship, we are here to negotiate. We do not appreciate percieved hostilities.
+	<<if $gvorikStatus == "independent">>
+		Ratet Hud: We appreciate the apology.
+	<<endif>>
+	Ratet Hud: We can forgive transgressions in return for your aid.
 
 Ratet Hud: The Augurs of the other ship refuse to communicate with us.
 <<if $newMovementPOC == "gvorik">>
-    Ratet Hud: We are only interested in peace, Ambassador.
+	Ratet Hud: We are only interested in peace, Ambassador.
 <<else>>
-    Ratet Hud: We are only interested in peace, Captain.
+	Ratet Hud: We are only interested in peace, Captain.
 <<endif>>
 Ratet Hud: If the Augurs do not wish to speak with us, then we cannot make peace.
 Ratet Hud: We implore you to open their ears to our pleas.
@@ -45,139 +45,139 @@ Ratet Hud: We implore you to open their ears to our pleas.
 -> You: We will do everything we can to ensure peace between your peoples.
 -> You: Understood.
 -> You: Who needs peace, anyways?
-    <<set $newMovementOpinion to $newMovementOpinion - 5>>
-    Ratet Hud: I see.
+	<<set $newMovementOpinion to $newMovementOpinion - 5>>
+	Ratet Hud: I see.
 <<jump NewMovementDiscussion>>
 ===
 title: NewMovementDiscussion
 ---
 <<if $newMovementPOC == "gvorik">>
-    Ratet Hud: Anything else I can do for the Ambassador?
+	Ratet Hud: Anything else I can do for the Ambassador?
 <<else>>
-    Ratet Hud: Anything else I can do for you, Captain?
+	Ratet Hud: Anything else I can do for you, Captain?
 <<endif>>
 -> You: What can you tell me about yourselves?
-    Ratet Hud: We are the New Movement.
-    -> You: Is that it?
-    -> You: Okay...
-    -> You: Your movement name is very creative. A+, no explanation necessary.
-    Ratet Hud: ... I am trying to think of a way to summarize ourselves.
-    Ratet Hud: The New Movement is representative of all Aratel. 100 years ago, the Augurs promised us peace, prosperity, and a place by their sides.
-    Ratet Hud: But we are forced to comply with every whim. Now, they are demanding we surrender our land, our posessions, all our toils for no discernable purpose.
-    Ratet Hud: Their Grand Purpose is ambiguous. We have the right to know how we are being used, and we demand equitable treatment.
-    <<jump NewMovementDiscussion>>
+	Ratet Hud: We are the New Movement.
+	-> You: Is that it?
+	-> You: Okay...
+	-> You: Your movement name is very creative. A+, no explanation necessary.
+	Ratet Hud: ... I am trying to think of a way to summarize ourselves.
+	Ratet Hud: The New Movement is representative of all Aratel. 100 years ago, the Augurs promised us peace, prosperity, and a place by their sides.
+	Ratet Hud: But we are forced to comply with every whim. Now, they are demanding we surrender our land, our posessions, all our toils for no discernable purpose.
+	Ratet Hud: Their Grand Purpose is ambiguous. We have the right to know how we are being used, and we demand equitable treatment.
+	<<jump NewMovementDiscussion>>
 -> You: What can you tell me about the Augurs?
-    Ratet Hud: Not much. They left their Word with us for five generations. But they do not tend to concern themselves with our lives.
-    Ratet Hud: We only hear glimmers from their lackeys, but they have turned cold to our rights and privileges as Aratel.
-    Ratet Hud: It may be beyond their capabilities to care for the common Aratel. I am surprised they even agreed to negotiate.
-    Ratet Hud: But now, they shoot at us if we get too close.
-    <<jump NewMovementDiscussion>>
+	Ratet Hud: Not much. They left their Word with us for five generations. But they do not tend to concern themselves with our lives.
+	Ratet Hud: We only hear glimmers from their lackeys, but they have turned cold to our rights and privileges as Aratel.
+	Ratet Hud: It may be beyond their capabilities to care for the common Aratel. I am surprised they even agreed to negotiate.
+	Ratet Hud: But now, they shoot at us if we get too close.
+	<<jump NewMovementDiscussion>>
 -> You: Are you aware that your Homeworld is missing an entire continent? <<if hasInfo("Yvik") and not hasInfo("Yvik's Eye read")>>
-    Ratet Hud: Yvik's Eye. Yes, I am aware.
-    Ratet Hud: We'll transfer the relevant information into your databanks.
-    Ratet Hud: Standby for transmission.
-    Officer Dabo: Transmission recieved. Data block added to your data pad, Captain.
-    <<addDataBlock "Yvik's Eye">>
-    <<jump NewMovementDiscussion>>
+	Ratet Hud: Yvik's Eye. Yes, I am aware.
+	Ratet Hud: We'll transfer the relevant information into your databanks.
+	Ratet Hud: Standby for transmission.
+	Officer Dabo: Transmission recieved. Data block added to your data pad, Captain.
+	<<addDataBlock "Yvik's Eye">>
+	<<jump NewMovementDiscussion>>
 -> You: What's the deal with Morrigor? <<if hasInfo("metLesserAugur") and not hasInfo("dealingWithLesser")>>
-    <<setInfo "dealingWithLesser">>
-    Ratet Hud: Morrigor?
-    Ratet Hud: *Lesser* Augur Morrigor?
-    Ratet Hud: Captain, the Augurs are refusing to seriously consider our offer.
-    Ratet Hud: *Lesser* Augur Morrigor is nothing more than a... a dog, blindly obeying their commands.
-    Ratet Hud: We WILL NOT negotiate unless we can speak to the Augurs themselves.
-    -> You: My first priority is just to get Morrigor to agree to talks. Demands can come after.
-    -> You: Understood.
-    -> You: Whiners. Be grateful that they sent someone at all.
-        <<set $gvorikOpinion to $gvorikOpinion - 5>>
-        <<set $newMovementOpinion to $newMovementOpinion - 5>>
-    <<jump NewMovementDiscussion>>
+	<<setInfo "dealingWithLesser">>
+	Ratet Hud: Morrigor?
+	Ratet Hud: *Lesser* Augur Morrigor?
+	Ratet Hud: Captain, the Augurs are refusing to seriously consider our offer.
+	Ratet Hud: *Lesser* Augur Morrigor is nothing more than a... a dog, blindly obeying their commands.
+	Ratet Hud: We WILL NOT negotiate unless we can speak to the Augurs themselves.
+	-> You: My first priority is just to get Morrigor to agree to talks. Demands can come after.
+	-> You: Understood.
+	-> You: Whiners. Be grateful that they sent someone at all.
+		<<set $gvorikOpinion to $gvorikOpinion - 5>>
+		<<set $newMovementOpinion to $newMovementOpinion - 5>>
+	<<jump NewMovementDiscussion>>
 -> You: Clarify Yvik's Eye for me. <<if hasInfo("Yvik's Eye read")>>
-    <<jump YviksEyeDiscussion>>
+	<<jump YviksEyeDiscussion>>
 -> You: I'm ending negotiations.
-    UNFINISHED
+	UNFINISHED
 -> You: Could you hold, please?
 -> You: That's all. Offscreen.
 ===
 title: YviksEyeDiscussion
 ---
 -> You: The Augurs flung Urjvor into space?
-    Ratet Hud: Yes.
-    -> You: That's not possible.
-        Ratet Hud: It is, if you're the Augurs.
-    -> You: Could you elaborate?
-        Ratet Hud: What is there to elaborate on?
-        Ratet Hud: Jvor displeased the Augurs, so they exterminated him and his kind.
-    -> You: (Say Nothing)
-    
-    Officer Dabo: That doesn't make any sense.
-    Officer Dabo: Captain, the Augurs are the rulers of the Aratel, that's certain.
-    Officer Dabo: But the technology they'd need to rip out a continent and send it flying?
-    Officer Dabo: That's way beyond even our current capabilities.
+	Ratet Hud: Yes.
+	-> You: That's not possible.
+		Ratet Hud: It is, if you're the Augurs.
+	-> You: Could you elaborate?
+		Ratet Hud: What is there to elaborate on?
+		Ratet Hud: Jvor displeased the Augurs, so they exterminated him and his kind.
+	-> You: (Say Nothing)
+	
+	Officer Dabo: That doesn't make any sense.
+	Officer Dabo: Captain, the Augurs are the rulers of the Aratel, that's certain.
+	Officer Dabo: But the technology they'd need to rip out a continent and send it flying?
+	Officer Dabo: That's way beyond even our current capabilities.
 
-    -> You: Ratet Hud, why do *you* think the Augurs would be able to do it?
-        Ratet Hud: If I'm being honest Captain, I don't know.
-        Ratet Hud: It's been five generations since the Augurs came to us, and hardly any have questioned their place since Yvik's Eye.
-        Ratet Hud: Now that I am questioning them, I am not sure where to even begin.
-        Ratet Hud: Maybe everything they've told us is a lie. But that can't be true, can it?
-        Ratet Hud: Surely there is truth in the Augurs' Word.
-    -> You: Do you know how the Augurs might have been able to remove Urjvor?
-        Ratet Hud: No. The Augurs tell us nothing.
-        Officer Dabo: No ideas here, Captain.
-    -> You: Maybe they thought about it, really hard. With their powerful minds.
-        Officer Dabo: ... Sure thing, Captain.
-        <<set $daboO to $daboO - 1>>
-    -> You: They probably made the whole thing up.
-        Ratet Hud: Why would they lie? Urjvor is gone, Captain. You can see it for yourself.
-    <<jump YviksEyeDiscussion>>
+	-> You: Ratet Hud, why do *you* think the Augurs would be able to do it?
+		Ratet Hud: If I'm being honest Captain, I don't know.
+		Ratet Hud: It's been five generations since the Augurs came to us, and hardly any have questioned their place since Yvik's Eye.
+		Ratet Hud: Now that I am questioning them, I am not sure where to even begin.
+		Ratet Hud: Maybe everything they've told us is a lie. But that can't be true, can it?
+		Ratet Hud: Surely there is truth in the Augurs' Word.
+	-> You: Do you know how the Augurs might have been able to remove Urjvor?
+		Ratet Hud: No. The Augurs tell us nothing.
+		Officer Dabo: No ideas here, Captain.
+	-> You: Maybe they thought about it, really hard. With their powerful minds.
+		Officer Dabo: ... Sure thing, Captain.
+		<<set $daboO to $daboO - 1>>
+	-> You: They probably made the whole thing up.
+		Ratet Hud: Why would they lie? Urjvor is gone, Captain. You can see it for yourself.
+	<<jump YviksEyeDiscussion>>
 
 -> You: Who is Jvor?
-    Ratet Hud: The Emperor of Urjvor. We don't know much about him outside of the Word of the Augurs.
-    Ratet Hud: Urjvor was supposed to be mighty, and massive. But the Word tells of his unspeakable cruelty.
-    Ratet Hud: Before Yvik's Eye, he was initially chosen by the Augurs to help his people.
-    Ratet Hud: But he rebelled, and the Word describes how he tortured and enslaved anyone who believed the Augurs' truth.
-    Ratet Hud: Then he attempted to ascend into the sky and remove the Augurs.
-    Ratet Hud: He failed.
-    <<jump YviksEyeDiscussion>> 
+	Ratet Hud: The Emperor of Urjvor. We don't know much about him outside of the Word of the Augurs.
+	Ratet Hud: Urjvor was supposed to be mighty, and massive. But the Word tells of his unspeakable cruelty.
+	Ratet Hud: Before Yvik's Eye, he was initially chosen by the Augurs to help his people.
+	Ratet Hud: But he rebelled, and the Word describes how he tortured and enslaved anyone who believed the Augurs' truth.
+	Ratet Hud: Then he attempted to ascend into the sky and remove the Augurs.
+	Ratet Hud: He failed.
+	<<jump YviksEyeDiscussion>> 
 -> You: What is Urjvor?
-    Ratet Hud: Urjvor was the greatest accomplishment of the old Aratel.
-    Ratet Hud: It was an Empire so vast and wide that it encompassed nearly all of Yvik.
-    Ratet Hud: It prospered until Jvor disobeyed the Augurs.
-    <<jump YviksEyeDiscussion>> 
+	Ratet Hud: Urjvor was the greatest accomplishment of the old Aratel.
+	Ratet Hud: It was an Empire so vast and wide that it encompassed nearly all of Yvik.
+	Ratet Hud: It prospered until Jvor disobeyed the Augurs.
+	<<jump YviksEyeDiscussion>> 
 -> You: When was Yvik's Eye made?
-    Ratet Hud: A hundred years ago, roughly.
-    Ratet Hud: Five generations have come and gone since.
-    <<if $gvorikStatus != "confined" and $gvorikOpinion < 0>>
-        Ambassador G'Vorik: Five generations? That's quite a lot for only a hundred years.
-    <<else>>
-        -> You: Five generations?
-        -> You: Okay.
-            <<jump YviksEyeDiscussion>>
-    <<endif>>
+	Ratet Hud: A hundred years ago, roughly.
+	Ratet Hud: Five generations have come and gone since.
+	<<if $gvorikStatus != "confined" and $gvorikOpinion < 0>>
+		Ambassador G'Vorik: Five generations? That's quite a lot for only a hundred years.
+	<<else>>
+		-> You: Five generations?
+		-> You: Okay.
+			<<jump YviksEyeDiscussion>>
+	<<endif>>
 
-    UNFINISHED
+	UNFINISHED
 
-    Ratet Hud: We live for around 15 years on average. It's short, but we make what we can of it.
-    Officer Dabo: That's not just short, it's incredibly short for sapient life.
-    Officer Dabo: Just how old are you?
-    Ratet Hud: I am 16 years old.
-    Officer Dabo: I'm impressed. Your intent clearly translates into language. I'm shocked you've found the time to invest in rhetoric, given everything you've had to manage.
-    Ratet Hud: It is a form rarely practiced, and it has been squandered under the rule of the Augurs. Circumstances dictate that I master oration.
-    Ratet Hud: Words are important when it comes to image. The Augurs bless us with short lives, agressive tempers, and endless work. Our frustrations manifest through petulance.
-    Ratet Hud: I do my best to project the opposite so that I might command respect. Be assured however, I can be just as petulant as any other Aratel.
+	Ratet Hud: We live for around 15 years on average. It's short, but we make what we can of it.
+	Officer Dabo: That's not just short, it's incredibly short for sapient life.
+	Officer Dabo: Just how old are you?
+	Ratet Hud: I am 16 years old.
+	Officer Dabo: I'm impressed. Your intent clearly translates into language. I'm shocked you've found the time to invest in rhetoric, given everything you've had to manage.
+	Ratet Hud: It is a form rarely practiced, and it has been squandered under the rule of the Augurs. Circumstances dictate that I master oration.
+	Ratet Hud: Words are important when it comes to image. The Augurs bless us with short lives, agressive tempers, and endless work. Our frustrations manifest through petulance.
+	Ratet Hud: I do my best to project the opposite so that I might command respect. Be assured however, I can be just as petulant as any other Aratel.
 
-    <<jump YviksEyeDiscussion>>
+	<<jump YviksEyeDiscussion>>
 -> You: Please come up with a better naming system, I feel like I'm choking on a bag of marbles. <<if not hasInfo("hatesAratelNames")>>
-    <<setInfo "hatesAratelNames">>
-    <<set $gvorikOpinion to $gvorikOpinion - 5>>
-    <<set $crewTrust to $crewTrust - 5>>
-    <<set $newMovementOpinion to $newMovementOpinion - 5>>
-    <<if $gvorikStatus != "confined">>
-        <<set $newMovementPOC to "gvorik">>
-    <<endif>>
-    <<jump NewMovementDiscussion>>
+	<<setInfo "hatesAratelNames">>
+	<<set $gvorikOpinion to $gvorikOpinion - 5>>
+	<<set $crewTrust to $crewTrust - 5>>
+	<<set $newMovementOpinion to $newMovementOpinion - 5>>
+	<<if $gvorikStatus != "confined">>
+		<<set $newMovementPOC to "gvorik">>
+	<<endif>>
+	<<jump NewMovementDiscussion>>
 -> You: Back to my other questions...
-    <<jump NewMovementDiscussion>>
+	<<jump NewMovementDiscussion>>
 ===
 title: LesserAugurFirstContact
 ---
@@ -185,26 +185,26 @@ Morrigor: Union. What do you want?
 -> You: I am the Captain of the {$shipName}. We are here to mediate negotiations.
 -> You: Hello, Augurs. I am {$name} of the {$shipName}. <<if $name != "Captain">>
 -> You: I honestly don't know.
-    <<if $gvorikStatus != "confined">>
-        Ambassador G'Vorik: Captain.
-        <<set $gvorikOpinion to $gvorikOpinion - 5>>
-        <<if $gvorikStatus == "independent">>
-            Ambassador G'Vorik: Great Augurs, we're here to negotiate peace and resolve your conflict.
-        <<endif>>
-    <<endif>>
+	<<if $gvorikStatus != "confined">>
+		Ambassador G'Vorik: Captain.
+		<<set $gvorikOpinion to $gvorikOpinion - 5>>
+		<<if $gvorikStatus == "independent">>
+			Ambassador G'Vorik: Great Augurs, we're here to negotiate peace and resolve your conflict.
+		<<endif>>
+	<<endif>>
 
 Morrigor: You may call me Morrigor. We are not interested in Union involvement.
 Morrigor: Take your Union ship, use your human urethras to wet yourselves, and go.
 
 -> You: I'm willing to ignore your blatant insult in the interest of peace, Morrigor.
-    Morrigor: You are far more forgiving than I would ever be.
-    Morrigor: I guess the Union *is* full of peace-loving simpletons.
+	Morrigor: You are far more forgiving than I would ever be.
+	Morrigor: I guess the Union *is* full of peace-loving simpletons.
 -> You: You're excluding a lot of other species that work on this ship.
-    Morrigor: They can "pee" themselves in whatever manner they choose. I imagine you could "pee" yourself easily, though.
-    Morrigor: Seeing as how you are a human.
+	Morrigor: They can "pee" themselves in whatever manner they choose. I imagine you could "pee" yourself easily, though.
+	Morrigor: Seeing as how you are a human.
 -> You: Are you here to negotiate or not?
 -> You: Oh yeah? Well why don't YOU wet YOURSELVES?
-    Morrigor: Perhaps I am too busy engaging in coitus with your mother. And your father.
+	Morrigor: Perhaps I am too busy engaging in coitus with your mother. And your father.
 
 Morrigor: Offscreen.
 
@@ -213,214 +213,223 @@ Morrigor: Offscreen.
 Commander Corwin: I didn't know anyone was allowed to hang up on us.
 
 <<if $gvorikStatus == "onBridge">>
-    Ambassador G'Vorik: It's peculiar behavior. They're purposefully trying to jeopardize whatever chance at peace they could have.
+	Ambassador G'Vorik: It's peculiar behavior. They're purposefully trying to jeopardize whatever chance at peace they could have.
 <<endif>>
 
 -> You: Interesting.
 -> You: I'm not taking tanj. Raise shields and lock weapons.
-    <<jump LesserAugurAggress>>
+	<<jump LesserAugurAggress>>
 -> You: Well, I'm not done yet. Hail them again.
-    <<jump LesserAugurDiscussion>>
+	<<jump LesserAugurDiscussion>>
 
 ===
 title: LesserAugurDiscussion
 ---
 <<if $morrigorStatus == "pissed">>
-    Officer Dabo: Captain, the Lesser Augurs are refusing our hails.
-    <<stop>>
+	Officer Dabo: Captain, the Lesser Augurs are refusing our hails.
+	<<stop>>
 <<endif>>
 
 <<declare $numHangups = 0 as number>>
 <<if $morrigorStatus == "rattled">>
-    Morrigor: Is there anything else, Captain? What... Peace-loving stool sample, I mean... yes?
+	Morrigor: Is there anything else, Captain? What... Peace-loving stool sample, I mean... yes?
 <<elseif $augurAttendance == "Morrigor">>
-    Morrigor: My shuttle is undergoing preparations, Captain. As I said, I will be on your ship within the hour.
-    <<stop>>
+	Morrigor: My shuttle is undergoing preparations, Captain. As I said, I will be on your ship within the hour.
+	<<stop>>
 <<elseif $augurAttendance == "Augurs">>
-    Morrigor: I'm still thinking it over, Captain. You'll hear from me soon.
-    <<stop>>
+	Morrigor: I'm still thinking it over, Captain. You'll hear from me soon.
+	<<stop>>
 <<else>>
-    Morrigor: Is there anything more you can do to waste my time, Captain Simpleton?
+	Morrigor: Is there anything more you can do to waste my time, Captain Simpleton?
 <<endif>>
 -> You: Could I interest you in starting negotiations?
-    Morrigor: Offscreen.
-    <<set $numHangups to $numHangups + 1>>
-    <<stop>>
+	Morrigor: Offscreen.
+	<<set $numHangups to $numHangups + 1>>
+	<<stop>>
 -> You: What can you tell me about yourself?
-    <<if $morrigorStatus == "rattled">>
-        UNFINISHED
-        Morrigor: I am 
-    <<else>>
-        Morrigor: Captain, must I really explain?
-        Morrigor: We are the AUGURS. Ingrate. Offscreen.
-        <<set $numHangups to $numHangups + 1>>
-        <<stop>>
-    <<endif>>
+	<<if $morrigorStatus == "rattled">>
+		UNFINISHED
+		Morrigor: I am 
+	<<else>>
+		Morrigor: Captain, must I really explain?
+		Morrigor: We are the AUGURS. Ingrate. Offscreen.
+		<<set $numHangups to $numHangups + 1>>
+		<<stop>>
+	<<endif>>
 -> You: What can you tell me about the New Movement?
-    Morrigor: I'm sure they'd be happy to fill your head with nonsense themselves. Offscreen.
-    <<set $numHangups to $numHangups + 1>>
-    <<stop>>
+	Morrigor: I'm sure they'd be happy to fill your head with nonsense themselves. Offscreen.
+	<<set $numHangups to $numHangups + 1>>
+	<<stop>>
 -> You: What can you tell me about Ratet Hud? <<if hasInfo("metNewMovement")>>
 -> You: Could you PLEASE stop disconnecting? <<if $numHangups > 1>>
-    Morrigor: Offscreen.
-    <<set $numHangups to $numHangups + 1>>
-    <<stop>>
+	Morrigor: Offscreen.
+	<<set $numHangups to $numHangups + 1>>
+	<<stop>>
 -> You: LESSER Augur Morrigor, the New Movement is insisting that you contact your superiors. <<if hasInfo("dealingWithLesser") and not hasInfo("attemptedLesserDeal")>>
-    <<setInfo "attemptedLesserDeal">>
-    Morrigor: What? But...
-    Morrigor: No, Captain. I am in charge here. The Augurs cannot be bothered with this trivial rebellion.
-    -> You: The New Movement have the right to bring their demands directly to the Augurs.
-        Morrigor: Are you an idiot?
-        Morrigor: The New Movement has no power here. We're only here to, to, make a few morons happy.
-        Morrigor: They have no rights. They knew what they were doing when they decided to speak against the Word of the Augurs.
-        UNFINISHED
-        -> You: Shouldn't that be for the Augurs and the New Movement to discuss?
-            <<set $morrigorStatus to "rattled">>
-            Morrigor: No, Captain. I, I mean... Their Word is truth, you understand? They can't be bothered by you, by anyone.
-            Morrigor: My duty is to them.
-            <<jump LesserAugurDiscussion>>
-        -> You: That is entirely offensive. How can you be so callous?
-            Morrigor: What you see as callousness is nothing but righteousness.
-            Morrigor: How can you not get what I've been telling you? There is nothing but the Augurs. Their opinion is what matters.
-            Morrigor: I am following their instructions to the letter, and IT IS CLEAR. The New Movement do not deserve a second thought.
-            Morrigor: So don't blame me for any callousness. Blame the Augurs. Offscreen.
-            <<set $lesserAugurOpinion to $lesserAugurOpinion + 5>>
-            <<set $numHangups to $numHangups + 1>>
-            <<stop>>
-        -> You: Are you listening to yourself?
-            Morrigor: I am always listening, Captain.
-            Morrigor: You may not be able to wrap your simple head around it, but what I speak is truth.
-            Morrigor: Offscreen.
-            <<set $numHangups to $numHangups + 1>>
-            <<stop>>
-        -> You: Tanj off, tainted worm food.
-            Morrigor: I am repeatedly shocked that your small brain is incapable of comprehending my PURPOSE.
-            Morrigor: You just, you don't GET IT! WHY CAN'T YOU GET IT, YOU IDIOT? SIMPLETON? INCONTINENT FOOL? WE... we don't NEED YOU!
-            Morrigor: Peace-loving regurgent diglimps! Just tanjing die in a tanjing vat of tanjing thiophenol, RODENT FACE!
-            <<set $morrigorStatus to "pissed">>
-            <<stop>>
-    -> You: You don't seem in charge.
-        <<set $lesserAugurOpinion to $lesserAugurOpinion - 5>>
-        Morrigor: I am in charge! I am! You pathetic little skeeving...
-        -> You: Then act like a leader, and negotiate.
-            Morrigor: I am a leader! What don't you get?
-            Morrigor: The Augurs put me in charge, to lead, and that's what I'm going to do! I am leading!
-            -> You: How?
-                Morrigor: That's just...
-                Morrigor: Just...
-                Morrigor: Because! I know what I, what I'm...
-                Morrigor: The New Movement can't be allowed to succeed. And we cannot submit to your demands.
-                <<setInfo "morrigorRattled">>
-                <<jump LesserAugurDiscussion>>
-            -> You: Then do yourself a favor: negotiate.
-                Morrigor: I can't. But I can't just end this either.
-                Morrigor: I just... I want to...
-                Morrigor: I don't know! Okay! Okay. We'll negotiate.
-                Morrigor: You can expect me within the hour, Captain. Offscreen.
-                <<set $augurAttendance to "Morrigor">>
-                Officer Dabo: Now all we have to do is convince Ratet Hud to accept negotiations with Lesser Augur Morrigor.
-                Commander Corwin: I hope it's as easy as you make it sound.
-                <<stop>>
-            -> You: Seems like it.
-                <<set $lesserAugurOpinion to $lesserAugurOpinion - 1>>
-                Morrigor: Offscreen.
-                <<set $numHangups to $numHangups + 1>>
-                <<stop>>
-        -> You: Are not.
-            <<set $lesserAugurOpinion to $lesserAugurOpinion - 5>>
-            <<set $crewTrust to $crewTrust - 1>>
-            Morrigor: Am too!
-            -> You: Are not.
-                Morrigor: Am too!
-                Officer Roquell: Captain, is there really a point to this?
-                -> You: Nope.
-                    Morrigor: Yes!
-                -> You: Yes.
-                    Morrigor: No!
-                -> You: I don't know.
-                    Morrigor: Yes!
+	<<setInfo "attemptedLesserDeal">>
+	Morrigor: What? But...
+	Morrigor: No, Captain. I am in charge here. The Augurs cannot be bothered with this trivial rebellion.
+	-> You: The New Movement have the right to bring their demands directly to the Augurs.
+		Morrigor: Are you an idiot?
+		Morrigor: The New Movement has no power here. We're only here to, to, make a few morons happy.
+		Morrigor: They have no rights. They knew what they were doing when they decided to speak against the Word of the Augurs.
+		UNFINISHED
+		-> You: Shouldn't that be for the Augurs and the New Movement to discuss?
+			<<set $morrigorStatus to "rattled">>
+			Morrigor: No, Captain. I, I mean... Their Word is truth, you understand? They can't be bothered by you, by anyone.
+			Morrigor: My duty is to them.
+			<<jump LesserAugurDiscussion>>
+		-> You: That is entirely offensive. How can you be so callous?
+			Morrigor: What you see as callousness is nothing but righteousness.
+			Morrigor: How can you not get what I've been telling you? There is nothing but the Augurs. Their opinion is what matters.
+			Morrigor: I am following their instructions to the letter, and IT IS CLEAR. The New Movement do not deserve a second thought.
+			Morrigor: So don't blame me for any callousness. Blame the Augurs. Offscreen.
+			<<set $lesserAugurOpinion to $lesserAugurOpinion + 5>>
+			<<set $numHangups to $numHangups + 1>>
+			<<stop>>
+		-> You: Are you listening to yourself?
+			Morrigor: I am always listening, Captain.
+			Morrigor: You may not be able to wrap your simple head around it, but what I speak is truth.
+			Morrigor: Offscreen.
+			<<set $numHangups to $numHangups + 1>>
+			<<stop>>
+		-> You: Tanj off, tainted worm food.
+			Morrigor: I am repeatedly shocked that your small brain is incapable of comprehending my PURPOSE.
+			Morrigor: You just, you don't GET IT! WHY CAN'T YOU GET IT, YOU IDIOT? SIMPLETON? INCONTINENT FOOL? WE... we don't NEED YOU!
+			Morrigor: Peace-loving regurgent diglimps! Just tanjing die in a tanjing vat of tanjing thiophenol, RODENT FACE!
+			<<set $morrigorStatus to "pissed">>
+			<<stop>>
+	-> You: You don't seem in charge.
+		<<set $lesserAugurOpinion to $lesserAugurOpinion - 5>>
+		Morrigor: I am in charge! I am! You pathetic little skeeving...
+		-> You: Then act like a leader, and negotiate.
+			Morrigor: I am a leader! What don't you get?
+			Morrigor: The Augurs put me in charge, to lead, and that's what I'm going to do! I am leading!
+			-> You: How?
+				Morrigor: That's just...
+				Morrigor: Just...
+				Morrigor: Because! I know what I, what I'm...
+				Morrigor: The New Movement can't be allowed to succeed. And we cannot submit to your demands.
+				<<setInfo "morrigorRattled">>
+				<<jump LesserAugurDiscussion>>
+			-> You: Then do yourself a favor: negotiate.
+				Morrigor: I can't. But I can't just end this either.
+				Morrigor: I just... I want to...
+				Morrigor: I don't know! Okay! Okay. We'll negotiate.
+				Morrigor: You can expect me within the hour, Captain. Offscreen.
+				<<set $augurAttendance to "Morrigor">>
+				Officer Dabo: Now all we have to do is convince Ratet Hud to accept negotiations with Lesser Augur Morrigor.
+				Commander Corwin: I hope it's as easy as you make it sound.
+				<<stop>>
+			-> You: Seems like it.
+				<<set $lesserAugurOpinion to $lesserAugurOpinion - 1>>
+				Morrigor: Offscreen.
+				<<set $numHangups to $numHangups + 1>>
+				<<stop>>
+		-> You: Are not.
+			<<set $lesserAugurOpinion to $lesserAugurOpinion - 5>>
+			<<set $crewTrust to $crewTrust - 1>>
+			Morrigor: Am too!
+			-> You: Are not.
+				Morrigor: Am too!
+				Officer Roquell: Captain, is there really a point to this?
+				-> You: Nope.
+					Morrigor: Yes!
+				-> You: Yes.
+					Morrigor: No!
+				-> You: I don't know.
+					Morrigor: Yes!
 
-                Officer Roquell: Maybe we should refocus.
-                Morrigor: Listen smegheads, it doesn't matter whether or not the Augurs are coming. Because we are not negotiating.
-                Morrigor: So be content enough to ROT. THERE.
-                <<set $morrigorStatus to "pissed">>
-                <<stop>>
-            -> You: I know for a FACT that you are not in charge.
-                Morrigor: It's just words Captain. This task has been delegated to me.
-                Morrigor: That makes me in charge.
-                -> You: Semantics. You mean that it's just semantics.
-                    Morrigor: I don't care! Semantics, words, we can debate this all day.
-                    Morrigor: But I want to make two things clear. The two things I have attempted to make painfully clear since we started.
-                    Morrigor: Number One: I am in charge. The Augurs have made sure that I am to handle these responsibilities. They are busy.
-                    Morrigor: Number Two: I am not negotiating.
-                    -> You: Then what the tanj am I doing here?
-                        Morrigor: I don't care. Get out of my sight. Offscreen.
-                        <<set $numHangups to $numHangups + 1>>
-                        <<stop>>
-                    -> You: That leaves us at an impasse then.
-                        Morrigor: It just leaves you at an impasse. Offscreen.
-                        <<set $numHangups to $numHangups + 1>>
-                        <<stop>>
-                -> You: Then make a decision already! Stop jacking around!
-                    Morrigor: What?
-                    Morrigor: Ok, you want a decision?
-                    Morrigor: It's already been made. There will be no negotiations.
-                    <<if $crewTrust >= 0>>
-                        Officer Roquell: Okay, that's it!
-                        Morrigor: Excuse me, I am in the midst of negotiating...
-                        Officer Roquell: I apologize for my outburst. Permission to speak, Captain?
-                        -> You: Granted.
-                            <<set $roquellO += 5>>
-                            Morrigor: I appreciate your apology... whoever you are.
-                            Officer Roquell: Sit down, and shut up, Morrigor!
-                            Officer Roquell: Captain, I think I appreciate what you're trying to do here.
-                            Officer Roquell: BUT YOU, Morrigor, are the most stubborn... dingbat I've ever had the displeasure of hearing speak.
-                            Officer Roquell: Your current situation can only deteriorate. We are throwing you a lifeline here, and you are throwing it away.
-                            Officer Roquell: I honestly don't care at this point if our mission succeeds are not, because you are doing EVERYTHING you can to make sure we can't even get started.
-                            Officer Roquell: Now, do you really want to save yourselves? Let us help you. Call the Augurs, right now.
-                            Morrigor: I... have to think about this. Offscreen.
-                            <<set $augurAttendance = "Augurs">>
-                            Officer Roquell: They better.
-                            <<stop>>
-                        -> You: No, I've got this.
-                            Morrigor: I appreciate your apology... whoever you are.
-                            
-                    <<else>>
+				Officer Roquell: Maybe we should refocus.
+				Morrigor: Listen smegheads, it doesn't matter whether or not the Augurs are coming. Because we are not negotiating.
+				Morrigor: So be content enough to ROT. THERE.
+				<<set $morrigorStatus to "pissed">>
+				<<stop>>
+			-> You: I know for a FACT that you are not in charge.
+				Morrigor: It's just words Captain. This task has been delegated to me.
+				Morrigor: That makes me in charge.
+				-> You: Semantics. You mean that it's just semantics.
+					Morrigor: I don't care! Semantics, words, we can debate this all day.
+					Morrigor: But I want to make two things clear. The two things I have attempted to make painfully clear since we started.
+					Morrigor: Number One: I am in charge. The Augurs have made sure that I am to handle these responsibilities. They are busy.
+					Morrigor: Number Two: I am not negotiating.
+					-> You: Then what the tanj am I doing here?
+						Morrigor: I don't care. Get out of my sight. Offscreen.
+						<<set $numHangups to $numHangups + 1>>
+						<<stop>>
+					-> You: That leaves us at an impasse then.
+						Morrigor: It just leaves you at an impasse. Offscreen.
+						<<set $numHangups to $numHangups + 1>>
+						<<stop>>
+				-> You: Then make a decision already! Stop jacking around!
+					Morrigor: What?
+					Morrigor: Ok, you want a decision?
+					Morrigor: It's already been made. There will be no negotiations.
+					<<if $crewTrust >= 0>>
+						Officer Roquell: Okay, that's it!
+						Morrigor: Excuse me, I am in the midst of negotiating...
+						Officer Roquell: I apologize for my outburst.
+						Morrigor: I appreciate your apology...
+						Officer Roquell: Permission to speak, Captain?
+						-> You: Granted.
+							<<set $roquellO += 5>>
+							Morrigor: I wasn't finished!
+							Officer Roquell: Sit down, and shut up, Morrigor!
+							Officer Roquell: Captain, I think I appreciate what you're trying to do here.
+							Officer Roquell: BUT YOU, Morrigor, are the most stubborn... dingbat I've ever had the displeasure of hearing speak.
+							Officer Roquell: Your current situation can only deteriorate. We are throwing you a lifeline here, and you are throwing it away.
+							Officer Roquell: I honestly don't care at this point if our mission succeeds are not, because you are doing EVERYTHING you can to make sure we can't even get started.
+							Officer Roquell: Now, do you really want to save yourselves? Let us help you. Call the Augurs, right now.
+							Morrigor: I... have to think about this. Offscreen.
+							<<set $augurAttendance = "Augurs">>
+							Officer Roquell: They better.
+							<<stop>>
+						-> You: No, I've got this.
+							Morrigor: And I know for a FACT that you don't.
+							-> You: Listen, I got carried away.
+								Morrigor: And then some.
+								-> You: But you realize UNFINISHED
+							-> You:
+							-> You: Alright, jaghole. Lock weapons on the Lesser Augur ship.
+								Morrigor: You'll never see me coming, you bloated lecherous carcass.
+								Morrigor: Offscreen.
+								<<jump LesserAugurAggress>>
+					<<else>>
 
-                    <<endif>>
-                -> You: Listen here, pond scum...
-            UNFINISHED
-        -> You: 
-        UNFINISHED
-    -> You: Fine, have it your way.
-        Morrigor: Good. Unless you need to waste more of my time?
-        -> You: But that means YOU have to be at the negotiating table.
-            Morrigor: Captain, be reasonable.
-            -> You: Sorry, who are you calling unreasonable?
-            UNFINISHED
-        -> You: No. Offscreen.
-            <<set $lesserAugurOpinion to $lesserAugurOpinion + 10>>
-            <<stop>>
+					<<endif>>
+				-> You: Listen here, pond scum...
+			UNFINISHED
+		-> You: 
+		UNFINISHED
+	-> You: Fine, have it your way.
+		Morrigor: Good. Unless you need to waste more of my time?
+		-> You: But that means YOU have to be at the negotiating table.
+			Morrigor: Captain, be reasonable.
+			-> You: Sorry, who are you calling unreasonable?
+			UNFINISHED
+		-> You: No. Offscreen.
+			<<set $lesserAugurOpinion to $lesserAugurOpinion + 10>>
+			<<stop>>
 -> You: Are you aware that your Homeworld is missing an entire continent? <<if hasInfo("Yvik") and not hasInfo("Yvik's Eye read")>>
-    Morrigor: Why do you care? You're conducting negotiations. What does it matter?
-    -> You: It's an anomaly, and we want to understand it.
-        Morrigor: If Yvik matters that much to you, I'd be more than happy to send your garbage scow plummeting to its surface.
-        Morrigor: We don't deal in anomalies. We deal in truth, in the word of the Augurs. That is all that needs to be understood.
-        Morrigor: Offscreen.
-        <<set $numHangups to $numHangups + 1>>
-        <<stop>>
-    -> You: We're trying to understand you better.
-        Morrigor: There is no benefit to understanding us.
-        Morrigor: Understand that you are only here because some care little enough to tolerate you.
-        Morrigor: That's all you need to know about us. Your breath, your presence, your fecal matter, they are all wastes of space.
-        Morrigor: Offscreen.
-        <<set $numHangups to $numHangups + 1>>
-        <<stop>>
-    -> You: Why do you care? It's a simple question.
-        Morrigor: Do yourselves a favor, and focus on your job, instead of useless information.
-        Morrigor: Offscreen.
-        <<set $numHangups to $numHangups + 1>>
-        <<stop>>
+	Morrigor: Why do you care? You're conducting negotiations. What does it matter?
+	-> You: It's an anomaly, and we want to understand it.
+		Morrigor: If Yvik matters that much to you, I'd be more than happy to send your garbage scow plummeting to its surface.
+		Morrigor: We don't deal in anomalies. We deal in truth, in the word of the Augurs. That is all that needs to be understood.
+		Morrigor: Offscreen.
+		<<set $numHangups to $numHangups + 1>>
+		<<stop>>
+	-> You: We're trying to understand you better.
+		Morrigor: There is no benefit to understanding us.
+		Morrigor: Understand that you are only here because some care little enough to tolerate you.
+		Morrigor: That's all you need to know about us. Your breath, your presence, your fecal matter, they are all wastes of space.
+		Morrigor: Offscreen.
+		<<set $numHangups to $numHangups + 1>>
+		<<stop>>
+	-> You: Why do you care? It's a simple question.
+		Morrigor: Do yourselves a favor, and focus on your job, instead of useless information.
+		Morrigor: Offscreen.
+		<<set $numHangups to $numHangups + 1>>
+		<<stop>>
 -> You: I've read the Augurs' Word about Yvik's Eye. Would you mind clarifying a few things? <<if hasInfo("Yvik's Eye read")>>
 -> You: That's it, I'm calling off negotiations.
 -> You: Could you hold, please?

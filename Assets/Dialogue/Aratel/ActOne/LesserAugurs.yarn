@@ -20,13 +20,13 @@ Officer Dabo: If you let me perform a more long-form scan, I might be able to fi
 title: LesserAugurLongScan
 ---
 <<if $scanTarget == "LesserAugur">>
-    Officer Dabo: Captain, you already have me scanning the Augur ship.
-    <<stop>>
+	Officer Dabo: Captain, you already have me scanning the Augur ship.
+	<<stop>>
 <<elseif $scanTarget != "">>
-    Officer Dabo: Captain, I'm already scanning something else. I can switch priorities if you'd like.
-    -> You: Go ahead.
-    -> You: Nevermind.
-        <<stop>>
+	Officer Dabo: Captain, I'm already scanning something else. I can switch priorities if you'd like.
+	-> You: Go ahead.
+	-> You: Nevermind.
+		<<stop>>
 <<endif>>
 <<set $scanTarget to "LesserAugur">>
 Officer Dabo: Sure thing, Captain. Scanning Augur ship now.
@@ -34,21 +34,21 @@ Officer Dabo: Sure thing, Captain. Scanning Augur ship now.
 title: LesserAugurHail
 ---
 <<if hasInfo("metLesserAugur")>>
-    <<jump LesserAugurDiscussion>>
+	<<jump LesserAugurDiscussion>>
 <<else>>
-    <<jump LesserAugurFirstContact>>
+	<<jump LesserAugurFirstContact>>
 <<endif>>
 ===
 title: LesserAugurMonitor
 ---
 <<if $monitorTarget == "LesserAugur">>
-    Commander Rikt: Captain, I'm already monitoring the Augur's ship.
-    <<stop>>
+	Commander Rikt: Captain, I'm already monitoring the Augur's ship.
+	<<stop>>
 <<elseif $monitorTarget != "">>
-    Commander Rikt: Captain, I'm already monitoring something else. I can switch to this, though.
-    -> You: Make it so.
-    -> You: No, keep going.
-        <<stop>>
+	Commander Rikt: Captain, I'm already monitoring something else. I can switch to this, though.
+	-> You: Make it so.
+	-> You: No, keep going.
+		<<stop>>
 <<endif>>
 <<set $monitorTarget to "LesserAugur">>
 Commander Rikt: Alright, beginning monitor.

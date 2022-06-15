@@ -1,0 +1,10 @@
+Just a list of features for Yarn spinner that I'd like. Maybe I'll fork the relevant repositories and add these someday.
+
+For Yarn:
+Arrays and iterables (especially from external scripts)
+
+For the VS Code Plugin:
+Outline for all variables and all of their possible values (+ options to filter based on things like what yarn file you're currently in)
+If above is done fully and successfully, a testing framework built on top for testing whether or not the player can access certain branches or nodes with certain conditions from a given starting node.
+Highlight a section of text and make a new node from it (and replace the section with a jump marker)
+Auto-indent on new line.
