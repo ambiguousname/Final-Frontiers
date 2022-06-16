@@ -232,9 +232,10 @@ title: LesserAugurDiscussion
 
 <<declare $numHangups = 0 as number>>
 <<if $morrigorStatus == "rattled">>
-	Morrigor: Is there anything else, Captain? What... Peace-loving stool sample, I mean... yes?
+	Morrigor: What?
 <<elseif $augurAttendance == "Morrigor">>
-	Morrigor: My shuttle is undergoing preparations, Captain. As I said, I will be on your ship within the hour.
+	Morrigor: My shuttle is undergoing preparations, Captain. As I said, we will be on your ship within the hour.
+	Morrigor: Make sure the New Movement understands that we will be attending.
 	<<stop>>
 <<elseif $augurAttendance == "Augurs">>
 	Morrigor: I'm still thinking it over, Captain. You'll hear from me soon.
@@ -316,7 +317,7 @@ title: LesserAugurDiscussion
 				Morrigor: I can't. But I can't just end this either.
 				Morrigor: I just... I want to...
 				Morrigor: I don't know! Okay! Okay. We'll negotiate.
-				Morrigor: You can expect me within the hour, Captain. Offscreen.
+				Morrigor: You can expect us within the hour, Captain. Offscreen.
 				<<set $augurAttendance to "Morrigor">>
 				Officer Dabo: Now all we have to do is convince Ratet Hud to accept negotiations with Lesser Augur Morrigor.
 				Commander Corwin: I hope it's as easy as you make it sound.
@@ -361,7 +362,7 @@ title: LesserAugurDiscussion
 						Morrigor: It just leaves you at an impasse. Offscreen.
 						<<set $numHangups to $numHangups + 1>>
 						<<stop>>
-				-> You: Then make a decision already! Stop jacking around!
+				-> You: Then make a decision already!
 					Morrigor: What?
 					Morrigor: Ok, you want a decision?
 					Morrigor: It's already been made. There will be no negotiations.
@@ -373,6 +374,7 @@ title: LesserAugurDiscussion
 						Officer Roquell: Permission to speak, Captain?
 						-> You: Granted.
 							<<set $roquellO += 5>>
+							<<set $lesserAugurOpinion -= 5>>
 							Morrigor: I wasn't finished!
 							Officer Roquell: Sit down, and shut up, Morrigor!
 							Officer Roquell: Captain, I think I appreciate what you're trying to do here.
@@ -386,19 +388,66 @@ title: LesserAugurDiscussion
 							<<stop>>
 						-> You: No, I've got this.
 							Morrigor: And I know for a FACT that you don't.
-							-> You: Listen, I got carried away.
-								Morrigor: And then some.
-								-> You: But you realize UNFINISHED
-							-> You:
+							-> You: Listen, I'm sorry.
+								Morrigor: Better be.
+								-> You: But you realize that I can't do anything if you keep refusing our help?
+								-> You: Okay, jerk. Just listen what I have to say.
+								-> You: But we need to refocus. This is about the Augurs.
+									Morrigor: Everything I do is for the Augurs, Captain.
+									Morrigor: Everything I know says that they are so ... ABOVE this. 
+									-> You: Then at least take their place.
+										Morrigor: Fine. Expect us within the hour. Tell the New Movement they can have their negotiation.
+										Morrigor: Offscreen.
+										<<set $augurAttendance = "Morrigor">>
+									-> You: I don't tanjing care. Get them on the horn.
+										Morrigor: No.
+										<<set $morrigorStatus = "rattled">>
+										<<jump LesserAugurDiscussion>>
+								Morrigor: I don't know how to make this clearer: we aren't interested in your help.
+								Morrigor: And you've wasted enough of my time. Offscreen.
+								<<stop>>
+							-> You: HEY! SIT DOWN AND SHUT YOUR MOUTH!
+								Morrigor: How *dare* you.
+								Morrigor: I will annihilate you.
+								Morrigor: Lock weapons on the Union ship. Blow them to shreds.
+								Morrigor: Oh, and offscreen.
+								<<set $morrigorStatus to "pissed">>
+								<<jump LesserAugurAggress>>
 							-> You: Alright, jaghole. Lock weapons on the Lesser Augur ship.
 								Morrigor: You'll never see me coming, you bloated lecherous carcass.
 								Morrigor: Offscreen.
 								<<jump LesserAugurAggress>>
 					<<else>>
-
+						-> You: That's not a decision.
+							Morrigor: Just what do you mean?
+							-> You: You're stalling for options.
+								Morrigor: There aren't any good options.
+								-> You: How would you know without trying one?
+									Morrigor: Fine. Fine! FINE!
+									Morrigor: I don't know if I can get the Augurs interested. But I can at least try.
+									Morrigor: We will be ready within the hour, Captain. Expect us on your ship then.
+									Morrigor: Offscreen.
+									<<set $lesserAugurOpinion -= 1>>
+									<<set $augurAttendance to "Morrigor">>
+									<<stop>>
+								-> You: There's one. WORK WITH ME!!!
+									Morrigor: No. Offscreen.
+									<<set $numHangups += 1>>
+									<<stop>>
+							-> You: You're an idiot.
+								Morrigor: That's just what an *idiot* would say. Offscreen.
+								<<set $numHangups += 1>>
+								<<stop>>
+							-> You: You're not in charge.
+								Morrigor: I *so* am. Watch this! Lock weapons on the Union ship. Prepare to fire.
+								Morrigor: Oh, and offscreen.
+								<<jump LesserAugurAggress>>
+						-> You: I just want to reach through the viewscreen and strangle you.
+							Morrigor: Good luck. There's glass in the way.
+							Morrigor: And with your intelligence, you'll probably end up choking yourself to death. Offscreen.
+							<<set $numHangups += 1>>
+							<<stop>>
 					<<endif>>
-				-> You: Listen here, pond scum...
-			UNFINISHED
 		-> You: 
 		UNFINISHED
 	-> You: Fine, have it your way.
