@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -56,6 +57,9 @@ namespace StarterAssets
 
 		// cinemachine
 		private float _cinemachineTargetPitch;
+		private float _cinemachineTargetFOV;
+		private float _cinemachineFOVMoveSpeed;
+		private CinemachineVirtualCamera _cineCamera;
 
 		// player
 		private float _speed;
@@ -80,6 +84,7 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
+			_cineCamera = _mainCamera.GetComponent<CinemachineBrain>().ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
 		}
 
 		private void Start()
@@ -97,15 +102,29 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-		}
+			SetFOV();
+        }
 
-		private void LateUpdate()
-		{
-			CameraRotation();
-		}
+        private void LateUpdate()
+        {
+            CameraRotation();
+        }
 
-		public void SetPitch(float pitch) {
+        public void SetPitch(float pitch) {
 			_cinemachineTargetPitch = pitch;
+		}
+
+		public void RubberbandFOV(float amount = 5, float speed = 1) {
+			_cinemachineTargetFOV = amount;
+			_cinemachineFOVMoveSpeed = speed;
+		}
+
+		private void SetFOV() {
+			_cineCamera.m_Lens.FieldOfView = Mathf.Lerp(_cineCamera.m_Lens.FieldOfView, _cinemachineTargetFOV, Time.deltaTime * _cinemachineFOVMoveSpeed);
+			if (Mathf.Abs(_cineCamera.m_Lens.FieldOfView - _cinemachineTargetFOV) < 0.01f) {
+				_cineCamera.m_Lens.FieldOfView = _cinemachineTargetFOV;
+
+			}
 		}
 
 		private void GroundedCheck()
