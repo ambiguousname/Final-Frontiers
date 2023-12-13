@@ -84,12 +84,12 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
-			_cineCamera = _mainCamera.GetComponent<CinemachineBrain>().ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
 		}
 
 		private void Start()
-		{
-			_controller = GetComponent<CharacterController>();
+        {
+            //_cineCamera = _mainCamera.GetComponent<CinemachineBrain>().ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
+            _controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 
 			// reset our timeouts on start
@@ -120,11 +120,11 @@ namespace StarterAssets
 		}
 
 		private void SetFOV() {
-			_cineCamera.m_Lens.FieldOfView = Mathf.Lerp(_cineCamera.m_Lens.FieldOfView, _cinemachineTargetFOV, Time.deltaTime * _cinemachineFOVMoveSpeed);
+			/*_cineCamera.m_Lens.FieldOfView = Mathf.Lerp(_cineCamera.m_Lens.FieldOfView, _cinemachineTargetFOV, Time.deltaTime * _cinemachineFOVMoveSpeed);
 			if (Mathf.Abs(_cineCamera.m_Lens.FieldOfView - _cinemachineTargetFOV) < 0.01f) {
 				_cineCamera.m_Lens.FieldOfView = _cinemachineTargetFOV;
 
-			}
+			}*/
 		}
 
 		private void GroundedCheck()

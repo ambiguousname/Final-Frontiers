@@ -43,7 +43,7 @@ public class WarpTransition : MonoBehaviour
         SceneManager.sceneLoaded += LoadYarnDialogue;
 
         canExitWarp = false;
-        StartCoroutine(WarpLoad());
+        //StartCoroutine(WarpLoad());
     }
 
     private IEnumerator WarpLoad() {
